@@ -1,508 +1,480 @@
-
-<section class="content-header">
-    <h1>
-        Dashboard
-        <small>Control panel</small>
-    </h1>
-    <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Dashboard</li>
-    </ol>
-</section>
-
-<!-- Main content -->
-<section class="content">
-    <!-- Small boxes (Stat box) -->
-    <div class="row">
-        <div class="col-lg-3 col-xs-6">
-            <!-- small box -->
-            <div class="small-box bg-aqua">
-                <div class="inner">
-                    <h3>150</h3>
-
-                    <p>New Orders</p>
-                </div>
-                <div class="icon">
-                    <i class="ion ion-bag"></i>
-                </div>
-                <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-            </div>
+<!-- Title area -->
+<div class="titleArea">
+    <div class="wrapper">
+        <div class="pageTitle">
+            <h5>Bảng điều khiển</h5>
+            <span>Trang quản lý hệ thống</span>
         </div>
-        <!-- ./col -->
-        <div class="col-lg-3 col-xs-6">
-            <!-- small box -->
-            <div class="small-box bg-green">
-                <div class="inner">
-                    <h3>53<sup style="font-size: 20px">%</sup></h3>
 
-                    <p>Bounce Rate</p>
-                </div>
-                <div class="icon">
-                    <i class="ion ion-stats-bars"></i>
-                </div>
-                <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-            </div>
-        </div>
-        <!-- ./col -->
-        <div class="col-lg-3 col-xs-6">
-            <!-- small box -->
-            <div class="small-box bg-yellow">
-                <div class="inner">
-                    <h3>44</h3>
-
-                    <p>User Registrations</p>
-                </div>
-                <div class="icon">
-                    <i class="ion ion-person-add"></i>
-                </div>
-                <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-            </div>
-        </div>
-        <!-- ./col -->
-        <div class="col-lg-3 col-xs-6">
-            <!-- small box -->
-            <div class="small-box bg-red">
-                <div class="inner">
-                    <h3>65</h3>
-
-                    <p>Unique Visitors</p>
-                </div>
-                <div class="icon">
-                    <i class="ion ion-pie-graph"></i>
-                </div>
-                <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-            </div>
-        </div>
-        <!-- ./col -->
+        <div class="clear"></div>
     </div>
-    <!-- /.row -->
-    <!-- Main row -->
-    <div class="row">
-        <!-- Left col -->
-        <section class="col-lg-7 connectedSortable">
-            <!-- Custom tabs (Charts with tabs)-->
-            <div class="nav-tabs-custom">
-                <!-- Tabs within a box -->
-                <ul class="nav nav-tabs pull-right">
-                    <li class="active"><a href="#revenue-chart" data-toggle="tab">Area</a></li>
-                    <li><a href="#sales-chart" data-toggle="tab">Donut</a></li>
-                    <li class="pull-left header"><i class="fa fa-inbox"></i> Sales</li>
-                </ul>
-                <div class="tab-content no-padding">
-                    <!-- Morris chart - Sales -->
-                    <div class="chart tab-pane active" id="revenue-chart" style="position: relative; height: 300px;"></div>
-                    <div class="chart tab-pane" id="sales-chart" style="position: relative; height: 300px;"></div>
+</div>
+
+<div class="line"></div>
+
+
+<!-- Message -->
+
+
+<!-- Main content wrapper -->
+<div class="wrapper">
+
+    <div class="widgets">
+        <!-- Stats -->
+
+        <!-- Amount -->
+        <div class="oneTwo">
+            <div class="widget">
+                <div class="title">
+                    <img src="public/admin/images/icons/dark/money.png" class="titleIcon" />
+                    <h6>Doanh số</h6>
                 </div>
+
+                <table cellpadding="0" cellspacing="0" width="100%" class="sTable myTable">
+                    <tbody>
+
+                        <tr>
+                            <td class="fontB blue f13">Tổng doanh số</td>
+                            <td class="textR webStatsLink red" style="width:120px;">44,000,000 đ</td>
+                        </tr>
+
+                        <tr>
+                            <td class="fontB blue f13">Doanh số hôm nay</td>
+                            <td class="textR webStatsLink red" style="width:120px;">0 đ</td>
+                        </tr>
+
+                        <tr>
+                            <td class="fontB blue f13">Doanh số theo tháng</td>
+                            <td class="textR webStatsLink red" style="width:120px;">
+                                0 đ
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
             </div>
-            <!-- /.nav-tabs-custom -->
+        </div>
 
-            <!-- Chat box -->
-            <div class="box box-success">
-                <div class="box-header">
-                    <i class="fa fa-comments-o"></i>
 
-                    <h3 class="box-title">Chat</h3>
-
-                    <div class="box-tools pull-right" data-toggle="tooltip" title="Status">
-                        <div class="btn-group" data-toggle="btn-toggle">
-                            <button type="button" class="btn btn-default btn-sm active"><i class="fa fa-square text-green"></i>
-                            </button>
-                            <button type="button" class="btn btn-default btn-sm"><i class="fa fa-square text-red"></i></button>
-                        </div>
-                    </div>
+        <!-- User -->
+        <div class="oneTwo">
+            <div class="widget">
+                <div class="title">
+                    <img src="public/admin/images/icons/dark/users.png" class="titleIcon" />
+                    <h6>Thống kê dữ liệu</h6>
                 </div>
-                <div class="box-body chat" id="chat-box">
-                    <!-- chat item -->
-                    <div class="item">
-                        <img src="dist/img/user4-128x128.jpg" alt="user image" class="online">
 
-                        <p class="message">
-                            <a href="#" class="name">
-                                <small class="text-muted pull-right"><i class="fa fa-clock-o"></i> 2:15</small>
-                                Mike Doe
+                <table cellpadding="0" cellspacing="0" width="100%" class="sTable myTable">
+                    <tbody>
+
+                        <tr>
+                            <td>
+                                <div class="left">Tổng số gia dịch</div>
+                                <div class="right f11"><a href="admin/tran.html">Chi tiết</a></div>
+                            </td>
+
+                            <td class="textC webStatsLink">
+                                15					</td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <div class="left">Tổng số sản phẩm</div>
+                                <div class="right f11"><a href="admin/product.html">Chi tiết</a></div>
+                            </td>
+
+                            <td class="textC webStatsLink">
+                                8					</td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <div class="left">Tổng số bài viết</div>
+                                <div class="right f11"><a href="admin/news.html">Chi tiết</a></div>
+                            </td>
+
+                            <td class="textC webStatsLink">
+                                4					</td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <div class="left">Tổng số thành viên</div>
+                                <div class="right f11"><a href="admin/user.html">Chi tiết</a></div>
+                            </td>
+
+                            <td class="textC webStatsLink">
+                                2					</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="left">Tổng số liên hệ</div>
+                                <div class="right f11"><a href="admin/contact.html">Chi tiết</a></div>
+                            </td>
+
+                            <td class="textC webStatsLink">
+                                0					</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="clear"></div>
+
+        <!-- Giao dich thanh cong gan day nhat -->
+
+        <div class="widget">
+            <div class="title">
+                <span class="titleIcon"><input type="checkbox" id="titleCheck" name="titleCheck" /></span>
+                <h6>Danh sách Giao dịch</h6>
+            </div>
+
+            <table cellpadding="0" cellspacing="0" width="100%" class="sTable mTable myTable" id="checkAll">
+
+
+                <thead>
+                    <tr>
+                        <td style="width:10px;"><img src="public/admin/images/icons/tableArrows.png" /></td>
+                        <td style="width:60px;">Mã số</td>
+                        <td style="width:75px;">Thành viên</td>
+                        <td style="width:90px;">Số tiền</td>
+                        <td>Hình thức</td>
+                        <td style="width:100px;">Giao dịch</td>
+                        <td style="width:75px;">Ngày tạo</td>
+                        <td style="width:55px;">Hành động</td>
+                    </tr>
+                </thead>
+
+                <tfoot class="auto_check_pages">
+                    <tr>
+                        <td colspan="8">
+                            <div class="list_action itemActions">
+                                <a href="#submit" id="submit" class="button blueB" url="admin/tran/del_all.html">
+                                    <span style='color:white;'>Xóa hết</span>
+                                </a>
+                            </div>
+                        </td>
+                    </tr>
+                </tfoot>
+
+                <tbody class="list_item">
+                    <tr>
+                        <td><input type="checkbox" name="id[]" value="21" /></td>
+
+                        <td class="textC">21</td>
+
+                        <td>
+                            Hoàng văn Tuyền					</td>
+
+                        <td class="textR red">10,000,000</td>
+
+                        <td>
+                            dathang					</td>
+
+
+                        <td class="status textC">
+                            <span class="pending">
+                                Chờ xử lý						</span>
+                        </td>
+
+                        <td class="textC">16-08-2014</td>
+
+                        <td class="textC">
+                            <a href="admin/tran/view/21.html" class="lightbox">
+                                <img src="public/admin/images/icons/color/view.png" />
                             </a>
-                            I would like to meet you to discuss the latest news about
-                            the arrival of the new theme. They say it is going to be one the
-                            best themes on the market
-                        </p>
-                        <div class="attachment">
-                            <h4>Attachments:</h4>
 
-                            <p class="filename">
-                                Theme-thumbnail-image.jpg
-                            </p>
-
-                            <div class="pull-right">
-                                <button type="button" class="btn btn-primary btn-sm btn-flat">Open</button>
-                            </div>
-                        </div>
-                        <!-- /.attachment -->
-                    </div>
-                    <!-- /.item -->
-                    <!-- chat item -->
-                    <div class="item">
-                        <img src="dist/img/user3-128x128.jpg" alt="user image" class="offline">
-
-                        <p class="message">
-                            <a href="#" class="name">
-                                <small class="text-muted pull-right"><i class="fa fa-clock-o"></i> 5:15</small>
-                                Alexander Pierce
+                            <a href="admin/tran/del/21.html" title="Xóa" class="tipS verify_action" >
+                                <img src="public/admin/images/icons/color/delete.png" />
                             </a>
-                            I would like to meet you to discuss the latest news about
-                            the arrival of the new theme. They say it is going to be one the
-                            best themes on the market
-                        </p>
-                    </div>
-                    <!-- /.item -->
-                    <!-- chat item -->
-                    <div class="item">
-                        <img src="dist/img/user2-160x160.jpg" alt="user image" class="offline">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="id[]" value="20" /></td>
 
-                        <p class="message">
-                            <a href="#" class="name">
-                                <small class="text-muted pull-right"><i class="fa fa-clock-o"></i> 5:30</small>
-                                Susan Doe
+                        <td class="textC">20</td>
+
+                        <td>
+                            Hoàng văn Tuyền					</td>
+
+                        <td class="textR red">5,000,000</td>
+
+                        <td>
+                            baokim					</td>
+
+
+                        <td class="status textC">
+                            <span class="pending">
+                                Chờ xử lý						</span>
+                        </td>
+
+                        <td class="textC">15-08-2014</td>
+
+                        <td class="textC">
+                            <a href="admin/tran/view/20.html" class="lightbox">
+                                <img src="public/admin/images/icons/color/view.png" />
                             </a>
-                            I would like to meet you to discuss the latest news about
-                            the arrival of the new theme. They say it is going to be one the
-                            best themes on the market
-                        </p>
-                    </div>
-                    <!-- /.item -->
-                </div>
-                <!-- /.chat -->
-                <div class="box-footer">
-                    <div class="input-group">
-                        <input class="form-control" placeholder="Type message...">
 
-                        <div class="input-group-btn">
-                            <button type="button" class="btn btn-success"><i class="fa fa-plus"></i></button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- /.box (chat box) -->
+                            <a href="admin/tran/del/20.html" title="Xóa" class="tipS verify_action" >
+                                <img src="public/admin/images/icons/color/delete.png" />
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="id[]" value="19" /></td>
 
-            <!-- TO DO List -->
-            <div class="box box-primary">
-                <div class="box-header">
-                    <i class="ion ion-clipboard"></i>
+                        <td class="textC">19</td>
 
-                    <h3 class="box-title">To Do List</h3>
+                        <td>
+                            Hoàng văn Tuyền					</td>
 
-                    <div class="box-tools pull-right">
-                        <ul class="pagination pagination-sm inline">
-                            <li><a href="#">&laquo;</a></li>
-                            <li><a href="#">1</a></li>
-                            <li><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li><a href="#">&raquo;</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <!-- /.box-header -->
-                <div class="box-body">
-                    <ul class="todo-list">
-                        <li>
-                            <!-- drag handle -->
-                            <span class="handle">
-                                <i class="fa fa-ellipsis-v"></i>
-                                <i class="fa fa-ellipsis-v"></i>
-                            </span>
-                            <!-- checkbox -->
-                            <input type="checkbox" value="">
-                            <!-- todo text -->
-                            <span class="text">Design a nice theme</span>
-                            <!-- Emphasis label -->
-                            <small class="label label-danger"><i class="fa fa-clock-o"></i> 2 mins</small>
-                            <!-- General tools such as edit or delete-->
-                            <div class="tools">
-                                <i class="fa fa-edit"></i>
-                                <i class="fa fa-trash-o"></i>
-                            </div>
-                        </li>
-                        <li>
-                            <span class="handle">
-                                <i class="fa fa-ellipsis-v"></i>
-                                <i class="fa fa-ellipsis-v"></i>
-                            </span>
-                            <input type="checkbox" value="">
-                            <span class="text">Make the theme responsive</span>
-                            <small class="label label-info"><i class="fa fa-clock-o"></i> 4 hours</small>
-                            <div class="tools">
-                                <i class="fa fa-edit"></i>
-                                <i class="fa fa-trash-o"></i>
-                            </div>
-                        </li>
-                        <li>
-                            <span class="handle">
-                                <i class="fa fa-ellipsis-v"></i>
-                                <i class="fa fa-ellipsis-v"></i>
-                            </span>
-                            <input type="checkbox" value="">
-                            <span class="text">Let theme shine like a star</span>
-                            <small class="label label-warning"><i class="fa fa-clock-o"></i> 1 day</small>
-                            <div class="tools">
-                                <i class="fa fa-edit"></i>
-                                <i class="fa fa-trash-o"></i>
-                            </div>
-                        </li>
-                        <li>
-                            <span class="handle">
-                                <i class="fa fa-ellipsis-v"></i>
-                                <i class="fa fa-ellipsis-v"></i>
-                            </span>
-                            <input type="checkbox" value="">
-                            <span class="text">Let theme shine like a star</span>
-                            <small class="label label-success"><i class="fa fa-clock-o"></i> 3 days</small>
-                            <div class="tools">
-                                <i class="fa fa-edit"></i>
-                                <i class="fa fa-trash-o"></i>
-                            </div>
-                        </li>
-                        <li>
-                            <span class="handle">
-                                <i class="fa fa-ellipsis-v"></i>
-                                <i class="fa fa-ellipsis-v"></i>
-                            </span>
-                            <input type="checkbox" value="">
-                            <span class="text">Check your messages and notifications</span>
-                            <small class="label label-primary"><i class="fa fa-clock-o"></i> 1 week</small>
-                            <div class="tools">
-                                <i class="fa fa-edit"></i>
-                                <i class="fa fa-trash-o"></i>
-                            </div>
-                        </li>
-                        <li>
-                            <span class="handle">
-                                <i class="fa fa-ellipsis-v"></i>
-                                <i class="fa fa-ellipsis-v"></i>
-                            </span>
-                            <input type="checkbox" value="">
-                            <span class="text">Let theme shine like a star</span>
-                            <small class="label label-default"><i class="fa fa-clock-o"></i> 1 month</small>
-                            <div class="tools">
-                                <i class="fa fa-edit"></i>
-                                <i class="fa fa-trash-o"></i>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-                <!-- /.box-body -->
-                <div class="box-footer clearfix no-border">
-                    <button type="button" class="btn btn-default pull-right"><i class="fa fa-plus"></i> Add item</button>
-                </div>
-            </div>
-            <!-- /.box -->
+                        <td class="textR red">5,000,000</td>
 
-            <!-- quick email widget -->
-            <div class="box box-info">
-                <div class="box-header">
-                    <i class="fa fa-envelope"></i>
+                        <td>
+                            baokim					</td>
 
-                    <h3 class="box-title">Quick Email</h3>
-                    <!-- tools box -->
-                    <div class="pull-right box-tools">
-                        <button type="button" class="btn btn-info btn-sm" data-widget="remove" data-toggle="tooltip" title="Remove">
-                            <i class="fa fa-times"></i></button>
-                    </div>
-                    <!-- /. tools -->
-                </div>
-                <div class="box-body">
-                    <form action="#" method="post">
-                        <div class="form-group">
-                            <input type="email" class="form-control" name="emailto" placeholder="Email to:">
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" name="subject" placeholder="Subject">
-                        </div>
-                        <div>
-                            <textarea class="textarea" placeholder="Message" style="width: 100%; height: 125px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
-                        </div>
-                    </form>
-                </div>
-                <div class="box-footer clearfix">
-                    <button type="button" class="pull-right btn btn-default" id="sendEmail">Send
-                        <i class="fa fa-arrow-circle-right"></i></button>
-                </div>
-            </div>
 
-        </section>
-        <!-- /.Left col -->
-        <!-- right col (We are only adding the ID to make the widgets sortable)-->
-        <section class="col-lg-5 connectedSortable">
+                        <td class="status textC">
+                            <span class="pending">
+                                Chờ xử lý						</span>
+                        </td>
 
-            <!-- Map box -->
-            <div class="box box-solid bg-light-blue-gradient">
-                <div class="box-header">
-                    <!-- tools box -->
-                    <div class="pull-right box-tools">
-                        <button type="button" class="btn btn-primary btn-sm daterange pull-right" data-toggle="tooltip" title="Date range">
-                            <i class="fa fa-calendar"></i></button>
-                        <button type="button" class="btn btn-primary btn-sm pull-right" data-widget="collapse" data-toggle="tooltip" title="Collapse" style="margin-right: 5px;">
-                            <i class="fa fa-minus"></i></button>
-                    </div>
-                    <!-- /. tools -->
+                        <td class="textC">15-08-2014</td>
 
-                    <i class="fa fa-map-marker"></i>
+                        <td class="textC">
+                            <a href="admin/tran/view/19.html" class="lightbox">
+                                <img src="public/admin/images/icons/color/view.png" />
+                            </a>
 
-                    <h3 class="box-title">
-                        Visitors
-                    </h3>
-                </div>
-                <div class="box-body">
-                    <div id="world-map" style="height: 250px; width: 100%;"></div>
-                </div>
-                <!-- /.box-body-->
-                <div class="box-footer no-border">
-                    <div class="row">
-                        <div class="col-xs-4 text-center" style="border-right: 1px solid #f4f4f4">
-                            <div id="sparkline-1"></div>
-                            <div class="knob-label">Visitors</div>
-                        </div>
-                        <!-- ./col -->
-                        <div class="col-xs-4 text-center" style="border-right: 1px solid #f4f4f4">
-                            <div id="sparkline-2"></div>
-                            <div class="knob-label">Online</div>
-                        </div>
-                        <!-- ./col -->
-                        <div class="col-xs-4 text-center">
-                            <div id="sparkline-3"></div>
-                            <div class="knob-label">Exists</div>
-                        </div>
-                        <!-- ./col -->
-                    </div>
-                    <!-- /.row -->
-                </div>
-            </div>
-            <!-- /.box -->
+                            <a href="admin/tran/del/19.html" title="Xóa" class="tipS verify_action" >
+                                <img src="public/admin/images/icons/color/delete.png" />
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="id[]" value="18" /></td>
 
-            <!-- solid sales graph -->
-            <div class="box box-solid bg-teal-gradient">
-                <div class="box-header">
-                    <i class="fa fa-th"></i>
+                        <td class="textC">18</td>
 
-                    <h3 class="box-title">Sales Graph</h3>
+                        <td>
+                            Hoàng văn Tuyền					</td>
 
-                    <div class="box-tools pull-right">
-                        <button type="button" class="btn bg-teal btn-sm" data-widget="collapse"><i class="fa fa-minus"></i>
-                        </button>
-                        <button type="button" class="btn bg-teal btn-sm" data-widget="remove"><i class="fa fa-times"></i>
-                        </button>
-                    </div>
-                </div>
-                <div class="box-body border-radius-none">
-                    <div class="chart" id="line-chart" style="height: 250px;"></div>
-                </div>
-                <!-- /.box-body -->
-                <div class="box-footer no-border">
-                    <div class="row">
-                        <div class="col-xs-4 text-center" style="border-right: 1px solid #f4f4f4">
-                            <input type="text" class="knob" data-readonly="true" value="20" data-width="60" data-height="60" data-fgColor="#39CCCC">
+                        <td class="textR red">5,000,000</td>
 
-                            <div class="knob-label">Mail-Orders</div>
-                        </div>
-                        <!-- ./col -->
-                        <div class="col-xs-4 text-center" style="border-right: 1px solid #f4f4f4">
-                            <input type="text" class="knob" data-readonly="true" value="50" data-width="60" data-height="60" data-fgColor="#39CCCC">
+                        <td>
+                            baokim					</td>
 
-                            <div class="knob-label">Online</div>
-                        </div>
-                        <!-- ./col -->
-                        <div class="col-xs-4 text-center">
-                            <input type="text" class="knob" data-readonly="true" value="30" data-width="60" data-height="60" data-fgColor="#39CCCC">
 
-                            <div class="knob-label">In-Store</div>
-                        </div>
-                        <!-- ./col -->
-                    </div>
-                    <!-- /.row -->
-                </div>
-                <!-- /.box-footer -->
-            </div>
-            <!-- /.box -->
+                        <td class="status textC">
+                            <span class="pending">
+                                Chờ xử lý						</span>
+                        </td>
 
-            <!-- Calendar -->
-            <div class="box box-solid bg-green-gradient">
-                <div class="box-header">
-                    <i class="fa fa-calendar"></i>
+                        <td class="textC">15-08-2014</td>
 
-                    <h3 class="box-title">Calendar</h3>
-                    <!-- tools box -->
-                    <div class="pull-right box-tools">
-                        <!-- button with a dropdown -->
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-success btn-sm dropdown-toggle" data-toggle="dropdown">
-                                <i class="fa fa-bars"></i></button>
-                            <ul class="dropdown-menu pull-right" role="menu">
-                                <li><a href="#">Add new event</a></li>
-                                <li><a href="#">Clear events</a></li>
-                                <li class="divider"></li>
-                                <li><a href="#">View calendar</a></li>
-                            </ul>
-                        </div>
-                        <button type="button" class="btn btn-success btn-sm" data-widget="collapse"><i class="fa fa-minus"></i>
-                        </button>
-                        <button type="button" class="btn btn-success btn-sm" data-widget="remove"><i class="fa fa-times"></i>
-                        </button>
-                    </div>
-                    <!-- /. tools -->
-                </div>
-                <!-- /.box-header -->
-                <div class="box-body no-padding">
-                    <!--The calendar -->
-                    <div id="calendar" style="width: 100%"></div>
-                </div>
-                <!-- /.box-body -->
-                <div class="box-footer text-black">
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <!-- Progress bars -->
-                            <div class="clearfix">
-                                <span class="pull-left">Task #1</span>
-                                <small class="pull-right">90%</small>
-                            </div>
-                            <div class="progress xs">
-                                <div class="progress-bar progress-bar-green" style="width: 90%;"></div>
-                            </div>
+                        <td class="textC">
+                            <a href="admin/tran/view/18.html" class="lightbox">
+                                <img src="public/admin/images/icons/color/view.png" />
+                            </a>
 
-                            <div class="clearfix">
-                                <span class="pull-left">Task #2</span>
-                                <small class="pull-right">70%</small>
-                            </div>
-                            <div class="progress xs">
-                                <div class="progress-bar progress-bar-green" style="width: 70%;"></div>
-                            </div>
-                        </div>
-                        <!-- /.col -->
-                        <div class="col-sm-6">
-                            <div class="clearfix">
-                                <span class="pull-left">Task #3</span>
-                                <small class="pull-right">60%</small>
-                            </div>
-                            <div class="progress xs">
-                                <div class="progress-bar progress-bar-green" style="width: 60%;"></div>
-                            </div>
+                            <a href="admin/tran/del/18.html" title="Xóa" class="tipS verify_action" >
+                                <img src="public/admin/images/icons/color/delete.png" />
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="id[]" value="17" /></td>
 
-                            <div class="clearfix">
-                                <span class="pull-left">Task #4</span>
-                                <small class="pull-right">40%</small>
-                            </div>
-                            <div class="progress xs">
-                                <div class="progress-bar progress-bar-green" style="width: 40%;"></div>
-                            </div>
-                        </div>
-                        <!-- /.col -->
-                    </div>
-                    <!-- /.row -->
-                </div>
-            </div>
-            <!-- /.box -->
+                        <td class="textC">17</td>
 
-        </section>
-        <!-- right col -->
+                        <td>
+                            Hoàng văn Tuyền					</td>
+
+                        <td class="textR red">5,000,000</td>
+
+                        <td>
+                            baokim					</td>
+
+
+                        <td class="status textC">
+                            <span class="pending">
+                                Chờ xử lý						</span>
+                        </td>
+
+                        <td class="textC">15-08-2014</td>
+
+                        <td class="textC">
+                            <a href="admin/tran/view/17.html" class="lightbox">
+                                <img src="public/admin/images/icons/color/view.png" />
+                            </a>
+
+                            <a href="admin/tran/del/17.html" title="Xóa" class="tipS verify_action" >
+                                <img src="public/admin/images/icons/color/delete.png" />
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="id[]" value="16" /></td>
+
+                        <td class="textC">16</td>
+
+                        <td>
+                            Hoàng văn Tuyền					</td>
+
+                        <td class="textR red">5,000,000</td>
+
+                        <td>
+                            baokim					</td>
+
+
+                        <td class="status textC">
+                            <span class="pending">
+                                Chờ xử lý						</span>
+                        </td>
+
+                        <td class="textC">15-08-2014</td>
+
+                        <td class="textC">
+                            <a href="admin/tran/view/16.html" class="lightbox">
+                                <img src="public/admin/images/icons/color/view.png" />
+                            </a>
+
+                            <a href="admin/tran/del/16.html" title="Xóa" class="tipS verify_action" >
+                                <img src="public/admin/images/icons/color/delete.png" />
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="id[]" value="15" /></td>
+
+                        <td class="textC">15</td>
+
+                        <td>
+                            Hoàng văn Tuyền					</td>
+
+                        <td class="textR red">5,000,000</td>
+
+                        <td>
+                            baokim					</td>
+
+
+                        <td class="status textC">
+                            <span class="pending">
+                                Chờ xử lý						</span>
+                        </td>
+
+                        <td class="textC">15-08-2014</td>
+
+                        <td class="textC">
+                            <a href="admin/tran/view/15.html" class="lightbox">
+                                <img src="public/admin/images/icons/color/view.png" />
+                            </a>
+
+                            <a href="admin/tran/del/15.html" title="Xóa" class="tipS verify_action" >
+                                <img src="public/admin/images/icons/color/delete.png" />
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="id[]" value="14" /></td>
+
+                        <td class="textC">14</td>
+
+                        <td>
+                            Hoàng văn Tuyền					</td>
+
+                        <td class="textR red">10,000,000</td>
+
+                        <td>
+                            nganluong					</td>
+
+
+                        <td class="status textC">
+                            <span class="completed">
+                                Thành công						</span>
+                        </td>
+
+                        <td class="textC">14-08-2014</td>
+
+                        <td class="textC">
+                            <a href="admin/tran/view/14.html" class="lightbox">
+                                <img src="public/admin/images/icons/color/view.png" />
+                            </a>
+
+                            <a href="admin/tran/del/14.html" title="Xóa" class="tipS verify_action" >
+                                <img src="public/admin/images/icons/color/delete.png" />
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="id[]" value="13" /></td>
+
+                        <td class="textC">13</td>
+
+                        <td>
+                            Hoàng văn Tuyền					</td>
+
+                        <td class="textR red">20,000,000</td>
+
+                        <td>
+                            nganluong					</td>
+
+
+                        <td class="status textC">
+                            <span class="completed">
+                                Thành công						</span>
+                        </td>
+
+                        <td class="textC">13-08-2014</td>
+
+                        <td class="textC">
+                            <a href="admin/tran/view/13.html" class="lightbox">
+                                <img src="public/admin/images/icons/color/view.png" />
+                            </a>
+
+                            <a href="admin/tran/del/13.html" title="Xóa" class="tipS verify_action" >
+                                <img src="public/admin/images/icons/color/delete.png" />
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="id[]" value="12" /></td>
+
+                        <td class="textC">12</td>
+
+                        <td>
+                            Hoàng văn Tuyền					</td>
+
+                        <td class="textR red">10,000,000</td>
+
+                        <td>
+                            nganluong					</td>
+
+
+                        <td class="status textC">
+                            <span class="completed">
+                                Thành công						</span>
+                        </td>
+
+                        <td class="textC">13-08-2014</td>
+
+                        <td class="textC">
+                            <a href="admin/tran/view/12.html" class="lightbox">
+                                <img src="public/admin/images/icons/color/view.png" />
+                            </a>
+
+                            <a href="admin/tran/del/12.html" title="Xóa" class="tipS verify_action" >
+                                <img src="public/admin/images/icons/color/delete.png" />
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+
+            </table>
+        </div>
+
     </div>
-    <!-- /.row (main row) -->
 
-</section>
-<!-- /.content -->
+</div>
+<div class="clear mt30"></div>

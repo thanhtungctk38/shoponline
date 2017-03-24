@@ -10,7 +10,7 @@ class MY_Controller extends CI_Controller{
             case 'admin':
         {
                 //Xử lý dữ liệu khi truy cập vào admin
-                
+                $this->load->helper('admin');
                 break;
         }
             default:{

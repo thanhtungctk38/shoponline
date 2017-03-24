@@ -1,8 +1,10 @@
 <meta charset ='utf-8'/>
 <base href="<?php echo base_url();?>">
 <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
-<title>4MenShop - Quản trị</title>
+<title>4MENSHOP - Quản trị</title>
 <link href="public/admin/css/main.css" rel="stylesheet" type="text/css" />
+<link href="public/admin/css/css.css" rel="stylesheet" type="text/css" />
+
 
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
 

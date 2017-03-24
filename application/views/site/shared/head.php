@@ -1,29 +1,35 @@
-<base href="<?php echo base_url();?>">
+<title>Shop UI | Unify - Responsive Website Template</title>
+<base href="<?php echo base_url()?>">
+<!-- Meta -->
 <meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>4MENSHOP-Quản trị</title>
-<!-- Tell the browser to be responsive to screen width -->
-<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-<!-- Bootstrap 3.3.6 -->
-<link rel="stylesheet" href="public/admin/bootstrap/css/bootstrap.min.css">
-<!-- Font Awesome -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-<!-- Ionicons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
-<!-- Theme style -->
-<link rel="stylesheet" href="public/admin/dist/css/AdminLTE.min.css">
-<!-- AdminLTE Skins. Choose a skin from the css/skins
-     folder instead of downloading all of them to reduce the load. -->
-<link rel="stylesheet" href="public/admin/dist/css/skins/_all-skins.min.css">
-<!-- iCheck -->
-<link rel="stylesheet" href="public/admin/plugins/iCheck/flat/blue.css">
-<!-- Morris chart -->
-<link rel="stylesheet" href="public/admin/plugins/morris/morris.css">
-<!-- jvectormap -->
-<link rel="stylesheet" href="public/admin/plugins/jvectormap/jquery-jvectormap-1.2.2.css">
-<!-- Date Picker -->
-<link rel="stylesheet" href="public/admin/plugins/datepicker/datepicker3.css">
-<!-- Daterange picker -->
-<link rel="stylesheet" href="public/admin/plugins/daterangepicker/daterangepicker.css">
-<!-- bootstrap wysihtml5 - text editor -->
-<link rel="stylesheet" href="public/admin/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<!-- Favicon -->
+<link rel="shortcut icon" href="favicon.ico">
+
+<!-- Web Fonts -->
+<link rel='stylesheet' type='text/css' href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600,800&amp;subset=cyrillic,latin'>
+
+<!-- CSS Global Compulsory -->
+<link rel="stylesheet" href="public/site/plugins/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="public/site/css/shop.style.css">
+
+<!-- CSS Header and Footer -->
+<link rel="stylesheet" href="public/site/css/headers/header-v5.css">
+<link rel="stylesheet" href="public/site/css/footers/footer-v4.css">
+
+<!-- CSS Implementing Plugins -->
+<link rel="stylesheet" href="public/site/plugins/animate.css">
+<link rel="stylesheet" href="public/site/plugins/line-icons/line-icons.css">
+<link rel="stylesheet" href="public/site/plugins/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="public/site/plugins/scrollbar/css/jquery.mCustomScrollbar.css">
+<link rel="stylesheet" href="public/site/plugins/owl-carousel/owl-carousel/owl.carousel.css">
+<link rel="stylesheet" href="public/site/plugins/revolution-slider/rs-plugin/css/settings.css">
+
+<!-- CSS Theme -->
+<link rel="stylesheet" href="public/site/css/theme-colors/default.css" id="style_color">
+
+<!-- CSS Customization -->
+<link rel="stylesheet" href="public/site/css/custom.css">

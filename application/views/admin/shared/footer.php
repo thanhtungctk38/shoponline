@@ -1,6 +1,7 @@
+<!-- Footer -->
+<div id="footer">
+    <div class="wrapper">
 
-<div class="pull-right hidden-xs">
-    <b>Version</b> 2.3.12
+        <div>Bản quyền © 2012-2016 Hocphp.info</div>
+    </div>
 </div>
-<strong>Copyright &copy; 2014-2016 <a href="http://almsaeedstudio.com">Almsaeed Studio</a>.</strong> All rights
-reserved.
