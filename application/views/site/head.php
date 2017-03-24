@@ -1,5 +1,5 @@
 
-<title>Shop UI | Unify - Responsive Website Template</title>
+<title>4MENSHOP</title>
 <base href="<?php echo base_url()?>">
 <!-- Meta -->
 <meta charset="utf-8">
