@@ -60,25 +60,25 @@
         </li>
         <li class="account">
 
-            <a href="admin/account.html" class=" exp" >
+            <a href="<?php echo admin_url('account')?>" class=" exp" >
                 <span>Tài khoản</span>
                 <strong>3</strong>
             </a>
 
             <ul class="sub">
                 <li >
-                    <a href="admin/admin.html">
-                        Ban quản trị	
+                    <a href="<?php echo admin_url('account/admin')?>">
+                        Quản trị
                     </a>
                 </li>
                 <li >
-                    <a href="admin/admin_group.html">
-                        Nhóm quản trị	
+                    <a href="<?php echo admin_url('account/user')?>">
+                        Nhân viên
                     </a>
                 </li>
                 <li >
-                    <a href="admin/user.html">
-                        Thành viên	
+                    <a href="<?php echo admin_url('account/permission')?>">
+                        Quyền	
                     </a>
                 </li>
             </ul>

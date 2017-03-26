@@ -459,7 +459,7 @@ ul.sub li ul li { padding-left: 10px; }
 .statsRow { background: url(../images/backgrounds/titleRowBg.png); }
 .statsItems { padding: 20px 0 14px 0; overflow: visible; text-align: center; }
 
-.sItem { width: /*15%*/; margin: 0 1%; display: inline-block; border: 1px solid #d5d5d5; position: relative; background: #eee url(../images/backgrounds/stats.png) repeat-x; }
+.sItem { margin: 0 1%; display: inline-block; border: 1px solid #d5d5d5; position: relative; background: #eee url(../images/backgrounds/stats.png) repeat-x; }
 .sItem:first-child {  }
 .sItem > span { display: block; color: #626262;  }
 .sItem > h2 { float: left; }
@@ -538,7 +538,7 @@ ul.sub li ul li { padding-left: 10px; }
 
 input[type=submit], input[type=reset], input[type=button], button { padding: 7px 18px 8px 18px; }
 
-.formSubmit { display: block; float: right; margin: 14px 18px; }
+.formSubmit { display: block; float: left; margin: 14px 18px; }
 
 .button span { padding: 7px 18px 8px 18px; display: inline-block; height: 12px; }
 .button .icon { float: left; margin: 7px -8px 5px 12px; }
@@ -842,7 +842,7 @@ html ul.tabs li.activeTab a { color: #2E6B9B; }
 .pLinks { float: right; width: 12px; margin-left: 5px; }
 .pInfo i { display: block; }
 .pLinks a { margin-top: 10px; display: block; }
-.pLinks a:first-child { margin-top: 3px; }.
+.pLinks a:first-child { margin-top: 3px; }
 
 
 /* New updates widget */
@@ -1008,7 +1008,7 @@ table thead td.headerSortDown span { background: url(../images/icons/sortDown.pn
 
 /* ===== General form styles ===== */
 
-.formRow { padding: 22px 14px; clear: both; border-bottom: 1px solid #E2E2E2; border-top: 1px solid white; position: relative; }
+.formRow { padding: 8px 14px; clear: both; border-bottom: 1px solid #E2E2E2; border-top: 1px solid white; position: relative; }
 .formRow:first-child { border-top: none; }
 .formRow:last-child { border-bottom: none; }
 .ui-formwizard .formRow:last-child { border-bottom: 1px solid #E2E2E2 ; }
@@ -1333,34 +1333,7 @@ position: relative;
 
 /* ===== Growl notifications ===== */
 
-div.jGrowl { z-index: 9999; color: #fff; font-size: 12px; }
-div.ie6.top-right { 
-	right: 				auto;
-	bottom: 			auto;
-	left: 				expression( ( 0 - jGrowl.offsetWidth + ( document.documentElement.clientWidth ? document.documentElement.clientWidth : document.body.clientWidth ) + ( ignoreMe2 = document.documentElement.scrollLeft ? document.documentElement.scrollLeft : document.body.scrollLeft ) ) + 'px' );
-	top: 				expression( ( 0 + ( ignoreMe = document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop ) ) + 'px' );
-}
 
-div.ie6.top-left {
-	left: 				expression( ( 0 + ( ignoreMe2 = document.documentElement.scrollLeft ? document.documentElement.scrollLeft : document.body.scrollLeft ) ) + 'px' );
-	top: 				expression( ( 0 + ( ignoreMe = document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop ) ) + 'px' );
-}
-
-div.ie6.bottom-right {
-	left: 				expression( ( 0 - jGrowl.offsetWidth + ( document.documentElement.clientWidth ? document.documentElement.clientWidth : document.body.clientWidth ) + ( ignoreMe2 = document.documentElement.scrollLeft ? document.documentElement.scrollLeft : document.body.scrollLeft ) ) + 'px' );
-	top: 				expression( ( 0 - jGrowl.offsetHeight + ( document.documentElement.clientHeight ? document.documentElement.clientHeight : document.body.clientHeight ) + ( ignoreMe = document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop ) ) + 'px' );
-}
-
-div.ie6.bottom-left {
-	left: 				expression( ( 0 + ( ignoreMe2 = document.documentElement.scrollLeft ? document.documentElement.scrollLeft : document.body.scrollLeft ) ) + 'px' );
-	top: 				expression( ( 0 - jGrowl.offsetHeight + ( document.documentElement.clientHeight ? document.documentElement.clientHeight : document.body.clientHeight ) + ( ignoreMe = document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop ) ) + 'px' );
-}
-
-div.ie6.center {
-	left: 				expression( ( 0 + ( ignoreMe2 = document.documentElement.scrollLeft ? document.documentElement.scrollLeft : document.body.scrollLeft ) ) + 'px' );
-	top: 				expression( ( 0 + ( ignoreMe = document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop ) ) + 'px' );
-	width: 				100%;
-}
 
 /** Normal Style Positions **/
 div.jGrowl { position: absolute; }
