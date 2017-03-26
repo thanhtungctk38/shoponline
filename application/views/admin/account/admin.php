@@ -1,7 +1,7 @@
 <!-- Main content -->
 <!-- Common view -->
 <!--Load head-->
-<?php $this->load->view('admin/admin/head'); ?>
+<?php $this->load->view('admin/account/head'); ?>
 
 <!-- Message -->
 <!-- Main content wrapper -->
