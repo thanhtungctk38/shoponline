@@ -7,7 +7,7 @@
 <!-- Main content wrapper -->
 <div class="wrapper">
     <div class="widget">
-
+        <?php $this->load->view('admin/message', $this->data) ?>
         <div class="title">
             <span class="titleIcon">
                 <input type="checkbox" id="titleCheck" name="titleCheck" /></span>
@@ -18,8 +18,9 @@
             <thead>
                 <tr>
                     <td style="width:10px;"><img src="public/admin/images/icons/tableArrows.png" /></td>
-                    <td style="width:80px;">Mã số</td>
-                    <td>Tên</td>
+                    <td style="width:50px;">Mã số</td>
+                    <td>Tên đăng nhập</td>
+                    <td>Họ và tên</td>
                     <td>Email</td>
                     <td>Điện thoại</td>
                     <td>Địa chỉ</td>
@@ -43,43 +44,48 @@
             </tfoot>
 
             <tbody>
-                <?php foreach ($list as $row):?>
-                <tr>
-                    <td><input type="checkbox" name="id[]" value="<?php echo $row->MaTK?>" /></td>
-                    <td class="textC"><?php echo $row->MaTK;?></td>
-                    <td>
-                        <span title="<?php echo $row->HoTen?>" class="tipS">
-                            <?php echo $row->HoTen?>					
-                        </span>
-                    </td>
+                <?php foreach ($list as $row): ?>
+                    <tr>
+                        <td><input type="checkbox" name="id[]" value="<?php echo $row->AccountID ?>" /></td>
+                        <td class="textC"><?php echo $row->AccountID; ?></td>
+                        <td>
+                            <span title="<?php echo $row->Username ?>" class="tipS">
+                                <?php echo $row->Username ?>					
+                            </span>
+                        </td>
+                        <td>
+                            <span title="<?php echo $row->Name ?>" class="tipS">
+                                <?php echo $row->Name ?>					
+                            </span>
+                        </td>
 
 
-                    <td><span title="<?php echo $row->Email?>" class="tipS">
-                            <?php echo $row->Email?>					
-                        </span>
-                    </td>
+                        <td><span title="<?php echo $row->Email ?>" class="tipS">
+                                <?php echo $row->Email ?>					
+                            </span>
+                        </td>
 
-                    <td>
-                       <?php echo $row->SoDienThoai?>						
-                    </td>
+                        <td>
+                            <?php echo $row->Phone ?>						
+                        </td>
 
-                    <td>
-                        <?php echo $row->DiaChi?>						
-                    </td>
+                        <td>
+                            <?php echo $row->Address ?>						
+                        </td>
 
 
-                    <td class="option">
-                        <a href="user/edit/19.html" title="Chỉnh sửa" class="tipS ">
-                            <img src="public/admin/images/icons/color/edit.png" />
-                        </a>
+                        <td class="option">
+                            <a href="<?php echo admin_url('account/edit/'.$row->AccountID)?>" title="Chỉnh sửa" class="tipS ">
+                                <img src="public/admin/images/icons/color/edit.png" />
+                            </a>
 
-                        <a href="user/del/19.html" title="Xóa" class="tipS verify_action" >
-                            <img src="public/admin/images/icons/color/delete.png" />
-                        </a>
-                    </td>
-                </tr>
-                <?php endforeach;?>
-        </tbody>
+                            <a href="user/del/19.html" title="Xóa" class="tipS verify_action" >
+                                <img src="public/admin/images/icons/color/delete.png" />
+                            </a>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
         </table>
 
     </div>

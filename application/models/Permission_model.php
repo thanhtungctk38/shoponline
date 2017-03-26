@@ -1,6 +1,6 @@
 <?php
 class Permission_model extends MY_Model{
-    var $table = 'quyen';
-    var $key = 'MaQuyen';
+    var $table = 'permission';
+    var $key = 'PermissionID';
     
 }

@@ -3,7 +3,7 @@
     <div class="widget">
         <div class="title">
             <img src="public/admin/images/icons/dark/add.png" class="titleIcon" />
-            <h6>Thêm mới tài khoản</h6>
+            <h6>Cập nhật thông tin tài khoản</h6>
         </div>
         <form class="form" id="form" action="admin/account/add" method="post" enctype="multipart/form-data">
             <fieldset>
@@ -11,9 +11,9 @@
                     <label class="formLeft" for="param_name">Tên đăng nhập (*)</label>
                     <div class="formRight">
                         <div class="oneTwo">
-                            <input type="text"  id="param_name" name="username" value="<?php echo set_value('username');?>">
+                            <input type="text"  id="param_name" name="username" value="<?php echo $info->Username?>">
                         </div>
-                        <div name="username_error" class="clear error"><?php echo form_error('username')?></div>
+                        <div name="username_error" class="clear error"><?php echo form_error('username') ?></div>
                     </div>
                     <div class="clear"></div>
                 </div>
@@ -21,9 +21,9 @@
                     <label class="formLeft">Mật khẩu (*)</label>
                     <div class="formRight">
                         <div class="oneTwo">
-                            <input type="password"  id="" name="password" value="<?php echo set_value('password');?>">
+                            <input type="password"  id="" name="password" value="">
                         </div>
-                        <div name="password_error" class="clear error"><?php echo form_error('password')?></div>
+                        <div name="password_error" class="clear error"><?php echo form_error('password') ?></div>
                     </div>
                     <div class="clear"></div>
                 </div>
@@ -31,9 +31,9 @@
                     <label class="formLeft">Nhập lại mật khẩu (*)</label>
                     <div class="formRight">
                         <div class="oneTwo">
-                            <input type="password"  id="" name="repassword" value="<?php echo set_value('repassword');?>">
+                            <input type="password"  id="" name="repassword" value="">
                         </div>
-                        <div name="repassword_error" class="clear error"><?php echo form_error('repassword')?></div>
+                        <div name="repassword_error" class="clear error"><?php echo form_error('repassword') ?></div>
                     </div>
                     <div class="clear"></div>
                 </div>
@@ -41,9 +41,9 @@
                     <label class="formLeft">Họ và tên (*)</label>
                     <div class="formRight">
                         <div class="oneTwo">
-                            <input type="text"  id="" name="fullname"  value="<?php echo set_value('fullname');?>">
+                            <input type="text"  id="" name="fullname"  value="<?php echo $info->Name?>">
                         </div>
-                        <div name="fullname_error" class="clear error"><?php echo form_error('fullname')?></div>
+                        <div name="fullname_error" class="clear error"><?php echo form_error('fullname') ?></div>
                     </div>
                     <div class="clear"></div>
                 </div>
@@ -51,9 +51,9 @@
                     <label class="formLeft">Email (*)</label>
                     <div class="formRight">
                         <div class="oneTwo">
-                            <input type="text"  id="" name="email" value="<?php echo set_value('email');?>">
+                            <input type="text"  id="" name="email" value="<?php echo $info->Email?>">
                         </div>
-                        <div name="email_error" class="clear error"><?php echo form_error('email')?></div>
+                        <div name="email_error" class="clear error"><?php echo form_error('email') ?></div>
                     </div>
                     <div class="clear"></div>
                 </div>
@@ -61,7 +61,7 @@
                     <label>Ngày sinh:</label>
                     <div class="formRight">
                         <div class="oneFour">
-                            <input class="maskDate" name="birthday" id="datepicker" value="value" type="text">
+                            <input class="maskDate" name="birthday" id="datepicker" value="<?php echo date('d-m-Y', strtotime($info->Birthday))?>" type="text">
                         </div>
                     </div>
                     <div class="clear"></div>
@@ -69,9 +69,10 @@
                 <div class="formRow">
                     <label>Giới tính:</label>
                     <div class="formRight">
-                        <input type="radio"   checked="true" name="gender" id="admin" />
+                       
+                        <input type="radio" <?php if($info->Gender==1) echo "checked='true'" ?> name="gender" id="admin" />
                         <label for="admin">Nam</label>
-                        <input type="radio" name="gender" id="user" />
+                        <input type="radio" <?php if($info->Gender==0) echo "checked='true'" ?> name="gender" id="user" />
                         <label for="user">Nữ</label>
                     </div>
                     <div class="clear"></div>
@@ -90,7 +91,7 @@
                     <label class="formLeft">Số điện thoại</label>
                     <div class="formRight">
                         <div class="oneFour">
-                            <input type="text"  id="" name="phone"  value="<?php echo set_value('phone');?>">
+                            <input type="text"  id="" name="phone"  value="<?php echo set_value('phone'); ?>">
                         </div>
                         <div name="phone_error" class="clear error"><?php echo form_error('phone'); ?></div>
                     </div>
@@ -118,10 +119,10 @@
                     <div class="clear"></div>
                 </div>
                 <div class="formSubmit">
-                    <input value="Thêm mới" class="redB" type="submit">
+                    <input value="Cập nhật" class="redB" type="submit">
                     <input value="Hủy bỏ"  class="basic" type="reset">
                 </div>
-              
+
             </fieldset>
         </form>
     </div>

@@ -13,19 +13,21 @@ class Account extends MY_Controller {
 
     function admin() {
         $option = array(
-            'where' => 'MaQuyen =1'
+            'where' => 'PermissionID =1'
         );
+
         $this->data = array(
             'temp' => 'admin/account/admin',
             'list' => $this->account_model->get_list($option),
-            'total' => $this->account_model->get_total($option)
+            'total' => $this->account_model->get_total($option),
+            'message' => $this->session->flashdata('message')
         );
         $this->load->view('admin/shared/layout', $this->data);
     }
 
     function user() {
         $option = array(
-            'where' => 'MaQuyen =2'
+            'where' => 'PermissionID =2'
         );
         $this->data = array(
             'temp' => 'admin/account/user',
@@ -54,14 +56,14 @@ class Account extends MY_Controller {
             $this->form_validation->set_rules('username', 'Tên đăng nhập', 'required|max_length[50]|callback_check_username');
             $this->form_validation->set_rules('password', 'Mật khẩu', 'required|max_length[50]');
             $this->form_validation->set_rules('repassword', 'Nhập lại mật khẩu', 'required|matches[password]');
-            $this->form_validation->set_rules('fullname', 'Nhập lại mật khẩu', 'required|matches[password]');
+            $this->form_validation->set_rules('fullname', 'Họ và tên', 'required');
             $this->form_validation->set_rules('email', 'Email', 'required|valid_email');
             $this->form_validation->set_rules('phone', 'Số điện thoại', 'numeric|max_length[12]|min_length[9]');
         }
         //Nếu nhập liệu chính xác
         if ($this->form_validation->run()) {
             $username = $this->input->post('username');
-            $password = $this->input->post('ơassword');
+            $password = $this->input->post('password');
             $fullname = $this->input->post('fullname');
             $email = $this->input->post('email');
             $birthday = $this->input->post('birthday');
@@ -77,6 +79,23 @@ class Account extends MY_Controller {
             } else {
                 $permission = 2;
             }
+            $data = array(
+                'PermissionID' => $permission,
+                'Username' => $username,
+                'Password' => md5($password),
+                'Name' => $fullname,
+                'Email' => $email,
+                'Birthday' => date('Y-m-d', strtotime($birthday)),
+                'Gender' => $gender,
+                'Address' => $address,
+                'Phone' => $phone
+            );
+            if ($this->account_model->create($data)) {
+                $this->session->set_flashdata('message', 'Thêm mới dữ liệu thành công');
+            } else {
+                $this->session->set_flashdata('message', 'Không thể thêm dữ liệu');
+            }
+            redirect(admin_url('account/admin'));
         }
         $this->data = array(
             'temp' => 'admin/account/add'
@@ -88,14 +107,32 @@ class Account extends MY_Controller {
     function check_username() {
         $username = $this->input->post('username');
         $where = array(
-            'TenDN' => $username
+            'username' => $username
         );
         if ($this->account_model->check_exists($where)) {
-            $this->form_validation->set_message(__FUNCTION__,'Tài khoản đã tồn tại');
+            $this->form_validation->set_message(__FUNCTION__, 'Tài khoản đã tồn tại');
             return false;
         }
 
         return true;
+    }
+
+    //Hàm chỉnh sửa thông tin account
+    function edit() {
+        $this->load->library('form_validation');
+        $this->load->helper('form');
+        $id = $this->uri->segment(4);
+        $id = intval($id);
+        $info = $this->account_model->get_info($id);
+        if (!$info) {
+            $this->session->set_flashdata('message', "Không tồn tại tài khoản này");
+            redirect(admin_url('account/admin'));
+        }
+        $this->data = array(
+            'temp' => 'admin/account/edit',
+            'info'=>$info
+        );
+        $this->load->view('admin/shared/layout', $this->data);
     }
 
 }
