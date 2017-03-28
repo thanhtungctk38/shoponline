@@ -13,7 +13,7 @@
                         <span>Thêm mới</span>
                     </a></li>
 
-                <li><a href="<?php echo admin_url('account/index');?>">
+                <li><a href="<?php echo admin_url('account/admin');?>">
                         <img src="public/admin/images/icons/control/16/list.png" />
                         <span>Danh sách</span>
                     </a></li>

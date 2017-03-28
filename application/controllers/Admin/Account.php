@@ -13,7 +13,7 @@ class Account extends MY_Controller {
 
     function admin() {
         $option = array(
-            'where' => 'PermissionID =1'
+            'where' => 'roleID =1'
         );
 
         $this->data = array(
@@ -37,10 +37,10 @@ class Account extends MY_Controller {
         $this->load->view('admin/shared/layout', $this->data);
     }
 
-    function permission() {
-        $this->load->model('permission_model');
+    function role() {
+        $this->load->model('role_model');
         $this->data = array(
-            'temp' => 'admin/account/permission',
+            'temp' => 'admin/account/role',
             'list' => $this->permission_model->get_list(),
             'total' => $this->permission_model->get_total()
         );
@@ -57,7 +57,7 @@ class Account extends MY_Controller {
             $this->form_validation->set_rules('password', 'Mật khẩu', 'required|max_length[50]');
             $this->form_validation->set_rules('repassword', 'Nhập lại mật khẩu', 'required|matches[password]');
             $this->form_validation->set_rules('fullname', 'Họ và tên', 'required');
-            $this->form_validation->set_rules('email', 'Email', 'required|valid_email');
+            $this->form_validation->set_rules('email', 'Email', 'required|valid_email|callback_check_email');
             $this->form_validation->set_rules('phone', 'Số điện thoại', 'numeric|max_length[12]|min_length[9]');
         }
         //Nếu nhập liệu chính xác
@@ -69,18 +69,18 @@ class Account extends MY_Controller {
             $birthday = $this->input->post('birthday');
             $address = $this->input->post('address');
             $phone = $this->input->post('phone');
-            if ($this->input->post('gender')) {
+            if ($this->input->post('gender') == 'male') {
                 $gender = 1;
             } else {
                 $gender = 0;
             }
-            if ($this->input->post('permission')) {
-                $permission = 1;
+            if ($this->input->post('role')=='admin') {
+                $role = 1;
             } else {
-                $permission = 2;
+                $role = 2;
             }
             $data = array(
-                'PermissionID' => $permission,
+                'RoleID' => $role,
                 'Username' => $username,
                 'Password' => md5($password),
                 'Name' => $fullname,
@@ -110,7 +110,20 @@ class Account extends MY_Controller {
             'username' => $username
         );
         if ($this->account_model->check_exists($where)) {
-            $this->form_validation->set_message(__FUNCTION__, 'Tài khoản đã tồn tại');
+            $this->form_validation->set_message(__FUNCTION__, 'Tên đăng nhập đã tồn tại');
+            return false;
+        }
+
+        return true;
+    }
+
+    function check_email() {
+        $email = $this->input->post('email');
+        $where = array(
+            'email' => $email
+        );
+        if ($this->account_model->check_exists($where)) {
+            $this->form_validation->set_message(__FUNCTION__, 'Email đã tồn tại.');
             return false;
         }
 
@@ -130,9 +143,29 @@ class Account extends MY_Controller {
         }
         $this->data = array(
             'temp' => 'admin/account/edit',
-            'info'=>$info
+            'info' => $info
         );
         $this->load->view('admin/shared/layout', $this->data);
+    }
+
+    function delete() {
+        $id = $this->uri->segment(4);
+        $id = intval($id);
+        $info = $this->account_model->get_info($id);
+        if (!$info) {
+            $this->session->set_flashdata('message', 'Không tồn tại tài khoản này');
+            redirect(admin_url('account/admin'));
+        }
+        $this->account_model->delete($id);
+        $this->session->set_flashdata('message', 'Xóa tài khoản thành công');
+        redirect(admin_url('account/admin'));
+    }
+
+    function logout() {
+        if ($this->session->userdata('login')) {
+            $this->session->unset_userdata('login');
+            redirect(admin_url('login'));
+        }
     }
 
 }

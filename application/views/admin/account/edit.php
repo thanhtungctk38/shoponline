@@ -11,7 +11,7 @@
                     <label class="formLeft" for="param_name">Tên đăng nhập (*)</label>
                     <div class="formRight">
                         <div class="oneTwo">
-                            <input type="text"  id="param_name" name="username" value="<?php echo $info->Username?>">
+                            <input disabled="disabled" type="text"  id="param_name" name="username" value="<?php echo $info->Username?>">
                         </div>
                         <div name="username_error" class="clear error"><?php echo form_error('username') ?></div>
                     </div>

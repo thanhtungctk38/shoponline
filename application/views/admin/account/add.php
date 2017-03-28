@@ -69,10 +69,10 @@
                 <div class="formRow">
                     <label>Giới tính:</label>
                     <div class="formRight">
-                        <input type="radio"   checked="true" name="gender" id="admin" />
-                        <label for="admin">Nam</label>
-                        <input type="radio" name="gender" id="user" />
-                        <label for="user">Nữ</label>
+                        <input type="radio"   checked="true" name="gender" id="male" value="male" />
+                        <label for="male">Nam</label>
+                        <input type="radio" name="gender" id="female"  value="female"/>
+                        <label for="female">Nữ</label>
                     </div>
                     <div class="clear"></div>
                 </div>
@@ -110,9 +110,9 @@
                 <div class="formRow">
                     <label>Quyền</label>
                     <div class="formRight">
-                        <input type="radio"   checked="true" name="permission" id="admin" />
+                        <input type="radio"   checked="true" name="role" id="admin" value="admin" />
                         <label for="admin">Quản lý</label>
-                        <input type="radio" name="permission" id="user" />
+                        <input type="radio" name="role" id="user" value="user" />
                         <label for="user">Nhân viên</label>
                     </div>
                     <div class="clear"></div>

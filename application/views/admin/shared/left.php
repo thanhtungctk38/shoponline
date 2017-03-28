@@ -1,9 +1,12 @@
+<?php $user = $this->session->userdata('login');?>
 <div id="leftSide" style="padding-top:30px;">
     <!-- Account panel -->
     <div class="sideProfile">
-        <a href="#" title="" class="profileFace"><img width="40" src="public/admin/images/user.png" /></a>
-        <span>Xin chào: <strong>admin!</strong></span>
-        <span>Nguyễn Thanh Tùng</span>
+        <a href="#" title="" class="profileFace">
+            <img width="40" src="<?php if($user->Image == NULL) echo "public/admin/images/user.png"; else echo $user->Image?>"/></a>
+        <span><strong><?php echo $user->Name?></strong></span>
+       <span><?php if($user->RoleID==1) echo 'Quản lý';
+       else echo 'Nhân viên'?></span>
         <div class="clear"></div>
     </div>
     <div class="sidebarSep"></div>		    
@@ -58,6 +61,7 @@
             </ul>
 
         </li>
+        <?php if($user->RoleID==1):?>
         <li class="account">
 
             <a href="<?php echo admin_url('account')?>" class=" exp" >
@@ -84,6 +88,7 @@
             </ul>
 
         </li>
+        <?php endif;?>
         <li class="support">
 
             <a href="admin/support.html" class=" exp" >

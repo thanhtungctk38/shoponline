@@ -1,7 +1,9 @@
+<?php $user = $this->session->userdata('login');
+?>
 <div class="topNav">
     <div class="wrapper">
         <div class="welcome">
-            <span>Xin chào: <b>admin!</b></span>
+            <span>Xin chào: <b><?php echo $user->Name?></b></span>
         </div>
 
         <div class="userNav">
@@ -12,7 +14,7 @@
                     </a></li>
 
                 <!-- Logout -->
-                <li><a href="admin/home/logout.html">
+                <li><a href="<?php echo admin_url('account/logout') ?>">
                         <img src="public/admin/images/icons/topnav/logout.png" alt="" />
                         <span>Đăng xuất</span>
                     </a></li>

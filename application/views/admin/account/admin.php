@@ -2,7 +2,7 @@
 <!-- Common view -->
 <!--Load head-->
 <?php $this->load->view('admin/account/head'); ?>
-
+<br>
 <!-- Message -->
 <!-- Main content wrapper -->
 <div class="wrapper">
@@ -75,16 +75,26 @@
 
 
                         <td class="option">
-                            <a href="<?php echo admin_url('account/edit/'.$row->AccountID)?>" title="Chỉnh sửa" class="tipS ">
+                            <a href="<?php echo admin_url('account/edit/' . $row->AccountID) ?>" title="Chỉnh sửa" class="tipS ">
                                 <img src="public/admin/images/icons/color/edit.png" />
                             </a>
 
-                            <a href="user/del/19.html" title="Xóa" class="tipS verify_action" >
+                            <a id="delete" href="<?php echo admin_url('account/delete/' . $row->AccountID) ?>" title="Xóa" class="tipS verify_action" >
                                 <img src="public/admin/images/icons/color/delete.png" />
                             </a>
+                            <script>
+                                $('#delete').click(function () {
+                                    if (!confirm("Bạn có chắc chắn muốn xóa tài khoản này không?")) {
+                                        return false;
+                                    } else {
+                                        window.location = $('#delete').attr('href');
+                                        return true;
+                                    }
+                                });
+                            </script>
                         </td>
                     </tr>
-                <?php endforeach; ?>
+<?php endforeach; ?>
             </tbody>
         </table>
 
