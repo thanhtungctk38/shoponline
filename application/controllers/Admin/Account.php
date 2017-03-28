@@ -13,7 +13,7 @@ class Account extends MY_Controller {
 
     function admin() {
         $option = array(
-            'where' => 'RoleID =1'
+            'where' => 'roleID =1'
         );
 
         $this->data = array(
@@ -27,7 +27,7 @@ class Account extends MY_Controller {
 
     function user() {
         $option = array(
-            'where' => 'RoleID =2'
+            'where' => 'PermissionID =2'
         );
         $this->data = array(
             'temp' => 'admin/account/user',
@@ -167,10 +167,7 @@ class Account extends MY_Controller {
             redirect(admin_url('login'));
         }
     }
-//    function upload(){
-//        $this->load->library('upload');
-//        $config['upload_path']=
-//    }
+
 }
 ?>
 

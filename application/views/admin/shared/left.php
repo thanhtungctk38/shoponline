@@ -13,7 +13,7 @@
     <!-- Left navigation -->
     <ul id="menu" class="nav">
         <li class="home">
-            <a href="<?php echo admin_url('home');?>" class="active" id="current">
+            <a href="admin/home.html" class="active" id="current">
                 <span>Bảng điều khiển</span>
                 <strong></strong>
             </a>
@@ -37,7 +37,7 @@
             </ul>
         </li>
         <li class="product">
-            <a href="" class=" exp" >
+            <a href="admin/product.html" class=" exp" >
                 <span>Sản phẩm</span>
                 <strong>3</strong>
             </a>
@@ -49,8 +49,8 @@
                     </a>
                 </li>
                 <li>
-                    <a href="<?php echo admin_url('category')?>">
-                        Danh mục sản phẩm	
+                    <a href="admin/cat.html">
+                        Danh mục	
                     </a>
                 </li>
                 <li >

@@ -3,19 +3,30 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/Xampp/htdocs/shoponline/application/controllers/Admin/Category.php</file>
+            <file>file:/D:/Xampp/htdocs/shoponline/application/controllers/Admin/Home.php</file>
             <file>file:/D:/Xampp/htdocs/shoponline/application/views/admin/account/admin.php</file>
-            <file>file:/D:/Xampp/htdocs/shoponline/application/views/admin/account/role.php</file>
+            <file>file:/D:/Xampp/htdocs/shoponline/application/views/admin/message.php</file>
+            <file>file:/D:/Xampp/htdocs/shoponline/application/views/admin/shared/head.php</file>
             <file>file:/D:/Xampp/htdocs/shoponline/application/views/admin/account/head.php</file>
+            <file>file:/D:/Xampp/htdocs/shoponline/.htaccess</file>
             <file>file:/D:/Xampp/htdocs/shoponline/application/views/admin/account/add.php</file>
-            <file>file:/D:/Xampp/htdocs/shoponline/application/views/admin/category/index.php</file>
+            <file>file:/D:/Xampp/htdocs/shoponline/application/models/Role_model.php</file>
+            <file>file:/D:/Xampp/htdocs/shoponline/application/helpers/common_helper.php</file>
+            <file>file:/D:/Xampp/htdocs/shoponline/application/controllers/Admin/Login.php</file>
+            <file>file:/D:/Xampp/htdocs/shoponline/application/views/admin/shared/header.php</file>
+            <file>file:/D:/Xampp/htdocs/shoponline/application/views/admin/shared/layout.php</file>
+            <file>file:/D:/Xampp/htdocs/shoponline/application/views/admin/account/edit.php</file>
             <file>file:/D:/Xampp/htdocs/shoponline/application/models/Account_model.php</file>
+            <file>file:/D:/Xampp/htdocs/shoponline/public/admin/js/custom.js</file>
+            <file>file:/D:/Xampp/htdocs/shoponline/application/views/admin/login/index.php</file>
+            <file>file:/D:/Xampp/htdocs/shoponline/system/.htaccess</file>
             <file>file:/D:/Xampp/htdocs/shoponline/application/core/MY_Model.php</file>
-            <file>file:/D:/Xampp/htdocs/shoponline/application/views/welcome_message.php</file>
+            <file>file:/D:/Xampp/htdocs/shoponline/application/core/MY_Controller.php</file>
+            <file>file:/D:/Xampp/htdocs/shoponline/application/controllers/Home.php</file>
             <file>file:/D:/Xampp/htdocs/shoponline/application/views/admin/shared/left.php</file>
+            <file>file:/D:/Xampp/htdocs/shoponline/application/views/admin/account/user.php</file>
             <file>file:/D:/Xampp/htdocs/shoponline/application/controllers/Admin/Account.php</file>
-            <file>file:/D:/Xampp/htdocs/shoponline/application/views/admin/category/head.php</file>
-            <file>file:/D:/Xampp/htdocs/shoponline/application/models/Category_model.php</file>
+            <file>file:/D:/Xampp/htdocs/shoponline/application/helpers/admin_helper.php</file>
         </group>
     </open-files>
 </project-private>

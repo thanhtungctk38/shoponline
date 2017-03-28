@@ -195,9 +195,6 @@ class MY_Model extends CI_Model {
      */
     protected function get_list_set_input($input = array()) {
 
-        if((isset($input['select'])) && $input['select']){
-            $this->db->select($input['select']);
-        }
         // Thêm điều kiện cho câu truy vấn truyền qua biến $input['where'] 
         //(vi du: $input['where'] = array('email' => 'hocphp@gmail.com'))
         if ((isset($input['where'])) && $input['where']) {
@@ -210,16 +207,13 @@ class MY_Model extends CI_Model {
             $this->db->like($input['like'][0], $input['like'][1]);
         }
 
-        if((isset($input['join'])) && $input['join']){
-            $this->db->join($input['join'][0], $input['join'][1], $input['join'][2]);
-        }
         // Thêm sắp xếp dữ liệu thông qua biến $input['order'] 
         //(ví dụ $input['order'] = array('id','DESC'))
         if (isset($input['order'][0]) && isset($input['order'][1])) {
             $this->db->order_by($input['order'][0], $input['order'][1]);
         } else {
             //mặc định sẽ sắp xếp theo id giảm dần 
-            $order = ($this->order == '') ? array($this->table . '.' . $this->key, 'asc') : $this->order;
+            $order = ($this->order == '') ? array($this->table . '.' . $this->key, 'desc') : $this->order;
             $this->db->order_by($order[0], $order[1]);
         }
 
