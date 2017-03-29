@@ -1,10 +1,10 @@
 <meta charset ='utf-8'/>
-<base href="<?php echo base_url();?>">
+<base href="<?php echo base_url(); ?>">
 <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
 <title>4MENSHOP - Quản trị</title>
 <link href="public/admin/css/main.css" rel="stylesheet" type="text/css" />
 <link href="public/admin/css/css.css" rel="stylesheet" type="text/css" />
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.1.1/jquery-confirm.min.css">
 
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
 
@@ -61,3 +61,4 @@
 
 <script type="text/javascript" src="public/admin/js/charts/chart.js"></script>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.1.1/jquery-confirm.min.js"></script>

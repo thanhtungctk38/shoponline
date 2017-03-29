@@ -1,7 +1,7 @@
 <?php $this->load->view('admin/category/head') ?>
 
 <div class="wrapper">
-
+    <?php $this->load->view('admin/message', $this->data) ?>
     <!-- Static table -->
     <div class="widget" id="main_content">
 
@@ -46,19 +46,21 @@
                         </td>
                         <td><?php echo $row->CategoryID ?></td> 
                         <td style="text-align: left"><?php echo $row->CategoryName ?></td>  
-                        <td style="text-align: left"><?php echo $row->ParentName?></td>  
+                        <td style="text-align: left"><?php echo $row->ParentName ?></td>  
                         <td style="text-align: left"><?php echo $row->Description; ?></td>  
                         <td class="option">
-                            <a href="admin/cat/edit/18.html" title="Chỉnh sửa" class="tipS ">
+                            <a href="<?php echo admin_url('category/edit/' . $row->CategoryID) ?>" title="Chỉnh sửa" class="tipS ">
                                 <img src="public/admin/images/icons/color/edit.png">
                             </a>
 
-                            <a href="admin/cat/del/18.html" title="Xóa" class="tipS verify_action">
+                            <a href="<?php echo admin_url('category/delete/' . $row->CategoryID) ?>" title="Xóa" class="delete" class="tipS verify_action basic">
                                 <img src="public/admin/images/icons/color/delete.png">
                             </a>
                         </td>
+
                     </tr>
                 <?php endforeach; ?>
+
 
 
             </tbody>

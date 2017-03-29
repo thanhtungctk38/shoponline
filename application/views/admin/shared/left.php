@@ -44,7 +44,7 @@
 
             <ul class="sub">
                 <li >
-                    <a href="admin/product.html">
+                    <a href="admin/product">
                         Sản phẩm
                     </a>
                 </li>
