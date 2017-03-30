@@ -7,12 +7,12 @@
 
         <div class="horControlB menu_action">
             <ul>
-                <li><a href="admin/cat/add.html">
+                <li><a href="<?php echo admin_url('category/add')?>">
                         <img src="public/admin/images/icons/control/16/add.png">
                         <span>Thêm mới</span>
                     </a></li>
 
-                <li><a href="admin/cat.html">
+                <li><a href="<?php echo admin_url('category')?>">
                         <img src="public/admin/images/icons/control/16/list.png">
                         <span>Danh sách</span>
                     </a></li>

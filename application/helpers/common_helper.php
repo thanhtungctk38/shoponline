@@ -11,4 +11,7 @@ function pre($list, $exit=true){
         die();
     }
 }
+function format_price($price){
+    return number_format($price, 0, ',', ',') . ' VNĐ';
+}
 ?>

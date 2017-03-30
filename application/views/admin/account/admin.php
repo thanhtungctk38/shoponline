@@ -82,7 +82,11 @@
                             <a id="delete" href="<?php echo admin_url('account/delete/' . $row->AccountID) ?>" title="Xóa" class="tipS verify_action" >
                                 <img src="public/admin/images/icons/color/delete.png" />
                             </a>
-                            <script>
+                            
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+                    <script>
                                 $('#delete').click(function () {
                                     if (!confirm("Bạn có chắc chắn muốn xóa tài khoản này không?")) {
                                         return false;
@@ -92,9 +96,6 @@
                                     }
                                 });
                             </script>
-                        </td>
-                    </tr>
-<?php endforeach; ?>
             </tbody>
         </table>
 
