@@ -1,5 +1,6 @@
 <?php $this->load->view('admin/product/head'); ?>
 <div class="wrapper" id="main_product">
+    <?php $this->load->view('admin/message');?>
     <div class="widget">
 
         <div class="title">
@@ -24,52 +25,30 @@
                                         <td class="label" style="width:40px;"><label for="filter_id">Tên</label></td>
                                         <td class="item" style="width:155px;" ><input name="name" value="" id="filter_iname" type="text" style="width:155px;" /></td>
 
-                                        <td class="label" style="width:60px;"><label for="filter_status">Thể loại</label></td>
+                                        <td class="label" style="width:60px;"><label for="filter_status">Danh mục</label></td>
                                         <td class="item">
                                             <select name="catalog">
                                                 <option value=""></option>
-                                                <!-- kiem tra danh muc co danh muc con hay khong -->
-                                                <optgroup label="Tivi">
-                                                    <option value="18" >
-                                                        Toshiba											            </option>
-                                                    <option value="17" >
-                                                        Samsung											            </option>
-                                                    <option value="16" >
-                                                        Panasonic											            </option>
-                                                    <option value="15" >
-                                                        LG											            </option>
-                                                    <option value="14" >
-                                                        JVC											            </option>
-                                                    <option value="13" >
-                                                        AKAI											            </option>
-                                                </optgroup>
+                                                <?php
+                                                foreach ($categories as $cate):
+                                                    if ($cate->ParentID == 0):
+                                                        ?>
+                                                        <optgroup label="<?php echo $cate->CategoryName ?>">
+                                                            <?php
+                                                            foreach ($categories as $subcate):
+                                                                if ($subcate->ParentID == $cate->CategoryID):
+                                                                    ?>
+                                                                    <option value="<?php echo $subcate->CategoryID ?>" ><?php echo $subcate->CategoryName ?></option>											            </option>
+                                                                    <?php
+                                                                endif;
+                                                            endforeach;
+                                                            ?>						          
 
-                                                <!-- kiem tra danh muc co danh muc con hay khong -->
-                                                <optgroup label="Điện thoại">
-                                                    <option value="12" >
-                                                        HTC											            </option>
-                                                    <option value="11" >
-                                                        BlackBerry											            </option>
-                                                    <option value="10" >
-                                                        Asus											            </option>
-                                                    <option value="9" >
-                                                        Apple											            </option>
-                                                </optgroup>
-
-                                                <!-- kiem tra danh muc co danh muc con hay khong -->
-                                                <optgroup label="Laptop">
-                                                    <option value="8" >
-                                                        HP											            </option>
-                                                    <option value="7" >
-                                                        Dell											            </option>
-                                                    <option value="6" >
-                                                        Asus											            </option>
-                                                    <option value="5" >
-                                                        Apple											            </option>
-                                                    <option value="4" >
-                                                        Acer											            </option>
-                                                </optgroup>
-
+                                                        </optgroup>
+                                                        <?php
+                                                    endif;
+                                                endforeach;
+                                                ?>
                                             </select>
                                         </td>
 
@@ -139,7 +118,7 @@
                                 <b style="color: red"><?php echo format_price($row->Price) ?></b>
                             <?php endif; ?>
                         </td>
-                        <td class="textC"><?php //echo $row->CreateDate  ?></td>
+                        <td class="textC"><?php //echo $row->CreateDate       ?></td>
 
                         <td class="option textC">
                             <a  href="product/view/9.html" target='_blank' class='tipS' title="Xem chi tiết sản phẩm">
@@ -149,7 +128,7 @@
                                 <img src="public/admin/images/icons/color/edit.png" />
                             </a>
 
-                            <a href="admin/product/del/9.html" title="Xóa" class="tipS verify_action" >
+                            <a href="admin/product/delete/<?php echo $row->ProductID ?>" title="Xóa" class="tipS verify_action" >
                                 <img src="public/admin/images/icons/color/delete.png" />
                             </a>
                         </td>
