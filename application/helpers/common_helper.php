@@ -14,4 +14,7 @@ function pre($list, $exit=true){
 function format_price($price){
     return number_format($price, 0, ',', ',') . ' VNĐ';
 }
+function product_img_url($imgname){
+    return base_url('upload/productimg/'.$imgname);
+}
 ?>
