@@ -4,16 +4,15 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/D:/Xampp/htdocs/shoponline/application/controllers/Admin/Category.php</file>
-            <file>file:/D:/Xampp/htdocs/shoponline/application/views/admin/account/admin.php</file>
-            <file>file:/D:/Xampp/htdocs/shoponline/application/models/Account_model.php</file>
+            <file>file:/D:/Xampp/htdocs/shoponline/application/views/site/productdetail/index.php</file>
+            <file>file:/D:/Xampp/htdocs/shoponline/application/views/site/product/index.php</file>
+            <file>file:/D:/Xampp/htdocs/shoponline/application/models/Product_model.php</file>
             <file>file:/D:/Xampp/htdocs/shoponline/application/views/admin/product/index.php</file>
             <file>file:/D:/Xampp/htdocs/shoponline/application/controllers/Admin/Product.php</file>
-            <file>file:/D:/Xampp/htdocs/shoponline/application/views/admin/account/head.php</file>
+            <file>file:/D:/Xampp/htdocs/shoponline/application/views/site/shared/header.php</file>
             <file>file:/D:/Xampp/htdocs/shoponline/application/core/MY_Model.php</file>
-            <file>file:/D:/Xampp/htdocs/shoponline/application/views/welcome_message.php</file>
-            <file>file:/D:/Xampp/htdocs/shoponline/application/views/admin/shared/left.php</file>
-            <file>file:/D:/Xampp/htdocs/shoponline/application/controllers/Admin/Account.php</file>
-            <file>file:/D:/Xampp/htdocs/shoponline/application/views/admin/account/add.php</file>
+            <file>file:/D:/Xampp/htdocs/shoponline/application/controllers/Product.php</file>
+            <file>file:/D:/Xampp/htdocs/shoponline/application/controllers/Home.php</file>
         </group>
     </open-files>
 </project-private>

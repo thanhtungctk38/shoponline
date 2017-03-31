@@ -17,7 +17,10 @@ class MY_Controller extends CI_Controller {
                     break;
                 }
             default: {
-                    //Xử lý dữ liệu ở trang ngoài
+                    $this->load->model('category_model');
+                    $categories = $this->category_model->get_list();
+                    $this->data['categories'] = $categories;
+                    break;
                 }
         }
     }
