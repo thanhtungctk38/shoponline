@@ -3,15 +3,33 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/Xampp/htdocs/shoponline/application/controllers/Admin/Category.php</file>
-            <file>file:/D:/Xampp/htdocs/shoponline/application/views/site/productdetail/index.php</file>
-            <file>file:/D:/Xampp/htdocs/shoponline/application/views/site/product/index.php</file>
+            <file>file:/D:/Xampp/htdocs/shoponline/application/config/routes.php</file>
+            <file>file:/D:/Xampp/htdocs/shoponline/application/config/autoload.php</file>
+            <file>file:/D:/Xampp/htdocs/shoponline/application/views/admin/account/add.php</file>
+            <file>file:/D:/Xampp/htdocs/shoponline/application/helpers/common_helper.php</file>
+            <file>file:/D:/Xampp/htdocs/shoponline/application/views/admin/upload/upload_file.php</file>
+            <file>file:/D:/Xampp/htdocs/shoponline/application/views/admin/category/index.php</file>
             <file>file:/D:/Xampp/htdocs/shoponline/application/models/Product_model.php</file>
             <file>file:/D:/Xampp/htdocs/shoponline/application/views/admin/product/index.php</file>
             <file>file:/D:/Xampp/htdocs/shoponline/application/controllers/Admin/Product.php</file>
-            <file>file:/D:/Xampp/htdocs/shoponline/application/views/site/shared/header.php</file>
             <file>file:/D:/Xampp/htdocs/shoponline/application/core/MY_Model.php</file>
             <file>file:/D:/Xampp/htdocs/shoponline/application/controllers/Product.php</file>
+            <file>file:/D:/Xampp/htdocs/shoponline/application/views/admin/shared/left.php</file>
+            <file>file:/D:/Xampp/htdocs/shoponline/application/controllers/Admin/Account.php</file>
+            <file>file:/D:/Xampp/htdocs/shoponline/application/views/admin/upload/index.php</file>
+            <file>file:/D:/Xampp/htdocs/shoponline/application/controllers/Admin/Upload.php</file>
+            <file>file:/D:/Xampp/htdocs/shoponline/application/controllers/Admin/Category.php</file>
+            <file>file:/D:/Xampp/htdocs/shoponline/application/views/admin/account/admin.php</file>
+            <file>file:/D:/Xampp/htdocs/shoponline/application/views/site/product/index.php</file>
+            <file>file:/D:/Xampp/htdocs/shoponline/system/libraries/Upload.php</file>
+            <file>file:/D:/Xampp/htdocs/shoponline/application/views/admin/category/add.php</file>
+            <file>file:/D:/Xampp/htdocs/shoponline/application/libraries/Upload_library.php</file>
+            <file>file:/D:/Xampp/htdocs/shoponline/application/config/database.php</file>
+            <file>file:/D:/Xampp/htdocs/shoponline/application/views/admin/account/edit.php</file>
+            <file>file:/D:/Xampp/htdocs/shoponline/application/views/site/productdetail/index.php</file>
+            <file>file:/D:/Xampp/htdocs/shoponline/public/admin/js/custom.js</file>
+            <file>file:/D:/Xampp/htdocs/shoponline/application/views/site/shared/header.php</file>
+            <file>file:/D:/Xampp/htdocs/shoponline/application/config/config.php</file>
             <file>file:/D:/Xampp/htdocs/shoponline/application/controllers/Home.php</file>
         </group>
     </open-files>

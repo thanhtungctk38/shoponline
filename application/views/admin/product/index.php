@@ -1,6 +1,6 @@
 <?php $this->load->view('admin/product/head'); ?>
 <div class="wrapper" id="main_product">
-    <?php $this->load->view('admin/message');?>
+    <?php $this->load->view('admin/message'); ?>
     <div class="widget">
 
         <div class="title">
@@ -15,37 +15,36 @@
 
         <table cellpadding="0" cellspacing="0" width="100%" class="sTable mTable myTable" id="checkAll">
             <thead class="filter"><tr><td colspan="6">
-                        <form class="list_filter form" action="index.php/admin/product.html" method="get">
+                        <form class="list_filter form" action="<?php echo admin_url('product') ?>" method="get">
                             <table cellpadding="0" cellspacing="0" width="80%"><tbody>
 
                                     <tr>
                                         <td class="label" style="width:40px;"><label for="filter_id">Mã số</label></td>
-                                        <td class="item"><input name="id" value="" id="filter_id" type="text" style="width:55px;" /></td>
+                                        <td class="item"><input name="id" value="<?php echo $this->input->get('id'); ?>" id="filter_id" type="text" style="width:55px;" /></td>
 
                                         <td class="label" style="width:40px;"><label for="filter_id">Tên</label></td>
-                                        <td class="item" style="width:155px;" ><input name="name" value="" id="filter_iname" type="text" style="width:155px;" /></td>
+                                        <td class="item" style="width:155px;" >
+                                            <input name="name" value="<?php echo $this->input->get('name') ?>" id="filter_iname" type="text" style="width:155px;" />
+                                        </td>
 
                                         <td class="label" style="width:60px;"><label for="filter_status">Danh mục</label></td>
-                                        <td class="item">
-                                            <select name="catalog">
+                                        <td class="">
+                                            <select name="category">
                                                 <option value=""></option>
                                                 <?php
-                                                foreach ($categories as $cate):
-                                                    if ($cate->ParentID == 0):
+                                                foreach ($categories as $row):
+                                                    if (count($row->subs) > 1):
                                                         ?>
-                                                        <optgroup label="<?php echo $cate->CategoryName ?>">
-                                                            <?php
-                                                            foreach ($categories as $subcate):
-                                                                if ($subcate->ParentID == $cate->CategoryID):
-                                                                    ?>
-                                                                    <option value="<?php echo $subcate->CategoryID ?>" ><?php echo $subcate->CategoryName ?></option>											            </option>
-                                                                    <?php
-                                                                endif;
-                                                            endforeach;
-                                                            ?>						          
-
+                                                        <optgroup label="<?php echo $row->CategoryName ?>">
+                                                            <?php foreach ($row->subs as $sub): ?>
+                                                                <option value="<?php echo $sub->CategoryID ?>" <?php echo ($this->input->get('category') == $sub->CategoryID) ? 'selected' : '' ?>>
+                                                                    <?php echo $sub->CategoryName ?>
+                                                                </option>											            </option>
+                                                            <?php endforeach; ?>						          
                                                         </optgroup>
-                                                        <?php
+                                                    <?php else: ?>
+                                                        <option value="<?php echo $row->CategoryID ?>" <?php echo ($this->input->get('category') == $row->CategoryID) ? 'selected' : ''?>><?php echo $row->CategoryName ?></option>
+                                                    <?php
                                                     endif;
                                                 endforeach;
                                                 ?>
@@ -54,7 +53,7 @@
 
                                         <td style='width:150px'>
                                             <input type="submit" class="button blueB" value="Lọc" />
-                                            <input type="reset" class="basic" value="Reset" onclick="window.location.href = 'index.php/admin/product.html';">
+                                            <input type="reset" class="basic" value="Reset" onclick="window.location.href = 'admin/product';">
                                         </td>
 
                                     </tr>
@@ -83,14 +82,14 @@
                         </div>
 
                         <div class='pagination'>
-                            <?php echo $this->pagination->create_links(); ?>
+<?php echo $this->pagination->create_links(); ?>
                         </div>
                     </td>
                 </tr>
             </tfoot>
 
             <tbody class="list_item">
-                <?php foreach ($list as $row): ?>
+<?php foreach ($list as $row): ?>
                     <tr class='row_9'>
                         <td><input type="checkbox" name="id[]" value="<?php echo $row->ProductID ?>" /></td>
                         <td class="textC"><?php echo $row->ProductID ?></td>
@@ -111,14 +110,14 @@
                         </td>
 
                         <td class="textR">
-                            <?php if ($row->PercentOff > 0): ?>
+    <?php if ($row->PercentOff > 0): ?>
                                 <b style="color: red"><?php echo format_price($row->Price) ?></b>
                                 <p style="text-decoration: line-through"><?php echo format_price($row->Price * (1 - $row->PercentOff / 100)) ?></p>
                             <?php else: ?>
                                 <b style="color: red"><?php echo format_price($row->Price) ?></b>
-                            <?php endif; ?>
+    <?php endif; ?>
                         </td>
-                        <td class="textC"><?php //echo $row->CreateDate       ?></td>
+                        <td class="textC"><?php //echo $row->CreateDate               ?></td>
 
                         <td class="option textC">
                             <a  href="product/view/9.html" target='_blank' class='tipS' title="Xem chi tiết sản phẩm">
@@ -133,7 +132,7 @@
                             </a>
                         </td>
                     </tr>
-                <?php endforeach; ?>
+<?php endforeach; ?>
             </tbody>
 
         </table>

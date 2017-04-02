@@ -17,4 +17,7 @@ function format_price($price){
 function product_img_url($imgname){
     return base_url('upload/productimg/'.$imgname);
 }
+function account_img_url($img_name){
+    return base_url('upload/account/'.$img_name);
+}
 ?>

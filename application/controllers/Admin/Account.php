@@ -79,17 +79,21 @@ class Account extends MY_Controller {
             } else {
                 $role = 2;
             }
+            $this->load->library('upload_library');
+            $image= $this->upload_library->upload('./upload/account','image');
             $data = array(
                 'RoleID' => $role,
                 'Username' => $username,
                 'Password' => md5($password),
                 'Name' => $fullname,
                 'Email' => $email,
-                'Birthday' => date('Y-m-d', strtotime($birthday)),
+                'Birthday' => $birthday,
                 'Gender' => $gender,
                 'Address' => $address,
-                'Phone' => $phone
+                'Phone' => $phone,
+                'Image'=>$image
             );
+          
             if ($this->account_model->create($data)) {
                 $this->session->set_flashdata('message', 'Thêm mới dữ liệu thành công');
             } else {

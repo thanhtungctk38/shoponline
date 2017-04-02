@@ -730,4 +730,9 @@ $(function () {
     //===== Form elements styling =====//
 
     $("select, input:checkbox, input:radio, input:file").uniform();
+    $('a.verify_action').click(function()  {
+       if(!confirm('Bạn có chắc chắn muốn xóa?')){
+           return false;
+       } 
+    });
 });

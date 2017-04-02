@@ -3,7 +3,7 @@
     <!-- Account panel -->
     <div class="sideProfile">
         <a href="#" title="" class="profileFace">
-            <img width="40" src="<?php if($user->Image == NULL) echo "public/admin/images/user.png"; else echo $user->Image?>"/></a>
+            <img width="40" src="<?php echo ($user->Image == NULL)?"public/admin/images/user.png": account_img_url($user->Image)?>"/></a>
         <span><strong><?php echo $user->Name?></strong></span>
        <span><?php if($user->RoleID==1) echo 'Quản lý';
        else echo 'Nhân viên'?></span>

@@ -8,20 +8,23 @@ class Product extends MY_Controller {
     }
 
     function index() {
-        //Load thư viên phân trang
-        $this->load->library('pagination');
+        //Lấy ra số lượng các sản phẩm trong website
         $this->load->model('category_model');
         $total = $this->product_model->get_total();
+        
+        //Load và cài đặt thư viện phân trang
+        $this->load->library('pagination');
         $config = array(
-            'total_rows' => $total,
-            'base_url' => base_url('admin/product/index'),
-            'per_page' => 10,
-            'uri_segment' => 4,
+            'total_rows' => $total,//tổng các sản phẩm trên website
+            'base_url' => base_url('admin/product/index'),//link hiển thị danh sách sản phẩm
+            'per_page' => 10, // số sản phẩm trên 1 trang
+            'uri_segment' => 4, //phân đoạn hiển thị số trang trên url
             'next_link' => '>>',
             'prev_link' => '<<',
             'first_link' => 'Đầu',
             'last_link' => 'Cuối'
         );
+        //Khởi tạo cấu hình phân trang
         $this->pagination->initialize($config);
 
         $segment = $this->uri->segment(4);
@@ -29,13 +32,41 @@ class Product extends MY_Controller {
         $input = array(
             'limit' => array($config['per_page'], $segment)
         );
+        //Kiểm tra có thực hiện lọc dữ liệu hay không?
+        $id = $this->input->get('id');
+        $id = intval($id);
+        if($id > 0){
+            $input['where'] = array('ProductID'=>$id);
+        }
+        
+        $name = $this->input->get('name');
+        if($name){
+            $input['like']=array('ProductName', $name);
+        }
+        
+        $cateId = $this->input->get('category');
+        $cateId= intval($cateId);
+        if($cateId > 0){
+            $input['where']=array('CategoryID'=>$cateId);
+        }
+        //Lấy danh sách sản phẩm theo phân trang
+        $list = $this->product_model->get_list($input);
+        $cateOption = array(
+            'where' => array('ParentID' => NULL)
+        );
+        $categories = $this->category_model->get_list($cateOption);
+        foreach ($categories as $row) {
+            $cateOption['where'] = array('ParentID' => $row->CategoryID);
+            $subs = $this->category_model->get_list($cateOption);
+            $row->subs = $subs;
+        }
 
         $this->data = array(
             'message' => $this->session->flashdata('message'),
             'temp' => 'admin/product/index',
             'total' => $total,
-            'list' => $this->product_model->get_list($input),
-            'categories' => $this->category_model->get_list()
+            'list' => $list,
+            'categories' => $categories
         );
 
         $this->load->view('admin/shared/layout', $this->data);
