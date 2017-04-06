@@ -18,7 +18,7 @@
                     <div class="product-img">
                         <a href=<?php echo $productLink; ?>><img style="width:265px; height: 345px" class="full-width img-responsive" src=<?php echo product_img_url($product->Image) ?> alt=""></a>
                         <a class="product-review" href=<?php echo $productLink; ?>>Xem chi tiết</a>
-                        <a class="add-to-cart" href="<?php echo "cart/add/$product->ProductID;" ?>"><i class="fa fa-shopping-cart"></i>Thêm vào giỏ hàng</a>
+                        <a class="add-to-cart" href="<?php echo "cart/add/$product->ProductID"; ?>"><i class="fa fa-shopping-cart"></i>Thêm vào giỏ hàng</a>
                     </div>
                     <div class="product-description product-description-brd">
                         <div class="overflow-h margin-bottom-5">

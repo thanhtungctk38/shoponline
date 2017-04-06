@@ -3,8 +3,9 @@
 function public_url($url = '') {
     return base_url('public/' . $url);
 }
-function admin_url($url=''){
-    return base_url('admin/'.$url);
+
+function admin_url($url = '') {
+    return base_url('admin/' . $url);
 }
 
 function pre($list, $exit = true) {
@@ -20,19 +21,20 @@ function format_price($price) {
 }
 
 function product_img_url($imgname) {
-    return base_url('upload/productimg/' . $imgname);
+    return base_url('upload/product/' . $imgname);
 }
 
 function account_img_url($img_name) {
     return base_url('upload/account/' . $img_name);
 }
 
-function product_detail_link($id, $name){
+function product_detail_link($id, $name) {
     $name = str_to_slug($name);
     return base_url("sanpham/$id-$name.html");
 }
-function product_link($id, $name){
-    $name= str_to_slug($name);
+
+function product_link($id, $name) {
+    $name = str_to_slug($name);
     return base_url("danhmuc/$id-$name.html");
 }
 

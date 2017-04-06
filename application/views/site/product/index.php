@@ -6,37 +6,25 @@
 
         <div id="left_column" class=" col-md-3 hidden-xs">
             <div id="categories_block_left" class="block box-menu">
-                <h2 class="title_block" align="center"> SHOP THỜI TRANG 4MEN </h2>
-                <div class="block_content call-box">
-                    <div class="hotline"> <i class="fa fa-phone"></i> <span>0868.044.644</span> <span>0868.444.644</span>
-                        <div style="clear:both"></div>
-                    </div>
-                    <div class="info maps-link"> <a class="button" href="http://4menshop.com/dat-hang-truc-tuyen.html" title="Huong dan mua hang"><i class="fa fa-help"></i>Hướng dẫn mua hàng</a> </div>
-                    <div class="info"> <a style="color:#FFF;" href="http://4menshop.com/ban-do.html" title="Xem ban do"><i class="fa fa-map-marker"></i>Xem bản đồ</a>
-                    </div>
-                    <style type="text/css">
-                        .info_service li {
-                            font-weight: bold;
-                            color: #FFF;
-                            margin-bottom: 5px;
-                        }
-                        .info_service li span {
-                            display: inline-block;
-                            padding: 5px 10px 5px 10px;
-                            line-height: 15px;
-                            color: #FFF;
-                            background: #000;
-                            border-radius: 3px;
-                        }
-                    </style>
-                    <ul class="info_service">
-                        <li> <span>1</span> Giao hàng TOÀN QUỐC </li>
-                        <li> <span>2</span> Thanh toán khi nhận hàng </li>
-                        <li> <span>3</span> Đổi trả trong 15 ngày </li>
-                        <li> <span>4</span> Chất lượng đảm bảo </li>
-                        <li> <span>5</span> Hàng luôn sẵn có </li>
-                        <li> <span>6</span> MIỄN PHÍ vận chuyển: </li>
-                        <li style="padding-left:30px;">» Đơn hàng trên 1 triệu đồng </li>
+                <h2 class="title_block"> <a href="" title="">Danh mục</a> </h2>
+                <div class="block_content" style="">
+                    <ul class="metismenu" style="display: block;" id="menu">
+                        <?php foreach ($categories as $row): ?>
+                            <li>
+                                <a href=""><?php echo $row->CategoryName ?><span class="fa plus-minus"></span></a>
+                                <?php if (count($row->subs) > 1): ?>
+                                    <ul>
+                                        <?php foreach ($row->subs as $sub): ?>
+                                            <li>
+                                                <a href=""><?php echo $sub->CategoryName; ?></a>
+                                            </li>
+                                        <?php endforeach; ?>
+                                    </ul>
+                                <?php endif; ?>
+                            </li>
+
+                        <?php endforeach; ?>
+
                     </ul>
                 </div>
             </div>
@@ -104,12 +92,12 @@
 
                                         <h4 class="product-title"><a href=""><?php echo $product->ProductName; ?></a></h4>
                                         <?php
-                                        if ($product->PercentOff > 0) {
+                                        if ($product->Discount > 0) {
                                             echo "<div class='product-price line-through'>";
                                             echo format_price($product->Price);
                                             echo "</div>";
                                             echo "<div class='product-price'>";
-                                            echo format_price($product->Price * (1 - $product->PercentOff / 100));
+                                            echo format_price($product->Price * (1 - $product->Discount / 100));
                                             echo "</div>";
                                         } else {
                                             echo "<div class='product-price'>";

@@ -14,15 +14,15 @@ class Upload_library {
      * @file_name : Tên thẻ input upload file
      */
 
-    function upload($upload_path = '', $file_name) {
+    function upload($upload_path, $file_name) {
         $config = $this->config($upload_path);
         $this->CI->load->library('upload', $config);
         //Upload thành công
-        $name;
+        $name = '';
         if ($this->CI->upload->do_upload($file_name)) {
             $data = $this->CI->upload->data();
             $name = $data['file_name'];
-        } 
+        }
         return $name;
     }
 

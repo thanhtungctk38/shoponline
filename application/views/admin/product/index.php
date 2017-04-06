@@ -111,19 +111,19 @@
 
                         <td class="textR">
                             <?php if ($row->Discount > 0): ?>
-                                <b style="color: red"><?php echo format_price($row->Price) ?></b>
-                                <p style="text-decoration: line-through"><?php echo format_price($row->Price * (1 - $row->Discount / 100)) ?></p>
+                                <p style="text-decoration: line-through"><?php echo format_price($row->Price) ?></p>
+                                <b style="color: red" ><?php echo format_price($row->Price * (1 - $row->Discount / 100)) ?></b>
                             <?php else: ?>
                                 <b style="color: red"><?php echo format_price($row->Price) ?></b>
                             <?php endif; ?>
                         </td>
-                        <td class="textC"><?php //echo $row->CreateDate                ?></td>
+                        <td class="textC"><?php echo $row->CreateDate;?></td>
 
                         <td class="option textC">
                             <a  href="product/view/9.html" target='_blank' class='tipS' title="Xem chi tiết sản phẩm">
                                 <img src="public/admin/images/icons/color/view.png" />
                             </a>
-                            <a href="admin/product/edit/9.html" title="Chỉnh sửa" class="tipS">
+                            <a href="admin/product/edit/<?php echo $row->ProductID?>" title="Chỉnh sửa" class="tipS">
                                 <img src="public/admin/images/icons/color/edit.png" />
                             </a>
 

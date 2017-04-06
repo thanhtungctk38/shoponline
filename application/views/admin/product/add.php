@@ -58,7 +58,7 @@
                         <div class="formRow">
                             <label class="formLeft">Hình ảnh:</label>
                             <div class="formRight">
-                                <div class="left"><input type="file"  id="image" name="image"  ></div>
+                                <div class="left"><input type="file"  id="image" name="image"></div>
                                 <div name="image_error" class="clear error"></div>
                             </div>
                             <div class="clear"></div>
@@ -87,10 +87,10 @@
                             </label>
                             <div class="formRight">
                                 <span class="oneFour">
-                                    <input style="width:100px" class="maskPct" value="" type="text" name="discount">    
+                                    <input style="width:100px" class="maskPct" value="" type="text" name="discount"> %   
                                 </span>
 
-                                <div name="discount_error" class="clear error"></div>
+                                <div name="discount_error" class="clear error"><?php echo form_error('discount'); ?></div>
                             </div>
                             <div class="clear"></div>
                         </div>
@@ -103,7 +103,9 @@
                             </label>
                             <div class="formRight">
                                 <input style="width:100px" type="number" id="" value="0" min="0" name="quantity" />
+                                <div name="quantity_error" class="clear error"><?php echo form_error('quantity'); ?></div>
                             </div>
+
                             <div class="clear"></div>
                         </div>
 

@@ -10,36 +10,19 @@
                 <div id="block_top_menu" class="sf-contener col-sm-10 clearfix ">
                     <div class="cat-title"><i class="fa fa-bars"></i> Menu </div>
                     <ul class="sf-menu clearfix menu-content">
-                        <?php
-                        foreach ($categories as $cate):
-                            if ($cate->ParentID == NULL):
-                                ?>
-                        <li> <a href="<?php echo product_link($cate->CategoryID, $cate->CategoryName)?>" title=""><?php echo $cate->CategoryName ?></a>
-                                    <ul>
-                                        <?php
-                                        foreach ($categories as $subcate):
-                                            if ($subcate->ParentID == $cate->CategoryID):
-                                                ?>
-                                        <li> <a href="<?php echo product_link($subcate->CategoryID,$subcate->CategoryName);?>" title=<?php echo $subcate->CategoryName ?>><?php echo $subcate->CategoryName ?></a>
-
-                                                </li>
-                                                <?php
-                                            endif;
-                                        endforeach;
-                                        ?>
-
-
-                                    </ul>
-                                </li>
-                                <?php
-                            endif;
-                        endforeach;
-                        ?>
-
-                        <li><a href="index.php?c=product&a=promotion" title="Giam gia">Khuyến mãi</a>
+                        <li>
+                            <a href="" title="Trang chủ">Trang chủ</a>
                         </li>
-                        <li><a href="#" title="Tin tuc thoi trang">Tin tức</a>
+                        <li>
+                            <a href="danhmuc/0-thoi-trang-nam.html" title="Sản phẩm">Thời trang nam</a>
                         </li>
+                        <li>
+                            <a href="" title="Giam gia">Khuyến mãi</a>
+                        </li>
+                        <li>
+                            <a href="#" title="Tin tuc thoi trang">Nổi bật</a>
+                        </li>
+
                         <li> <a href="#" title="4men">Về 4MEN</a>
                             <ul>
 
@@ -79,17 +62,19 @@
             </div>
 
             <div class="shopping_cart clearfix">
-                <a href="gio-hang.html" title="Giỏ hàng của bạn" rel="nofollow"> <b>Giỏ hàng</b> (<span class="cartTopRightQuantity">
-                        <?php
-                        
-                        if (empty($this->cart->contents())) {
-                            echo '0';
-                        } else {
-                            echo $this->cart->total_items();
-                        }
-//                        ?>
-                    </span>) <span class="ajax_cart_product_txt">Sản phẩm</span> </a>
-
+                <a href="gio-hang.html" title="Giỏ hàng của bạn" rel="nofollow">
+                    <b>Giỏ hàng</b> 
+                  
+                    <span class="cartTopRightQuantity" style="font-weight: bold;">
+                       (<?php echo empty($this->cart->contents()) ? 0 : $this->cart->total_items(); ?>)
+                    </span>
+                    
+                    <span class="ajax_cart_product_txt"> sản phẩm</span>
+                </a>
+                </div>
+            <div class="clearfix">
+                <a href="">Đăng nhập</a> /
+                <a href="">Đăng kí</a>
             </div>
 
         </div>

@@ -28,7 +28,7 @@
                         </div>
                         <div class="product-price">
                             <span class="title-price line-through"><?php echo format_price($product->Price) ;?></span>
-                            <span class="title-price"><?php echo format_price($product->Price * (1- $product->PercentOff/100))?></span>
+                            <span class="title-price"><?php echo format_price($product->Price * (1- $product->Discount/100))?></span>
                         </div>
                     </div>
                    

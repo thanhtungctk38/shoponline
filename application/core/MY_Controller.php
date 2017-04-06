@@ -17,10 +17,7 @@ class MY_Controller extends CI_Controller {
                     break;
                 }
             default: {
-                    $this->load->model('category_model');
-                    $categories = $this->category_model->get_list();
-                    $this->data['categories'] = $categories;
-                    break;
+                   
                 }
         }
     }
