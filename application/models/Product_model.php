@@ -24,7 +24,7 @@ class Product_model extends MY_Model{
     }
     function get_promotion_products(){
         $option = array(
-            'where'=>'PercentOff > 0'
+            'where'=>'Discount > 0'
         );
         return $this->get_list($option);
     }

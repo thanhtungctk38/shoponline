@@ -12,7 +12,7 @@ class MY_Controller extends CI_Controller {
         switch ($controller) {
             case 'admin': {
                     //Xử lý dữ liệu khi truy cập vào admin
-                    $this->load->helper('admin');
+                    
                     $this->check_login();
                     break;
                 }

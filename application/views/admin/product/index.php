@@ -43,7 +43,7 @@
                                                             <?php endforeach; ?>						          
                                                         </optgroup>
                                                     <?php else: ?>
-                                                        <option value="<?php echo $row->CategoryID ?>" <?php echo ($this->input->get('category') == $row->CategoryID) ? 'selected' : ''?>><?php echo $row->CategoryName ?></option>
+                                                        <option value="<?php echo $row->CategoryID ?>" <?php echo ($this->input->get('category') == $row->CategoryID) ? 'selected' : '' ?>><?php echo $row->CategoryName ?></option>
                                                     <?php
                                                     endif;
                                                 endforeach;
@@ -82,14 +82,14 @@
                         </div>
 
                         <div class='pagination'>
-<?php echo $this->pagination->create_links(); ?>
+                            <?php echo $this->pagination->create_links(); ?>
                         </div>
                     </td>
                 </tr>
             </tfoot>
 
             <tbody class="list_item">
-<?php foreach ($list as $row): ?>
+                <?php foreach ($list as $row): ?>
                     <tr class='row_9'>
                         <td><input type="checkbox" name="id[]" value="<?php echo $row->ProductID ?>" /></td>
                         <td class="textC"><?php echo $row->ProductID ?></td>
@@ -110,14 +110,14 @@
                         </td>
 
                         <td class="textR">
-    <?php if ($row->PercentOff > 0): ?>
+                            <?php if ($row->Discount > 0): ?>
                                 <b style="color: red"><?php echo format_price($row->Price) ?></b>
-                                <p style="text-decoration: line-through"><?php echo format_price($row->Price * (1 - $row->PercentOff / 100)) ?></p>
+                                <p style="text-decoration: line-through"><?php echo format_price($row->Price * (1 - $row->Discount / 100)) ?></p>
                             <?php else: ?>
                                 <b style="color: red"><?php echo format_price($row->Price) ?></b>
-    <?php endif; ?>
+                            <?php endif; ?>
                         </td>
-                        <td class="textC"><?php //echo $row->CreateDate               ?></td>
+                        <td class="textC"><?php //echo $row->CreateDate                ?></td>
 
                         <td class="option textC">
                             <a  href="product/view/9.html" target='_blank' class='tipS' title="Xem chi tiết sản phẩm">
@@ -132,7 +132,7 @@
                             </a>
                         </td>
                     </tr>
-<?php endforeach; ?>
+                <?php endforeach; ?>
             </tbody>
 
         </table>

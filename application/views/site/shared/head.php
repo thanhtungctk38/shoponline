@@ -1,4 +1,4 @@
-<title>TEAM LẦY -- 4MENSHOP</title>
+<title><?php echo $title?></title>
 <base href="<?php echo base_url() ?>">
 <!-- Meta -->
 <meta charset="utf-8">

@@ -52,3 +52,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'home';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+$route['sanpham/(:num)-(:any)']= 'productdetail/index/$1-$2';
+$route['danhmuc/(:num)-(:any)']='product/index/$1';
+$route['danhmuc/(:num)-(:any)/(:num)']='product/index/$1/$3';
+$route['gio-hang']= 'cart';

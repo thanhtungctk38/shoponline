@@ -3,7 +3,7 @@
         <div class="container">
             <div class="row">
                 <div id="header_logo" class="col-sm-2">
-                    <a class="logo" href="index.php" title="thoi trang nam"> 
+                    <a class="logo" href="" title="thoi trang nam"> 
                         <img src="public/site/img/logo.png" alt="4men" width="180" />
                     </a>
                 </div>
@@ -14,13 +14,13 @@
                         foreach ($categories as $cate):
                             if ($cate->ParentID == NULL):
                                 ?>
-                                <li> <a href="product/index/<?php echo  $cate->CategoryID?>" title=""><?php echo $cate->CategoryName ?></a>
+                        <li> <a href="<?php echo product_link($cate->CategoryID, $cate->CategoryName)?>" title=""><?php echo $cate->CategoryName ?></a>
                                     <ul>
                                         <?php
                                         foreach ($categories as $subcate):
                                             if ($subcate->ParentID == $cate->CategoryID):
                                                 ?>
-                                                <li> <a href="<?php echo "product/index/$subcate->CategoryID"; ?>" title=<?php echo $subcate->CategoryName ?>><?php echo $subcate->CategoryName ?></a>
+                                        <li> <a href="<?php echo product_link($subcate->CategoryID,$subcate->CategoryName);?>" title=<?php echo $subcate->CategoryName ?>><?php echo $subcate->CategoryName ?></a>
 
                                                 </li>
                                                 <?php
@@ -79,13 +79,14 @@
             </div>
 
             <div class="shopping_cart clearfix">
-                <a href="index.php?c=cart&a=index" title="Giỏ hàng của bạn" rel="nofollow"> <b>Giỏ hàng</b> (<span class="cartTopRightQuantity">
-                        //<?php
-//                        if (empty($_SESSION['Cart'])) {
-//                            echo '0';
-//                        } else {
-//                            echo count($_SESSION['Cart']);
-//                        }
+                <a href="gio-hang.html" title="Giỏ hàng của bạn" rel="nofollow"> <b>Giỏ hàng</b> (<span class="cartTopRightQuantity">
+                        <?php
+                        
+                        if (empty($this->cart->contents())) {
+                            echo '0';
+                        } else {
+                            echo $this->cart->total_items();
+                        }
 //                        ?>
                     </span>) <span class="ajax_cart_product_txt">Sản phẩm</span> </a>
 

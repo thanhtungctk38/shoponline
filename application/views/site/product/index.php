@@ -47,11 +47,14 @@
                 </p>
                 <div class="block_content products-block">
                     <ul>
-                        <?php foreach ($hottestProducts as $product): ?>
+                        <?php
+                        foreach ($hottestProducts as $product):
+                            $productLink = product_detail_link($product->ProductID, $product->ProductName);
+                            ?>
                             <li class="clearfix">
-                                <a class="products-block-image" href="<?php echo "index.php?a=product&id={$product->ProductID}"; ?>" title=""> <img class="replace-2x img-responsive" src="<?php echo product_img_url($product->Image); ?>" alt="" title="" width="60" /> </a>
+                                <a class="products-block-image" href="<?php echo $productLink; ?>" title=""> <img class="replace-2x img-responsive" src="<?php echo product_img_url($product->Image); ?>" alt="" title="" width="60" /> </a>
                                 <div class="product-content">
-                                    <h5> <a class="product-name" href="<?php echo "index.php?a=product&id={$product->ProductID}"; ?>" title=""> <?php echo $product->ProductName; ?></a> </h5>
+                                    <h5> <a class="product-name" href="<?php echo $productLink; ?>" title=""> <?php echo $product->ProductName; ?></a> </h5>
                                     <div class="price-box"> <span class="price special-price"> <?php echo format_price($product->Price); ?> </span> </div>
                                 </div>
                             </li>
@@ -84,7 +87,7 @@
                         echo "<h2 style='padding-left:20px'>Không có sản phẩm nào</h2>";
                     } else {
                         foreach ($listProducts as $product):
-                            $productLink = "index.php?c=productdetail&a=index&id={$product->ProductID}";
+                            $productLink = product_detail_link($product->ProductID, $product->ProductName);
                             if ($i % 3 == 0) {
                                 echo '<div class="row">';
                             }
@@ -126,13 +129,16 @@
                         endforeach;
                     }
                     ?>
+                    <div class="pagination">
+                        <?php echo $pagination ?>
+                    </div>
                 </div>
+
             </div><!--/end filter results-->
 
-            <div class='text-center pagination'>
-                <?php echo $this->pagination->create_links(); ?>
-            </div>
+
 
         </div>
     </div><!--/end row-->
-</div><!--/end container--><!--=== End Content Part ===-->
+</div><!--/end container-->
+<!--=== End Content Part ===-->
