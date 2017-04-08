@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50505
 File Encoding         : 65001
 
-Date: 2017-04-01 05:28:21
+Date: 2017-04-04 18:53:52
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -26,19 +26,21 @@ CREATE TABLE `account` (
   `Password` varchar(32) COLLATE utf8_unicode_ci NOT NULL,
   `Name` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `Email` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
-  `Birthday` datetime DEFAULT NULL,
+  `Birthday` date DEFAULT NULL,
   `Gender` tinyint(1) DEFAULT NULL,
   `Address` varchar(500) COLLATE utf8_unicode_ci DEFAULT NULL,
   `Phone` varchar(20) COLLATE utf8_unicode_ci DEFAULT NULL,
   `Image` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
   `CreateDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`AccountID`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=DYNAMIC;
 
 -- ----------------------------
 -- Records of account
 -- ----------------------------
-INSERT INTO `account` VALUES ('15', '1', 'ngthtung2805', 'e10adc3949ba59abbe56e057f20f883e', 'Nguyễn Thanh Tùng', 'ngthtung2805@gmail.com', '1970-01-01 00:00:00', '1', '97A Nguyễn Trung Trực, P4, Đà Lạt, Lâm Đồng', '01665761394', null, '2017-03-28 07:32:47');
+INSERT INTO `account` VALUES ('15', '1', 'ngthtung2805', 'e10adc3949ba59abbe56e057f20f883e', 'Nguyễn Thanh Tùng', 'ngthtung2805@gmail.com', '1970-01-01', '1', '97A Nguyễn Trung Trực, P4, Đà Lạt, Lâm Đồng', '01665761394', null, '2017-03-28 07:32:47');
+INSERT INTO `account` VALUES ('16', '1', 'admin', '21232f297a57a5a743894a0e4a801fc3', 'Nguyễn Thanh Tùng', 'admin@gmail.com', '1996-05-28', '1', '97A Nguyễn Trung Trực, P4, Đà Lạt, Lâm Đồng', '01665761394', 'avartar.jpg', '2017-04-02 10:16:33');
+INSERT INTO `account` VALUES ('17', '2', '1', 'c4ca4238a0b923820dcc509a6f75849b', 'abcd', 'abcd@gmail.com', '0000-00-00', '0', '', '', null, '2017-04-02 10:15:19');
 
 -- ----------------------------
 -- Table structure for category
@@ -50,7 +52,7 @@ CREATE TABLE `category` (
   `ParentID` int(11) DEFAULT NULL,
   `Description` varchar(500) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`CategoryID`)
-) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=DYNAMIC;
 
 -- ----------------------------
 -- Records of category
@@ -63,9 +65,7 @@ INSERT INTO `category` VALUES ('6', 'Áo Thun Nam', '1', '');
 INSERT INTO `category` VALUES ('7', 'Áo Khoác Nam', '1', '');
 INSERT INTO `category` VALUES ('8', 'Áo Vest Nam', '1', '');
 INSERT INTO `category` VALUES ('9', 'Áo Len Nam', '1', '');
-INSERT INTO `category` VALUES ('17', 'Phụ kiện nam', '0', '');
 INSERT INTO `category` VALUES ('18', 'Mặt kính', '17', '');
-INSERT INTO `category` VALUES ('19', 'Đồng hồ nam', '17', '');
 
 -- ----------------------------
 -- Table structure for comment

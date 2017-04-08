@@ -141,7 +141,21 @@ class MY_Model extends CI_Model {
      * Lay tong so
      */
     function get_total($input = array()) {
-        $this->get_list_set_input($input);
+        if ((isset($input['where'])) && $input['where']) {
+            $this->db->where($input['where']);
+        }
+        if ((isset($input['or_where'])) && $input['or_where']) {
+            $this->db->or_where($input['or_where']);
+        }
+        //tim kiem like
+        // $input['like'] = array('name' => 'abc');
+        if ((isset($input['like'])) && $input['like']) {
+            $this->db->like($input['like'][0], $input['like'][1]);
+        }
+
+        if ((isset($input['join'])) && $input['join']) {
+            $this->db->join($input['join'][0], $input['join'][1], $input['join'][2]);
+        }
 
         $query = $this->db->get($this->table);
 

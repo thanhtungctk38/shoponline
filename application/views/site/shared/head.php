@@ -1,4 +1,4 @@
-<title>TEAM LẦY -- 4MENSHOP</title>
+<title><?php echo $title?></title>
 <base href="<?php echo base_url() ?>">
 <!-- Meta -->
 <meta charset="utf-8">
@@ -17,3 +17,4 @@
 <link rel="stylesheet" href="public/site/plugins/font-awesome/css/font-awesome.css">
 <link rel="stylesheet" href="public/site/plugins/owl-carousel/owl-carousel/owl.carousel.css">
 <link rel="stylesheet" href="public/site/css/css.css">
+<link href="public/site/plugins/metismenu/metisMenu.min.css" rel="stylesheet" type="text/css"/>

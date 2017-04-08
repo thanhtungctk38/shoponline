@@ -2,7 +2,10 @@
     <div id="columns" class="container">
         <div class="row">
             <div id="center_column" class="center_column col-sm-7 col-md-9">
-
+                <?php if($product == NULL): ?>
+                <h1>Không tồn tại sản phẩm này.</h1>
+                <a href="#" style="text-decoration:underline">Quay lại trang chủ</a>
+               <?php else:?>
                 <div style="clear:both;">
                     <div class="primary_block row">
                         <div class="pb-left-column col-xs-12 col-sm-12 col-md-5">
@@ -43,7 +46,7 @@
                             </div>
                             <p class="socialsharing_product list-inline box-info-product">
 
-                           
+
                             </p>
                         </div>
                     </div>
@@ -56,7 +59,7 @@
                             <section id="idTab1" class="page-product-box active">
                                 <div class="rte">
                                     <div style="text-align:justify"><span style="color:#000000">
-                                            <strong><?php echo $product->ProductName?></strong>
+                                            <strong><?php echo $product->ProductName ?></strong>
                                             <br/> <br/> 
                                             <p><?php echo $product->Description ?></p>
                                         </span>
@@ -67,6 +70,7 @@
                         </div>
                     </div>
                 </div>
+                <?php endif;?>
             </div>
             <div id="right_column" class="column col-sm-5 col-md-3 hidden-xs">
                 <div id="categories_block_left" class="block box-menu">

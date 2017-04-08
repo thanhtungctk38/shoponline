@@ -12,15 +12,12 @@ class MY_Controller extends CI_Controller {
         switch ($controller) {
             case 'admin': {
                     //Xử lý dữ liệu khi truy cập vào admin
-                    $this->load->helper('admin');
+                    
                     $this->check_login();
                     break;
                 }
             default: {
-                    $this->load->model('category_model');
-                    $categories = $this->category_model->get_list();
-                    $this->data['categories'] = $categories;
-                    break;
+                   
                 }
         }
     }

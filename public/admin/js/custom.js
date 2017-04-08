@@ -111,7 +111,7 @@ $(function () {
     $(".maskProd").mask("a*-999-a999", {placeholder: " "});
     $(".maskEye").mask("~9.99 ~9.99 999");
     $(".maskPo").mask("PO: aaa-999-***");
-    $(".maskPct").mask("99%");
+    $(".maskPct").mask("99");
     //===== Dual select boxes =====//
 
     $.configureBoxes();
@@ -730,4 +730,9 @@ $(function () {
     //===== Form elements styling =====//
 
     $("select, input:checkbox, input:radio, input:file").uniform();
+    $('a.verify_action').click(function()  {
+       if(!confirm('Bạn có chắc chắn muốn xóa?')){
+           return false;
+       } 
+    });
 });
