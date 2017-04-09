@@ -28,5 +28,12 @@ class Product_model extends MY_Model{
         );
         return $this->get_list($option);
     }
+    function get_product_by_category($id, $limit, $offset=0){
+        $option =array(
+            'where'=>'CategoryID='.$id,
+            'limit'=>array($limit, $offset)
+        );
+        return $this->get_list($option);
+    }
 }
 ?>

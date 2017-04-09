@@ -1255,11 +1255,7 @@ ul.sf-menu li li li:hover ul {
 
 /*Shop Product
 ------------------------------------*/
-.shop-product {
-    background: #f8f8f8;
-    padding: 10px 0 30px;
-    border-bottom: 1px solid #dedede;
-}
+
 
 .shop-product h2 {
     float: left;
