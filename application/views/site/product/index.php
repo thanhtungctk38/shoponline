@@ -11,12 +11,12 @@
                     <ul class="metismenu" style="display: block;" id="menu">
                         <?php foreach ($categories as $row): ?>
                             <li>
-                                <a href=""><?php echo $row->CategoryName ?><span class="fa plus-minus"></span></a>
+                                <a href="<?php echo product_link($row->CategoryID, $row->CategoryName);?>"><?php echo $row->CategoryName ?><span class="fa plus-minus"></span></a>
                                 <?php if (count($row->subs) > 1): ?>
                                     <ul>
                                         <?php foreach ($row->subs as $sub): ?>
                                             <li>
-                                                <a href=""><?php echo $sub->CategoryName; ?></a>
+                                                <a href="<?php echo product_link($sub->CategoryID, $sub->CategoryName);?>"><?php echo $sub->CategoryName; ?></a>
                                             </li>
                                         <?php endforeach; ?>
                                     </ul>
