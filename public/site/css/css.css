@@ -2578,7 +2578,7 @@ table th {
 #cmsinfo_block .content ul li.icon_check {
     color: #666;
     padding: 3px 0;
-    display: inline-block;
+    display: block;
     vertical-align: top
 }
 #cmsinfo_block .content ul li.icon_check:before {

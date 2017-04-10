@@ -1,4 +1,4 @@
-<title><?php echo $title?></title>
+<title><?php echo isset($title)?$title:'4MENSHOP Thời trang nam giá rẻ';?></title>
 <base href="<?php echo base_url() ?>">
 <!-- Meta -->
 <meta charset="utf-8">
@@ -18,3 +18,4 @@
 <link rel="stylesheet" href="public/site/plugins/owl-carousel/owl-carousel/owl.carousel.css">
 <link rel="stylesheet" href="public/site/css/css.css">
 <link href="public/site/plugins/metismenu/metisMenu.min.css" rel="stylesheet" type="text/css"/>
+<link href="public/site/css/log-reg-v3.css" rel="stylesheet" type="text/css"/>

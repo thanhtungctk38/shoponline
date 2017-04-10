@@ -14,10 +14,10 @@
                             <a href="" title="Trang chủ">Trang chủ</a>
                         </li>
                         <li>
-                            <a href="danhmuc/0-thoi-trang-nam.html" title="Sản phẩm">Thời trang nam</a>
+                            <a href="product" title="Sản phẩm">Thời trang nam</a>
                         </li>
                         <li>
-                            <a href="" title="Giam gia">Khuyến mãi</a>
+                            <a href="product/promotion" title="Giam gia">Khuyến mãi</a>
                         </li>
                         <li>
                             <a href="#" title="Tin tuc thoi trang">Nổi bật</a>
@@ -64,14 +64,60 @@
             <div class="shopping_cart clearfix">
                 <a href="gio-hang.html" title="Giỏ hàng của bạn" rel="nofollow">
                     <b>Giỏ hàng</b> 
-                  
+
                     <span class="cartTopRightQuantity" style="font-weight: bold;">
-                       (<?php echo empty($this->cart->contents()) ? 0 : $this->cart->total_items(); ?>)
+                        (<?php echo empty($this->cart->contents()) ? 0 : $this->cart->total_items(); ?>)
                     </span>
-                    
+
+
                     <span class="ajax_cart_product_txt"> sản phẩm</span>
-                </a>
+                </a><div class="cart_block block exclusive" style="display:none;"> 
+                    <div class="block_content"> 
+                        <div class="cart_block_list"> 
+                            <?php if (empty($this->cart->contents())): ?>
+                                <p class="cart_block_no_products">Bạn chưa chọn sản phẩm nào</p>
+                            <?php endif; ?>
+                            <dl class="products cartTopRightContent"> 
+                                <?php foreach ($this->cart->contents() as $item): ?>
+                                    <dt>
+
+                                        <a href="<?php echo product_detail_link($item['id'], $item['name']) ?>" class="cart-images">
+                                            <img widht="70" src="<?php echo product_img_url($item['option']['image']); ?>" height="70">
+                                        </a>		
+                                        <div class="cart-info">	
+                                            <div class="product-name">	
+                                                <span class="quantity-formated">	
+                                                    <span class="quantity"><?php echo $item['qty']; ?></span>&nbsp;x&nbsp;	
+                                                </span>			
+                                                <a class="cart_block_product_name" title="<?php echo $item['name']; ?>" 
+                                                   href="<?php echo product_link($item['id'], $item['option']['image']); ?>"><?php echo $item['name'] ?></a>	
+                                            </div>			
+                                            <span class="price"><?php echo format_price($item['price'] * $item['qty']); ?></span>		
+                                        </div>		
+                                        <span class="remove_link">
+                                            <a href="cart/delete/<?php echo $item['id']; ?>" cart="132966" onclick="javascript:removeItemCart(this)"></a>
+                                        </span>
+                                    </dt> 
+                                <?php endforeach; ?>
+                            </dl> 
+                            <div class="cart-prices cartTopRightTotal" style="display: block;">
+                                <div class="cart-prices-line last-line">
+                                    <span class="price cart_block_total ajax_block_cart_total">
+                                        <?php echo format_price($this->cart->total()); ?>
+                                    </span>
+                                    <span class="pr">Tổng cộng</span>
+                                </div>
+                            </div>
+                            <p class="cart-buttons cartTopRightButtons" style=""> 
+                                <a id="button_order_cart" class="btn btn-default button button-small" href="" title="Gửi đơn hàng" rel="nofollow"> 
+                                    <span> Gửi đơn hàng<i class="fa fa-chevron-right right"></i> 
+                                    </span> 
+                                </a> 
+                            </p> 
+                        </div> 
+                    </div> 
                 </div>
+            </div>
             <div class="clearfix">
                 <a href="">Đăng nhập</a> /
                 <a href="">Đăng kí</a>
