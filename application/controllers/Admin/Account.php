@@ -171,10 +171,7 @@ class Account extends MY_Controller {
             redirect(admin_url('login'));
         }
     }
-//    function upload(){
-//        $this->load->library('upload');
-//        $config['upload_path']=
-//    }
+
 }
 ?>
 

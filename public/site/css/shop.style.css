@@ -13,10 +13,7 @@ h1, h2, h3, h4, h5, h6 {
     color: #687074;
 }
 
-p {
-    color: #888;
-    font-size: 14px;
-}
+
 
 a {
     color: #18ba9b;
@@ -2978,14 +2975,15 @@ ul.sf-menu li li li:hover ul {
 
 /*Button Sea Shop*/
 .btn-u.btn-u-sea-shop {
-    background: #18ba9b;
+    background: #ca040b;
+    text-align: center;
 }
 .btn-u.btn-u-sea-shop:hover,
 .btn-u.btn-u-sea-shop:focus,
 .btn-u.btn-u-sea-shop:active,
 .btn-u.btn-u-sea-shop.active,
 .open .dropdown-toggle.btn-u.btn-u-sea-shop {
-    background: #2cd5b6;
+    background: #ca040b;
 }
 .btn-u.btn-u-split-sea.dropdown-toggle {
     border-left: solid 1px #2cd5b6;

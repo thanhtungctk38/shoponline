@@ -1,3 +1,4 @@
+<?php $user = $this->session->userdata('user_login'); ?>
 <header id="header">
     <div class="header-top clearfix">
         <div class="container">
@@ -119,8 +120,14 @@
                 </div>
             </div>
             <div class="clearfix">
-                <a href="">Đăng nhập</a> /
-                <a href="">Đăng kí</a>
+                <?php if (!isset($user)): ?>
+                    <a href="customer/login">Đăng nhập</a> /
+                    <a href="customer/register">Đăng kí</a>
+                <?php else: ?>
+                    Xin chào <strong> <?php echo $user->Name; ?></strong> ! |
+                    <a href="">Tài khoản</a> |
+                    <a href="customer/logout">Đăng xuất</a>
+                <?php endif; ?>
             </div>
 
         </div>

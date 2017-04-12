@@ -58,3 +58,4 @@ $route['danhmuc/(:num)-(:any)/(:num)']='product/get_by_category/$1/$3';
 $route['danhmuc/san-pham-khuyen-mai']='product/promotion';
 $route['danhmuc/san-pham-khuyen-mai/(:num)']='product/promotion/$1';
 $route['gio-hang']= 'cart';
+$route['trang-chu']='index.php';

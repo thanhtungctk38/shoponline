@@ -19,3 +19,4 @@
 <link rel="stylesheet" href="public/site/css/css.css">
 <link href="public/site/plugins/metismenu/metisMenu.min.css" rel="stylesheet" type="text/css"/>
 <link href="public/site/css/log-reg-v3.css" rel="stylesheet" type="text/css"/>
+<link href="public/site/css/ui_custom.css" rel="stylesheet" type="text/css"/>
