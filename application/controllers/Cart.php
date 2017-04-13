@@ -58,8 +58,9 @@ class Cart extends MY_Controller {
                 'image' => $product->Image
             )
         );
-        $this->cart->insert($cart);
-  
+         $this->cart->insert($cart);
+        redirect(base_url('gio-hang.html'));
+       
     }
 
     public function update($id, $qty) {
@@ -109,9 +110,10 @@ class Cart extends MY_Controller {
         $this->load->model('orderdetail_model');
         $order = array(
             'OrderID' => 0,
-            'CustomerID' =>$customerID,
+            'CustomerID' => $customerID,
             'OrderAddress' => $this->input->post('address'),
-            'Total' => $this->cart->total()
+            'Total' => $this->cart->total(),
+            'OrderDate'=>gmdate('Y-m-d H:i:s', time() + 7 * 3600)
         );
 
         $order_id = $this->order_model->Create($order);
