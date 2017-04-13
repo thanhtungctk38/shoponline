@@ -35,7 +35,11 @@ function product_detail_link($id, $name) {
 
 function product_link($id, $name) {
     $name = str_to_slug($name);
-    return base_url("danhmuc/$id-$name.html");
+    return base_url("danhmuc/$id-$name");
+}
+
+function promotion_link(){
+    return base_url('danhmuc/san-pham-khuyen-mai.html');
 }
 
 function str_to_slug($str) {

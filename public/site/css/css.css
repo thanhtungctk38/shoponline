@@ -2356,18 +2356,12 @@ a.product_link:hover {
 .columns .bordercolor {
     border-color: #e7e4de
 }
-div.error {
-    margin: 20px 0;
-    padding: 20px
+.error p {
+    color: #A73939;
+    font-size: 11px;
+    display: block;
 }
-div.error ol {
-    margin: 0
-}
-div.error ol li {
-    padding: 0;
-    list-style-position: inside;
-    list-style-type: decimal
-}
+
 #attributes .attribute_list #color_to_pick_list,
 #usefull_link_block,
 .fa-ul,
@@ -2377,19 +2371,7 @@ ul#uploadable_files,
 ul.social-block li {
     list-style-type: none
 }
-div.error p {
-    padding: 0;
-    margin: 0;
-    font-size: 14px
-}
-div.error p.link {
-    float: right;
-    margin-top: 7px
-}
-div.error p.link .btn {
-    color: #fff;
-    font-weight: 400
-}
+
 p.warning {
     background: #d4eeff;
     border: 1px solid #34acf9;
@@ -2408,15 +2390,7 @@ p.warning i {
     color: red;
     font-weight: 700
 }
-.alert-error,
-div.error {
-    background: url(img/warning.png) 20px center no-repeat #fde4e1;
-    padding-left: 70px;
-    border: 1px solid #ebbcb5;
-    font-size: 12px;
-    font-weight: 700;
-    color: #df0505
-}
+
 p.confirmation,
 p.success {
     margin: 20px 0 0;
@@ -2578,7 +2552,7 @@ table th {
 #cmsinfo_block .content ul li.icon_check {
     color: #666;
     padding: 3px 0;
-    display: inline-block;
+    display: block;
     vertical-align: top
 }
 #cmsinfo_block .content ul li.icon_check:before {
@@ -2863,8 +2837,7 @@ textarea {
 }
 .checkbox input[type=checkbox],
 .radio input[type=radio] {
-    float: left;
-    margin-left: 0
+  margin:2px 15px 0 0;
 }
 input[type=checkbox],
 input[type=radio] {
@@ -5597,13 +5570,6 @@ div.star.star_on:after {
 .fa-li {
     text-align: center
 }
-@font-face {
-    font-family: FontAwesome;
-    src: url(fonts/fontawesome-webfont.eot?v=4.2.0);
-    src: url(fonts/fontawesome-webfont.eot?#iefix&v=4.2.0) format("embedded-opentype"), url(fonts/fontawesome-webfont.woff?v=4.2.0) format("woff"), url(fonts/fontawesome-webfont.ttf?v=4.2.0) format("truetype"), url(fonts/fontawesome-webfont.svg?v=4.2.0#fontawesomeregular) format("svg");
-    font-weight: 400;
-    font-style: normal
-}
 .fa {
     font: normal normal normal 14px/1 FontAwesome;
     font-size: inherit;
@@ -5701,19 +5667,19 @@ div.uploader {
     transform: rotate(180deg)
 }
 .fa-rotate-270 {
-    filter: progid: DXImageTransform.Microsoft.BasicImage(rotation=3);
+
     -webkit-transform: rotate(270deg);
     -ms-transform: rotate(270deg);
     transform: rotate(270deg)
 }
 .fa-flip-horizontal {
-    filter: progid: DXImageTransform.Microsoft.BasicImage(rotation=0);
+
     -webkit-transform: scale(-1, 1);
     -ms-transform: scale(-1, 1);
     transform: scale(-1, 1)
 }
 .fa-flip-vertical {
-    filter: progid: DXImageTransform.Microsoft.BasicImage(rotation=2);
+
     -webkit-transform: scale(1, -1);
     -ms-transform: scale(1, -1);
     transform: scale(1, -1)
@@ -7507,7 +7473,6 @@ div.radio span.checked {
     background-position: -13px -243px
 }
 div.radio input {
-    opacity: 0;
     -moz-opacity: 0;
     background: 0 0;
     display: inline-block
@@ -7675,13 +7640,7 @@ div.selector.disabled.active span {
 div.checker {
     margin-top: 5px
 }
-.checkbox input[type=checkbox],
-.checkbox-inline input[type=checkbox],
-.checker span input,
-.radio input[type=radio],
-.radio-inline input[type=radio] {
-    margin: 0!important
-}
+
 .checkbox-inline,
 .radio-inline {
     cursor: default
@@ -7694,7 +7653,7 @@ div.checker {
     display: inline
 }
 div.radio {
-    margin-right: 3px
+    margin-right: 15px
 }
 div.uploader span.action {
     text-shadow: rgba(0, 0, 0, .1) 0 1px 0;

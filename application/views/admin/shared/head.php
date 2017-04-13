@@ -56,9 +56,6 @@
 
 <script type="text/javascript" src="public/admin/js/plugins/calendar.min.js"></script>
 <script type="text/javascript" src="public/admin/js/plugins/elfinder.min.js"></script>
-
 <script type="text/javascript" src="public/admin/js/custom.js"></script>
-
 <script type="text/javascript" src="public/admin/js/charts/chart.js"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.1.1/jquery-confirm.min.js"></script>

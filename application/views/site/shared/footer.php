@@ -1,3 +1,7 @@
+<div id="dialog" title="Thêm vào giỏ hàng thành công">ư
+    <p>Sản phẩm được thêm vào giỏ hàng thành công</p>
+    <a href="gio-hang.html"> Thanh toán</a>
+</div>
 <div id="footer-top">
     <div class="container">
         <div class="row">

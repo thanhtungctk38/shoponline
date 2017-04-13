@@ -23,7 +23,7 @@
                     <div class="product-description product-description-brd">
                         <div class="overflow-h margin-bottom-5">
 
-                            <h4 class="title-price">
+                            <h4 class="product-title">
                                 <a href=<?php echo $productLink; ?>>
                                     <?php echo $product->ProductName; ?>
                                 </a>
