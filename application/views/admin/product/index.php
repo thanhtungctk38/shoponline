@@ -82,7 +82,7 @@
                         </div>
 
                         <div class='pagination'>
-                            <?php echo $this->pagination->create_links(); ?>
+                            <?php echo $pagination;?>
                         </div>
                     </td>
                 </tr>

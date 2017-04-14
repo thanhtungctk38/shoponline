@@ -2,15 +2,20 @@
 
 class Product extends MY_Controller {
 
+    private $per_page;
+
     public function __construct() {
         parent::__construct();
         $this->load->model('product_model');
         $this->load->model('category_model');
+        $this->load->library('pagination_library');
+        $this->per_page = $this->pagination_library->per_page;
     }
 
-    function get_by_category($id = 0, $page = 1) {
-        $input = array(
-            'limit' => array(9, $page),
+    function get_by_category($id = 0) {
+        $offset = $this->pagination_library->get_offset();
+       $input = array(
+            'limit' => array($this->per_page, $offset),
             'where' => 'CategoryID =' . $id
         );
         $total = $this->product_model->get_total($input);
@@ -19,9 +24,10 @@ class Product extends MY_Controller {
         $this->_default($total, $url, $category->CategoryName, $input);
     }
 
-    function index($page = 1) {
+    function index() {
+        $offset = $this->pagination_library->get_offset();
         $input = array(
-            'limit' => array(9, $page),
+            'limit' => array($this->per_page, $offset),
         );
         $total = $this->product_model->get_total($input);
         $url = 'product/all';
@@ -29,7 +35,6 @@ class Product extends MY_Controller {
     }
 
     function _default($total, $url, $title, $input) {
-        $this->load->library('pagination_library');
         $this->data = array(
             'temp' => 'site/product/index',
             'title' => $title,

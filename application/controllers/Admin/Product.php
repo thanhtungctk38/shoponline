@@ -9,8 +9,7 @@ class Product extends MY_Controller {
     }
 
     function index() {
-        //Lấy ra số lượng các sản phẩm trong website
-        //Kiểm tra có thực hiện lọc dữ liệu hay không?
+        //Kiểm tra lọc
         $id = $this->input->get('id');
         $id = intval($id);
         $input['where'] = array();
@@ -28,46 +27,22 @@ class Product extends MY_Controller {
         if ($cateId > 0) {
             $input['where'] += array('CategoryID' => $cateId);
         }
-        $this->load->library('pagination');
+        //Cài đặt phân trang
+        $this->load->library('pagination_library');
+
+        $per_page = $this->pagination_library->per_page;
+        $offset = $this->pagination_library->get_offset();
         $total = $this->product_model->get_total($input);
-        $config = array(
-            'total_rows' => $total, //tổng các sản phẩm trên website
-            'base_url' => base_url('admin/product/index?id=' . $id . '&name=' . $name . '&category=' . $cateId), //link hiển thị danh sách sản phẩm
-            'per_page' => 10, // số sản phẩm trên 1 trang
-            'uri_segment' => 4, //phân đoạn hiển thị số trang trên url
-            'next_link' => '>>',
-            'prev_link' => '<<',
-            'first_link' => 'Đầu',
-            'last_link' => 'Cuối',
-            'use_page_numbers' => TRUE,
-            'query_string_segment' => 'page',
-            'page_query_string' => TRUE
-        );
-        //Khởi tạo cấu hình phân trang
-        $this->pagination->initialize($config);
-        $page = intval($this->input->get('page'));
-        $page = ($page > 0) ? $page : 1;
-        $input['limit'] = array($config['per_page'], ($page - 1) * $config['per_page']);
+        $input['limit'] = array($per_page, $offset);
 
-        //Lấy danh sách sản phẩm theo phân trang
-        $list = $this->product_model->get_list($input);
-
-        $cateOption = array(
-            'where' => array('ParentID' => NULL)
-        );
-        $categories = $this->category_model->get_list($cateOption);
-        foreach ($categories as $row) {
-            $cateOption['where'] = array('ParentID' => $row->CategoryID);
-            $subs = $this->category_model->get_list($cateOption);
-            $row->subs = $subs;
-        }
-
+        $url = base_url("admin/product/index?id=$id&name=$name&category=$cateId");
         $this->data = array(
             'message' => $this->session->flashdata('message'),
-            'temp' => 'admin/product/index',
             'total' => $total,
-            'list' => $list,
-            'categories' => $categories
+            'temp' => 'admin/product/index',
+            'list' => $this->product_model->get_list($input),
+            'categories' => $this->category_model->get_categories(),
+            'pagination' => $this->pagination_library->create_links($total, $url)
         );
 
         $this->load->view('admin/shared/layout', $this->data);
@@ -83,7 +58,7 @@ class Product extends MY_Controller {
         $this->product_model->delete($id);
         //Xóa file ảnh của sản phẩm
         $product_link = product_img_url($info->Image);
-        if(file_exists($product_link)){
+        if (file_exists($product_link)) {
             unlink($product_link);
         }
         $this->session->set_flashdata('message', 'Xóa sản phẩm thành công');
@@ -150,7 +125,7 @@ class Product extends MY_Controller {
             $quantity = $this->input->post('quantity');
             $this->load->library('upload_library');
             $image = $this->upload_library->upload('./upload/product', 'image');
-            
+
             $data = array(
                 'ProductName' => $productname,
                 'CategoryID' => $categoryid,
@@ -158,8 +133,8 @@ class Product extends MY_Controller {
                 'Discount' => $discount,
                 'Quantity' => $quantity
             );
-            if($image!=NULL){
-                $data['Image']=$image;
+            if ($image != NULL) {
+                $data['Image'] = $image;
             }
             if ($this->product_model->update($id, $data)) {
                 $this->session->set_flashdata('message', 'Chỉnh sửa dữ liệu thành công');
@@ -175,4 +150,5 @@ class Product extends MY_Controller {
         );
         $this->load->view('admin/shared/layout', $this->data);
     }
+
 }

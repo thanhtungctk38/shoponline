@@ -100,9 +100,7 @@ $(function () {
 
     $.mask.definitions['~'] = "[+-]";
     $(".maskDate").mask("99/99/9999");
-    $("#datepicker").datepicker({
-        dateFormat: "dd/mm/yy"
-    });
+
     $(".maskPhone").mask("(999) 999-9999");
     $(".maskPhoneExt").mask("(999) 999-9999? x99999");
     $(".maskIntPhone").mask("+33 999 999 999");
@@ -431,13 +429,11 @@ $(function () {
     $(".datepicker").datepicker({
         defaultDate: +7,
         autoSize: true,
-        appendText: '(dd-mm-yyyy)',
         dateFormat: 'dd-mm-yy',
     });
     $(".datepickerInline").datepicker({
         defaultDate: +7,
         autoSize: true,
-        appendText: '(dd-mm-yyyy)',
         dateFormat: 'dd-mm-yy',
         numberOfMonths: 1
     });
@@ -730,9 +726,9 @@ $(function () {
     //===== Form elements styling =====//
 
     $("select, input:checkbox, input:radio, input:file").uniform();
-    $('a.verify_action').click(function()  {
-       if(!confirm('Bạn có chắc chắn muốn xóa?')){
-           return false;
-       } 
+    $('a.verify_action').click(function () {
+        if (!confirm('Bạn có chắc chắn muốn xóa?')) {
+            return false;
+        }
     });
 });

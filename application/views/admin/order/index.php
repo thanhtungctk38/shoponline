@@ -53,7 +53,9 @@
                                         </td>
 
                                         <td class="label"><label for="filter_created_to">Đến ngày</label></td>
-                                        <td class="item"><input name="created_to" value="" id="filter_created_to" type="text" class="datepicker" /></td>
+                                        <td class="item">
+                                            <input name="created_to" value="" id="filter_created_to" type="text" class="datepicker" />
+                                        </td>
 
                                         <td class="label"></td>
                                         <td class="item"></td>

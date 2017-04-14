@@ -61,7 +61,7 @@
                     <label>Ngày sinh:</label>
                     <div class="formRight">
                         <div class="oneFour">
-                            <input class="maskDate" name="birthday" id="datepicker" value="" type="text">
+                            <input  name="birthday" class="maskDate datepicker"  value="" type="text" style="width:250px">
                         </div>
                     </div>
                     <div class="clear"></div>
