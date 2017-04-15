@@ -3,8 +3,8 @@
     <div class="widget">
         <div class="title">
             <span class="titleIcon"><input type="checkbox" id="titleCheck" name="titleCheck" /></span>
-            <h6>Danh sách Giao dịch</h6>
-            <div class="num f12">Tổng số: <b><?php echo $total; ?></b></div>
+            <h6>Chi tiết đơn hàng</h6>
+            <div class="num f12">Tổng số: <b><?php //echo $total; ?></b></div>
         </div>
 
         <table cellpadding="0" cellspacing="0" width="100%" class="sTable mTable myTable" id="checkAll">
@@ -61,13 +61,12 @@
             <thead>
                 <tr>
                     <td style="width:10px;"><img src="public/admin/images/icons/tableArrows.png" /></td>
-                    <td style="width:60px;">Mã số</td>
-                    <td>Thành viên</td>
-                    <td style="width:200px;">Số tiền</td>
-                    <td style="width:200px">Hình thức</td>
-                    <td style="width:100px;">Giao dịch</td>
-                    <td style="width:75px;">Ngày tạo</td>
-                    <td style="width:55px;">Hành động</td>
+                    <td style="width:60px;">Mã SP</td>
+                    <td>Tên sản phẩm</td>
+                    <td style="width:60px;">Số lượng</td>
+                    <td style="width:200px">Đơn giá</td>
+                    <td style="width:200px;">Thành tiền</td>
+                    <td style="width:200px;">Ghi chú</td>
                 </tr>
             </thead>
 
@@ -80,49 +79,27 @@
                             </a>
                         </div>
 
-                        <div class='pagination'>
-                           <?php echo $pagination;?>
-                        </div>
                     </td>
                 </tr>
             </tfoot>
 
             <tbody class="list_item">
-                <?php foreach ($list as $row): ?>
+                <?php foreach ($order->details as $row): ?>
                     <tr class='row'>
                         <td><input type="checkbox" name="id[]" value="<?php echo $row->OrderID; ?>" /></td>
-                        <td class="textC"><?php echo $row->OrderID; ?></td>
+                        <td class="textC"><?php echo $row->ProductID; ?></td>
                         <td>
-                            <?php echo $row->Name; ?>
+                            <?php echo $row->ProductName;?>
                         </td>
-                        <td class="textR red"><?php echo format_price($row->Total); ?></td>
+                        <td><?php echo $row->Quantity; ?></td>
                         <td>
+                            <?php echo format_price($row->Price);?> 
                         </td>
 
 
-                        <td class="status textC">
-                            <?php if ($row->Status == 0): ?>
-                                <span class="pending">
-                                    Chờ xử lý
-                                </span>
-                            <?php else: ?>
-                                <span class="completed">
-                                    Thành công
-                                </span>
-                            <?php endif; ?>
-                        </td>
-
-                        <td class="textC"><?php echo $row->OrderDate; ?></td>
-
-                        <td class="textC">
-                            <a href="admin/tran/view/21.html" class="lightbox">
-                                <img src="public/admin/images/icons/color/view.png" />
-                            </a>
-
-                            <a href="admin/tran/del/21.html" title="Xóa" class="tipS verify_action" >
-                                <img src="public/admin/images/icons/color/delete.png" />
-                            </a>
-                        </td>
+                        <td><?php echo format_price($row->Quantity * $row->Price); ?></td>
+                        <td></td>
+                      
                     </tr>
                 <?php endforeach; ?>
             </tbody>
