@@ -1,63 +1,52 @@
 <?php $this->load->view('admin/order/head') ?>
 <div class="wrapper">
+    <div class="details">
+        <form class="form" id="form" action="admin/account/add" method="post" enctype="multipart/form-data">
+            <fieldset>
+                <div class="formRow">
+                    <label style="width:120px">Mã đơn hàng</label>
+                    <input style="width:200px" type="text" disabled="disabled"  name="orderid" value="<?php echo $order->OrderID; ?>">
+                    <div class="clear"></div>
+                </div>
+                <div class="formRow">
+                    <label style="width:120px;">Tên khách hàng</label>
+                    <input style="width:200px;" type="text" name="orderid" value="<?php echo $order->CustomerName; ?>">
+                    <label style="width:120px;">Số điện thoại</label>
+                    <input style="width:150px;" type="text" name="orderid" value="<?php echo $order->Phone; ?>">
+                    <div class="clear"></div>
+                </div>
+                <div class="formRow">
+                    <label style="width:120px;">Tổng tiền</label>
+                    <input style="width:200px;" type="text" name="orderid" value="<?php echo $order->Total; ?>">
+                    <label style="width:120px;">Ngày đặt hàng</label>
+                    <input style="width:150px;" type="text" disabled="disabled" name="orderid" value="<?php echo $order->OrderDate; ?>">
+                </div>
+                <div class="formRow">
+                    <label style="width:120px;">Địa chỉ giao hàng</label>
+                    <textarea style="width:505px;" name="orderid" ><?php echo $order->OrderAddress; ?></textarea>
+
+                    <div class="clear"></div>
+                </div>
+
+                <div class="formRow">
+                    <label style="width:120px;">
+
+                    </label>
+                    <input value="Cập nhật" class="redB" type="submit">
+                    <input value="Hủy bỏ"  class="basic" type="reset">
+                </div>
+
+            </fieldset>
+        </form>
+    </div>
     <div class="widget">
         <div class="title">
             <span class="titleIcon"><input type="checkbox" id="titleCheck" name="titleCheck" /></span>
             <h6>Chi tiết đơn hàng</h6>
-            <div class="num f12">Tổng số: <b><?php //echo $total; ?></b></div>
+            <div class="num f12">Tổng số: <b><?php //echo $total;                  ?></b></div>
         </div>
 
         <table cellpadding="0" cellspacing="0" width="100%" class="sTable mTable myTable" id="checkAll">
-
-            <thead class="filter">
-                <tr>
-                    <td colspan="9">
-                        <form class="list_filter form" action="admin/order" method="get">
-                            <table cellpadding="0" cellspacing="0" width="100%"><tbody>
-                                    <tr>
-                                        <td class="label" style="width:60px;"><label for="filter_id">Mã số</label></td>
-                                        <td class="item"><input name="id" value="" id="filter_id" type="text" style="width:95px;" /></td>
-                                        <td class="label" style="width:60px;"><label for="filter_type">Hình thức</label></td>
-                                        <td class="item">
-                                            <select name="payment">
-                                                <option value=""></option>
-                                                <option value='nganluong' >Ngân lượng</option>
-                                                <option value='baokim' >Bảo kim</option>
-                                                <option value='dathang' >Đặt hàng</option>
-                                            </select>
-                                        </td>
-                                        <td class="label" style="width:60px;"><label for="filter_created">Từ ngày</label></td>
-                                        <td class="item"><input name="created" value="" id="filter_created" type="text" class="datepicker" /></td>
-                                        <td colspan='2' style='width:60px'>
-                                            <input type="submit" class="button blueB" value="Lọc" />
-                                            <input type="reset" class="basic" value="Reset" onclick="window.location.href = 'admin/order';">
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="label" style="width:60px;"><label for="filter_user">Thành viên</label></td>
-                                        <td class="item"><input name="customer" value="" id="filter_user" class="tipS" title="Nhập mã thành viên" type="text" /></td>
-                                        <td class="label"><label for="filter_status">Giao dịch</label></td>
-                                        <td class="item">
-                                            <select name="status">
-                                                <option></option>
-                                                <option value='0' >Đợi xử lý</option>
-                                                <option value='1' >Thành công</option>
-                                                <option value='2' >Hủy bỏ</option>
-                                            </select>
-                                        </td>
-                                        <td class="label"><label for="filter_created_to">Đến ngày</label></td>
-                                        <td class="item">
-                                            <input name="created_to" value="" id="filter_created_to" type="text" class="datepicker" />
-                                        </td>
-                                        <td class="label"></td>
-                                        <td class="item"></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </form>
-                    </td>
-                </tr>
-            </thead>
             <thead>
                 <tr>
                     <td style="width:10px;"><img src="public/admin/images/icons/tableArrows.png" /></td>
@@ -70,36 +59,23 @@
                 </tr>
             </thead>
 
-            <tfoot class="auto_check_pages">
-                <tr>
-                    <td colspan="8">
-                        <div class="list_action itemActions">
-                            <a href="#submit" id="submit" class="button blueB" url="admin/tran/del_all.html">
-                                <span style='color:white;'>Xóa hết</span>
-                            </a>
-                        </div>
-
-                    </td>
-                </tr>
-            </tfoot>
-
             <tbody class="list_item">
-                <?php foreach ($order->details as $row): ?>
+                <?php foreach ($order->Details as $row): ?>
                     <tr class='row'>
                         <td><input type="checkbox" name="id[]" value="<?php echo $row->OrderID; ?>" /></td>
                         <td class="textC"><?php echo $row->ProductID; ?></td>
                         <td>
-                            <?php echo $row->ProductName;?>
+                            <?php echo $row->ProductName; ?>
                         </td>
-                        <td><?php echo $row->Quantity; ?></td>
+                        <td class="form"><input style="width:30px" id="" value="<?php echo $row->Quantity;?>" min="0" name="quantity" type="number"></td>
                         <td>
-                            <?php echo format_price($row->Price);?> 
+                            <?php echo format_price($row->Price); ?> 
                         </td>
 
 
                         <td><?php echo format_price($row->Quantity * $row->Price); ?></td>
                         <td></td>
-                      
+
                     </tr>
                 <?php endforeach; ?>
             </tbody>

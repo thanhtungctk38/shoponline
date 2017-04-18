@@ -5,25 +5,16 @@ if (!defined('BASEPATH'))
 
 class MY_Model extends CI_Model {
 
-    // Ten table
     var $table = '';
-    // Key chinh cua table
     var $key = 'id';
-    // Order mac dinh (VD: $order = array('id', 'desc))
     var $order = '';
-    // Cac field select mac dinh khi get_list (VD: $select = 'id, name')
     var $select = '';
 
-    /**
-     * Them row moi
-     * $data : du lieu ma ta can them
-     */
-    function create($data = array()) {
+    function insert($data = array()) {
         if ($this->db->insert($this->table, $data)) {
             return $this->db->insert_id();
-        } else {
-            return 0;
         }
+        return FALSE;
     }
 
     /**
@@ -108,7 +99,7 @@ class MY_Model extends CI_Model {
      * $id : id can lay thong tin
      * $field : cot du lieu ma can lay
      */
-    function get_info($id, $field = '') {
+    function single($id, $field = '') {
         if (!$id) {
             return FALSE;
         }
@@ -137,24 +128,22 @@ class MY_Model extends CI_Model {
         return FALSE;
     }
 
-    /**
-     * Lay tong so
-     */
-    function get_total($input = array()) {
+    function total($input = array()) {
         if ((isset($input['where'])) && $input['where']) {
             $this->db->where($input['where']);
         }
         if ((isset($input['or_where'])) && $input['or_where']) {
             $this->db->or_where($input['or_where']);
         }
-        //tim kiem like
-        // $input['like'] = array('name' => 'abc');
+
         if ((isset($input['like'])) && $input['like']) {
             $this->db->like($input['like'][0], $input['like'][1]);
         }
 
         if ((isset($input['join'])) && $input['join']) {
-            $this->db->join($input['join'][0], $input['join'][1], $input['join'][2]);
+            foreach ($input['join'] as $row) {
+                $this->db->join($row[0], $row[1], $row[2]);
+            }
         }
 
         $query = $this->db->get($this->table);
@@ -193,12 +182,13 @@ class MY_Model extends CI_Model {
      * Lay danh sach
      * $input : mang cac du lieu dau vao
      */
-    function get_list($input = array()) {
+    function get_all($input = array()) {
         //xu ly ca du lieu dau vao
         $this->get_list_set_input($input);
 
         //thuc hien truy van du lieu
         $query = $this->db->get($this->table);
+
         //echo $this->db->last_query();
         return $query->result();
     }
@@ -228,7 +218,9 @@ class MY_Model extends CI_Model {
         }
 
         if ((isset($input['join'])) && $input['join']) {
-            $this->db->join($input['join'][0], $input['join'][1], $input['join'][2]);
+            foreach ($input['join'] as $row) {
+                $this->db->join($row[0], $row[1], $row[2]);
+            }
         }
         // Thêm sắp xếp dữ liệu thông qua biến $input['order'] 
         //(ví dụ $input['order'] = array('id','DESC'))

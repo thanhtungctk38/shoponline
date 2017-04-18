@@ -32,7 +32,8 @@
             </div>
 
             <div class="col-md-5">
-                <form id="sky-form1" class="log-reg-block sky-form" style="" action="customer/login" method="post">
+                <?php $call = $this->uri->segment(3);?>
+                <form id="sky-form1" class="log-reg-block sky-form" style="" action="customer/login/<?php echo $call; ?>" method="post">
                     <h2>Đăng nhập</h2>
 
                     <div class="row">
@@ -45,7 +46,7 @@
                     <div class="row">
                         <label class="col-lg-4" for="param_password">Mật khẩu</label>
                         <div class="input login-input col-lg-8">
-                            <input id="param_password" type="password"  name="password" class="form-control" value="<?php echo set_value('password')?>">
+                            <input id="param_password" type="password"  name="password" class="form-control" value="<?php echo set_value('password') ?>">
                             <div class="clear error" name="password_error"><?php echo form_error('password') ?></div>
                         </div>
                     </div>
@@ -55,13 +56,13 @@
                             <a href=""> Quên mật khẩu </a>
                         </div>
                     </div>
-                     <div class="row">
+                    <div class="row">
                         <label class="col-lg-4"></label>
                         <div class="col-lg-8">
-                          <div style="color:red"><?php echo form_error('login') ?></div>
+                            <div style="color:red"><?php echo form_error('login') ?></div>
                         </div>
                     </div>
-                  
+
                     <div class="row">
                         <label class="col-lg-4"></label>
                         <div class="col-lg-6">

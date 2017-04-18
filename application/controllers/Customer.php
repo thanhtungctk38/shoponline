@@ -7,7 +7,7 @@ class Customer extends MY_Controller {
         $this->load->model('customer_model');
     }
 
-    function login() {
+    function login($call = '') {
         $this->load->library('form_validation');
         $this->load->helper('form');
         if ($this->input->post()) {
@@ -23,7 +23,7 @@ class Customer extends MY_Controller {
                 $user = $this->customer_model->get_info_rule($where);
                 $this->session->set_userdata('user_login', $user);
                 $this->session->set_userdata('flash_message', 'Đăng nhập thành công');
-                redirect(base_url());
+                redirect(base_url($call));
             }
         }
         $this->data = array(
@@ -37,8 +37,8 @@ class Customer extends MY_Controller {
         $username = $this->input->post('username');
         $password = $this->input->post('password');
         $password = md5($password);
-        if($this->customer_model->check_login($username, $password))
-                return true;
+        if ($this->customer_model->check_login($username, $password))
+            return true;
         $this->form_validation->set_message(__FUNCTION__, 'Tên đăng nhập hoặc mật không chính xác');
         return false;
     }
@@ -82,7 +82,7 @@ class Customer extends MY_Controller {
                 'Phone' => $phone
             );
 
-            if ($this->customer_model->create($data)) {
+            if ($this->customer_model->insert($data)) {
                 $this->session->set_flashdata('message', 'Thêm mới dữ liệu thành công');
             } else {
                 $this->session->set_flashdata('message', 'Không thể thêm dữ liệu');
@@ -128,6 +128,13 @@ class Customer extends MY_Controller {
             $this->session->unset_userdata('user_login');
             redirect(base_url());
         }
+    }
+
+    function account() {
+        $this->data = array(
+            'temp' => 'site/customer/account'
+        );
+        $this->load->view('site/shared/layout', $this->data);
     }
 
 }

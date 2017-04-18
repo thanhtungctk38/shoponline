@@ -13,35 +13,26 @@ class Order extends MY_Controller {
         $this->load->library('pagination_library');
         $per_page = $this->pagination_library->per_page;
         $offset = $this->pagination_library->get_offset();
-        $input += array(
-            'select' => 'Order.*, Customer.*',
-            'join' => array(
-                'customer',
-                'Order.CustomerID=Customer.CustomerID',
-                ''
-            ),
+        $input = array(
             'limit' => array($per_page, $offset)
         );
-        $total = $this->order_model->get_total($input);
+        $total = $this->order_model->total($input);
         $url = admin_url('order');
         $this->data = array(
             'message' => $this->session->flashdata('message'),
             'total' => $total,
             'temp' => 'admin/order/index',
-            'list' => $this->order_model->get_list($input),
+            'list' => $this->order_model->get_order($per_page, $offset),
             'pagination' => $this->pagination_library->create_links($total, $url)
         );
         $this->load->view('admin/shared/layout', $this->data);
     }
 
     public function detail($id) {
-        
         $this->data = array(
             'message' => $this->session->flashdata('message'),
             'temp' => 'admin/order/detail',
             'order' => $this->order_model->get_order_detail($id),
-            'pagination' =>''
-                //$this->pagination_library->create_links($total, $url)
         );
         $this->load->view('admin/shared/layout', $this->data);
     }

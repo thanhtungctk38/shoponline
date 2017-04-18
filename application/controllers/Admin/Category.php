@@ -20,8 +20,8 @@ class Category extends MY_Controller {
         $this->data = array(
             'message' => $this->session->flashdata('message'),
             'temp' => 'admin/category/index',
-            'total' => $this->category_model->get_total(),
-            'list' => $this->category_model->get_list($input)
+            'total' => $this->category_model->total(),
+            'list' => $this->category_model->get_all($input)
         );
         $this->load->view('admin/shared/layout', $this->data);
     }
@@ -45,7 +45,7 @@ class Category extends MY_Controller {
                 'ParentID' => $parentid,
                 'Description' => $description
             );
-            if ($this->category_model->create($data)) {
+            if ($this->category_model->insert($data)) {
                 $this->session->set_flashdata('message', 'Thêm mới dữ liệu thành công');
             } else {
                 $this->session->set_flashdata('message', 'Không thể thêm dữ liệu');
@@ -54,7 +54,7 @@ class Category extends MY_Controller {
         }
         $this->data = array(
             'temp' => 'admin/category/add',
-            'list' => $this->category_model->get_list()
+            'list' => $this->category_model->get_all()
         );
         $this->load->view('admin/shared/layout', $this->data);
     }
@@ -62,7 +62,7 @@ class Category extends MY_Controller {
     function delete() {
         $id = $this->uri->segment(4);
         $id = intval($id);
-        $info = $this->category_model->get_info($id);
+        $info = $this->category_model->single($id);
         if (!$info) {
             $this->session->set_flashdata('message', 'Không tồn tại danh mục này');
             redirect(admin_url('category'));
@@ -79,7 +79,7 @@ class Category extends MY_Controller {
         $id = $this->uri->segment(4);
         $id = intval($id);
 
-        $info = $this->category_model->get_info($id);
+        $info = $this->category_model->single($id);
 
         if ($this->input->post()) {
             $this->form_validation->set_rules('categoryname', 'Tên danh mục', 'required|max_length[50]');
@@ -104,7 +104,7 @@ class Category extends MY_Controller {
         }
 
         $this->data = array(
-            'list' => $this->category_model->get_list(),
+            'list' => $this->category_model->get_all(),
             'temp' => 'admin/category/edit',
             'info' => $info
         );

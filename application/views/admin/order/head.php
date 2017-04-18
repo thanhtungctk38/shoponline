@@ -8,7 +8,7 @@
         <div class="horControlB menu_action">
             <ul>
 
-                <li><a href="admin/tran.html">
+                <li><a href="admin/order">
                         <img src="public/admin/images/icons/control/16/list.png" />
                         <span>Danh sách</span>
                     </a></li>

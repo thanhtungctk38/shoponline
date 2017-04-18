@@ -124,7 +124,7 @@
                     <a href="customer/login">Đăng nhập</a> /
                     <a href="customer/register">Đăng kí</a>
                 <?php else: ?>
-                    Xin chào <strong> <?php echo $user->Name; ?></strong> ! |
+                    Xin chào <strong> <?php echo $user->CustomerName; ?></strong> ! |
                     <a href="">Tài khoản</a> |
                     <a href="customer/logout">Đăng xuất</a>
                 <?php endif; ?>
