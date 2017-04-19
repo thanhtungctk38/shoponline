@@ -12,7 +12,9 @@ class Home extends MY_Controller {
     }
 
     function index() {
-        $totals = array(
+       // $this->load->library("Datetime_library");
+       // pre($this->datetime_library->get_current_month());
+                $totals = array(
             'order' => $this->order_model->total(),
             'product' => $this->product_model->total(),
             'category' => $this->category_model->total(),
@@ -20,8 +22,11 @@ class Home extends MY_Controller {
             'employee' => $this->account_model->total()
         );
         $sales = array(
-            'all'=>$this->order_model->get_total_sales(),
-            'today'=>$this->order_model->get_today_sales()
+            'all'=>$this->order_model->get_total_sales_by_type('all'),
+            'today'=>$this->order_model->get_total_sales_by_type('today'),
+            'week'=>$this->order_model->get_total_sales_by_type('thisweek'),
+            'month'=>$this->order_model->get_total_sales_by_type('thismonth'), 
+            'year'=>$this->order_model->get_total_sales_by_type('thisyear')
         );
         $this->data = array(
             'temp' => 'admin/home/index',
