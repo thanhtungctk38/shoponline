@@ -4,32 +4,17 @@ class Cart extends MY_Controller {
 
     public function __construct() {
         parent::__construct();
+        $this->load->library('form_validation');
+        $this->load->helper('form');
     }
 
     function index() {
-        $this->load->library('form_validation');
-        $this->load->helper("form");
-        if ($this->input->post()) {
-            $this->form_validation->set_rules('login', 'Đăng nhập', 'callback_check_login');
-            if ($this->form_validation->run()) {
-                $username = $this->input->post('username');
-                $password = $this->input->post('password');
-                $password = md5($password);
-                $where = array(
-                    'Username' => $username,
-                    'Password' => $password
-                );
-                $user = $this->customer_model->get_info_rule($where);
-                $this->session->set_userdata('user_login', $user);
-                $this->session->set_userdata('flash_message', 'Đăng nhập thành công');
-                redirect('cart');
-            }
-        }
         $this->data = array(
             'temp' => 'site/cart/index',
             'title' => 'Trang giỏ hàng 4MENSHOP Thương hiệu thời trang nam giá rẻ',
             'cart' => $this->cart->contents(),
-            'total' => $this->cart->total()
+            'total' => $this->cart->total(),
+            'message' => $this->session->flashdata('message')
         );
         $this->load->view('site/shared/layout', $this->data);
     }
@@ -48,7 +33,7 @@ class Cart extends MY_Controller {
     function add($id, $qty = 1) {
         $this->load->model('product_model');
 
-        $product = $this->product_model->get_info($id);
+        $product = $this->product_model->single($id);
         $cart = array(
             'id' => $id,
             'qty' => $qty,
@@ -58,9 +43,8 @@ class Cart extends MY_Controller {
                 'image' => $product->Image
             )
         );
-         $this->cart->insert($cart);
+        $this->cart->insert($cart);
         redirect(base_url('gio-hang.html'));
-       
     }
 
     public function update($id, $qty) {
@@ -105,36 +89,75 @@ class Cart extends MY_Controller {
         redirect(base_url('cart'));
     }
 
-    function send($customerID) {
-        $this->load->model('order_model');
-        $this->load->model('orderdetail_model');
-        $order = array(
-            'OrderID' => 0,
-            'CustomerID' => $customerID,
-            'OrderAddress' => $this->input->post('address'),
-            'Total' => $this->cart->total(),
-            'OrderDate'=>gmdate('Y-m-d H:i:s', time() + 7 * 3600)
-        );
-
-        $order_id = $this->order_model->Create($order);
-
-        $cart = $this->cart->contents();
-        foreach ($cart as $product) {
-            $order_detail = array(
-                'OrderID' => $order_id,
-                'ProductID' => $product['id'],
-                'Quantity' => $product['qty'],
-                'Price' => $product['price']
-            );
-            $this->orderdetail_model->create($order_detail);
+    function send($customerID = '') {
+        if ($this->cart->total() == 0) {
+            $this->session->set_flashdata('message', 'Vui lòng chọn sản phẩm trước khi đặt hàng');
+            redirect(base_url('cart'));
         }
-        $this->cart->destroy();
 
-        //load view
-        header("refresh:5;url=" . base_url());
+        //Nếu có dữ liệu post lên thì kiểm tra
+        if ($this->input->post()) {
+            $this->form_validation->set_rules('name', 'Họ và tên', 'required');
+            $this->form_validation->set_rules('email', 'Email', 'required|valid_email');
+            $this->form_validation->set_rules('phone', 'Số điện thoại', 'required|numeric|max_length[12]|min_length[9]');
+            $this->form_validation->set_rules('address', 'Địa chỉ', 'required');
+        }
+        $kt = FALSE;
+        $payment = '';
+        $total = $this->cart->total();
+        if ($this->form_validation->run()) {
+            $kt = TRUE;
+            $this->load->model('order_model');
+            $this->load->model('orderdetail_model');
+            $payment = $this->input->post('payment');
+            $order = array(
+                'OrderID' => 0,
+                'CustomerID' => $customerID,
+                'OrderAddress' => $this->input->post('address'),
+                'Total' => $this->cart->total(),
+                'OrderDate' => gmdate('Y-m-d H:i:s', time() + 7 * 3600),
+                'Payment' => $payment
+            );
 
-        echo '<div style="text-align: center;padding: 20px 10px;">Đặt hàng thành công <br>Cảm ơn bạn đã đặt hàng của shop. Shop sẽ confirm lại với bạn trong thời gian sớm nhất để xác nhận đơn hàng.<br>
+            if ($customerID == '') {
+                $order += array(
+                    'CustomerName' => $this->input->post('name'),
+                    'Email' => $this->input->post('email'),
+                    'Phone' => $this->input->post('phone')
+                );
+            }
+
+            $order_id = $this->order_model->insert($order);
+
+            $cart = $this->cart->contents();
+            foreach ($cart as $product) {
+                $order_detail = array(
+                    'OrderID' => $order_id,
+                    'ProductID' => intval($product['id']),
+                    'Quantity' => $product['qty'],
+                    'Price' => $product['price']
+                );
+                $this->orderdetail_model->insert($order_detail);
+            }
+            $this->cart->destroy();
+            switch ($payment) {
+                case 'cod':
+                    header("refresh:5;url=" . base_url());
+
+                    echo '<div style="text-align: center;padding: 20px 10px;">Đặt hàng thành công <br>Cảm ơn bạn đã đặt hàng của shop. Shop sẽ confirm lại với bạn trong thời gian sớm nhất để xác nhận đơn hàng.<br>
                     Trình duyệt sẽ tự động chuyển về trang chủ sau 5s, hoặc bạn có thể click <a href="localhost/shoponline">here</a>.</div>';
+                    break;
+                case 'nganluong':
+                    $url = "https://www.nganluong.vn/button_payment.php?receiver=ngthtung2805@gmail.com&product_name=4MENSHOP - Don hang so {$order_id}&price={$total}&return_url=(URL thanh toán thành công)&comments=";
+                    header('refresh:3; url=' . $url);
+                    echo '<div style="text-align: center;padding: 20px 10px;">Đặt hàng thành công <br>Cảm ơn bạn đã đặt hàng của shop.<br>
+                    Trình duyệt sẽ tự động chuyển sang <strong> Ngân lượng </strong> để tiến hành thanh toán sau 5s, hoặc bạn có thể  <a href="' . $url . '">nhấn vào đây</a>.</div>';
+                    break;
+            }
+        }
+        if (!$kt) {
+            $this->index();
+        }
     }
 
 }

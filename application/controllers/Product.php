@@ -18,8 +18,8 @@ class Product extends MY_Controller {
             'limit' => array($this->per_page, $offset),
             'where' => 'CategoryID =' . $id
         );
-        $total = $this->product_model->get_total($input);
-        $category = $this->category_model->get_info($id);
+        $total = $this->product_model->total($input);
+        $category = $this->category_model->single($id);
         $url = product_link($id, $category->CategoryName);
         $this->_default($total, $url, $category->CategoryName, $input);
     }
@@ -29,7 +29,7 @@ class Product extends MY_Controller {
         $input = array(
             'limit' => array($this->per_page, $offset),
         );
-        $total = $this->product_model->get_total($input);
+        $total = $this->product_model->total($input);
         $url = 'product/all';
         $this->_default($total, $url, 'Thời trang nam', $input);
     }
@@ -40,7 +40,7 @@ class Product extends MY_Controller {
             'title' => $title,
             'totalRows' => $total,
             'pagination' => $this->pagination_library->create_links($total, $url),
-            'listProducts' => $this->product_model->get_list($input),
+            'listProducts' => $this->product_model->get_all($input),
             'hottestProducts' => $this->product_model->get_hottest_products(5),
             'categories' => $this->category_model->get_categories()
         );

@@ -5,7 +5,7 @@ class ProductDetail extends MY_Controller{
         $this->load->model('product_model');
     }
     function index($id){
-        $product = $this->product_model->get_info($id);
+        $product = $this->product_model->single($id);
         
         $this->load->model('category_model');
         $category = $this->category_model->get_parent_category($product->CategoryID);

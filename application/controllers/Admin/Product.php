@@ -32,7 +32,7 @@ class Product extends MY_Controller {
 
         $per_page = $this->pagination_library->per_page;
         $offset = $this->pagination_library->get_offset();
-        $total = $this->product_model->get_total($input);
+        $total = $this->product_model->total($input);
         $input['limit'] = array($per_page, $offset);
 
         $url = base_url("admin/product/index?id=$id&name=$name&category=$cateId");
@@ -40,7 +40,7 @@ class Product extends MY_Controller {
             'message' => $this->session->flashdata('message'),
             'total' => $total,
             'temp' => 'admin/product/index',
-            'list' => $this->product_model->get_list($input),
+            'list' => $this->product_model->get_all($input),
             'categories' => $this->category_model->get_categories(),
             'pagination' => $this->pagination_library->create_links($total, $url)
         );
@@ -49,7 +49,7 @@ class Product extends MY_Controller {
     }
 
     function delete($id) {
-        $info = $this->product_model->get_info($id);
+        $info = $this->product_model->single($id);
         if (!$info) {
             $this->session->set_flashdata('message', 'Không tồn tại sản phẩm này');
             redirect(admin_url('product'));
@@ -92,7 +92,7 @@ class Product extends MY_Controller {
                 'Image' => $image
             );
 
-            if ($this->product_model->create($data)) {
+            if ($this->product_model->insert($data)) {
                 $this->session->set_flashdata('message', 'Thêm mới dữ liệu thành công');
             } else {
                 $this->session->set_flashdata('message', 'Không thể thêm dữ liệu');
@@ -108,7 +108,7 @@ class Product extends MY_Controller {
     }
 
     function edit($id) {
-        $info = $this->product_model->get_info($id);
+        $info = $this->product_model->single($id);
         $this->load->library('form_validation');
         $this->load->helper('form');
         if ($this->input->post()) {

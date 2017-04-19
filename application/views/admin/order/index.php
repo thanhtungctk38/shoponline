@@ -93,10 +93,22 @@
                         <td><input type="checkbox" name="id[]" value="<?php echo $row->OrderID; ?>" /></td>
                         <td class="textC"><?php echo $row->OrderID; ?></td>
                         <td>
-                            <?php echo $row->Name; ?>
+                            <?php echo $row->CustomerName; ?>
                         </td>
                         <td class="textR red"><?php echo format_price($row->Total); ?></td>
                         <td>
+                            <?php switch ($row->Payment){
+                               case 'nganluong':
+                                   echo 'Ngân lượng';
+                                   break;
+                               case 'baokim':
+                                   echo 'Bảo kim';
+                                   break;
+                               case 'cod':
+                                   echo 'Thanh toán sau khi nhận hàng';
+                                   break;
+                                
+                            }?>
                         </td>
 
 
@@ -115,7 +127,7 @@
                         <td class="textC"><?php echo $row->OrderDate; ?></td>
 
                         <td class="textC">
-                            <a href="admin/tran/view/21.html" class="lightbox">
+                            <a href="admin/order/detail/<?php echo $row->OrderID;?>" class="lightbox">
                                 <img src="public/admin/images/icons/color/view.png" />
                             </a>
 

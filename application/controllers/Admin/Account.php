@@ -18,8 +18,8 @@ class Account extends MY_Controller {
 
         $this->data = array(
             'temp' => 'admin/account/admin',
-            'list' => $this->account_model->get_list($option),
-            'total' => $this->account_model->get_total($option),
+            'list' => $this->account_model->get_all($option),
+            'total' => $this->account_model->total($option),
             'message' => $this->session->flashdata('message')
         );
         $this->load->view('admin/shared/layout', $this->data);
@@ -31,8 +31,8 @@ class Account extends MY_Controller {
         );
         $this->data = array(
             'temp' => 'admin/account/user',
-            'list' => $this->account_model->get_list($option),
-            'total' => $this->account_model->get_total($option)
+            'list' => $this->account_model->get_all($option),
+            'total' => $this->account_model->total($option)
         );
         $this->load->view('admin/shared/layout', $this->data);
     }
@@ -41,8 +41,8 @@ class Account extends MY_Controller {
         $this->load->model('role_model');
         $this->data = array(
             'temp' => 'admin/account/role',
-            'list' => $this->permission_model->get_list(),
-            'total' => $this->permission_model->get_total()
+            'list' => $this->permission_model->get_all(),
+            'total' => $this->permission_model->total()
         );
         $this->load->view('admin/shared/layout', $this->data);
     }
@@ -94,7 +94,7 @@ class Account extends MY_Controller {
                 'Image'=>$image
             );
           
-            if ($this->account_model->create($data)) {
+            if ($this->account_model->insert($data)) {
                 $this->session->set_flashdata('message', 'Thêm mới dữ liệu thành công');
             } else {
                 $this->session->set_flashdata('message', 'Không thể thêm dữ liệu');
@@ -140,7 +140,7 @@ class Account extends MY_Controller {
         $this->load->helper('form');
         $id = $this->uri->segment(4);
         $id = intval($id);
-        $info = $this->account_model->get_info($id);
+        $info = $this->account_model->single($id);
         if (!$info) {
             $this->session->set_flashdata('message', "Không tồn tại tài khoản này");
             redirect(admin_url('account/admin'));
@@ -155,7 +155,7 @@ class Account extends MY_Controller {
     function delete() {
         $id = $this->uri->segment(4);
         $id = intval($id);
-        $info = $this->account_model->get_info($id);
+        $info = $this->account_model->single($id);
         if (!$info) {
             $this->session->set_flashdata('message', 'Không tồn tại tài khoản này');
             redirect(admin_url('account/admin'));

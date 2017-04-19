@@ -11,10 +11,10 @@ class Category_model extends MY_Model {
             'where' => array('ParentID' => NULL)
         );
 
-        $categories = $this->get_list($cateOption);
+        $categories = $this->get_all($cateOption);
         foreach ($categories as $row) {
             $cateOption['where'] = array('ParentID' => $row->CategoryID);
-            $subs = $this->get_list($cateOption);
+            $subs = $this->get_all($cateOption);
             $row->subs = $subs;
         }
         return $categories;
@@ -22,8 +22,8 @@ class Category_model extends MY_Model {
 
     function get_parent_category($id) {
       
-        $category = $this->get_info($id );
-        $category->Parent = $this->get_info($category->ParentID);
+        $category = $this->single($id );
+        $category->Parent = $this->single($category->ParentID);
         return $category;
     }
 
