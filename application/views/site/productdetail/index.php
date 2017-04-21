@@ -91,17 +91,16 @@
                                         </p>
                                         <div class="box-cart-bottom">
                                             <p class="buttons_bottom_block">
-                                                <button type="button" id="buyNow" rel="7745" class=" btn btn-danger btn-buynow" value="Mua ngay" onclick="addToCart(<?php echo $product->ProductID;?>)"> 
+                                                <button type="button" id="buyNow" rel="7745" class=" btn btn-danger btn-buynow" value="Mua ngay" onclick="addToCart(<?php echo $product->ProductID; ?>)"> 
                                                     <i class="fa fa-shopping-cart "></i>
                                                     <span>Mua ngay</span>
                                                 </button>
                                                 <script>
-                                                    function addToCart(id){
-                                                        var qty = document.getElementById("quantityBuy").value;
-                                                        window.location= "cart/add/"+ id+"/"+qty;
+                                                    function addToCart(id) {
+                                                        var qty = $("#quantityBuy").val();
+                                                        window.location = "cart/add/" + id + "/" + qty;
                                                     }
-                                                    </script>
-                                        
+                                                </script>
                                             </p>
                                         </div>
                                     </div>
@@ -118,7 +117,11 @@
                     </div>
                     <div class="moreinfo_block" class="clear">
                         <ul class="nav nav-tabs tab-info page-product-heading">
-                            <li class="active"><a data-toggle="tab" href="#idTab1">Mô tả sản phẩm</a>
+                            <li class="active">
+                                <a data-toggle="tab" href="#idTab1">Mô tả sản phẩm</a>
+                            </li>
+                             <li>
+                                <a data-toggle="tab" href="#reviews">Bình luận sản phẩm</a>
                             </li>
                         </ul>
                         <div class="tab-content ">
@@ -137,43 +140,74 @@
                                     <br /> <span style="font-family:sans-serif">- Hai túi trước, sau có độ sâu rộng phù hợp rất tiện lợi</span>
                                     <br /> <span style="font-family:sans-serif">- Nút và khóa quần đều là kim loại không gỉ, giúp đạt chất lượng sử dụng tối ưu</span>
                                     <br /> <span style="font-family:sans-serif">- Màu sắc và kiểu dáng cho bạn tính ứng dụng rất cao</span>
-                                    <div style="text-align:center">
-                                        <br /> <span style="font-family:sans-serif"><img src="http://4menshop.com/images/thumbs/2017/03/quan-jean-rach-goi-den-qj1395-7745-slide-1.jpg?t=1490537670" alt="Quần jean rách gối đen qj1395 - 2" /><br /> <br /> <img src="http://4menshop.com/images/thumbs/2017/03/quan-jean-rach-goi-den-qj1395-7745-slide-3.jpg?t=1490537675" alt="Quần jean rách gối đen qj1395 - 3" /></span>
-                                    </div>
-                                    <div class="buy-box-bottom-detail">
-                                        <p class="price_display col-md-6 col-sm-6" style="margin-bottom:0px;"> Giá: <span class="price special-price"> 325.000</span> </p>
-                                        <p class="col-md-6 col-sm-6" align="right" style="margin-bottom:0px;"> Size:
-                                            <select name="sizeSelect" id="sizeSelectBottom" style="width:70px; display:inline-block;margin-left:5px;">
-                                                <option value="28">28</option>
-                                                <option value="29">29</option>
-                                                <option value="30">30</option>
-                                                <option value="31">31</option>
-                                                <option value="32">32</option>
-                                                <option value="34">34</option>
-                                            </select>
-                                            <input have-size="1" type="button" id="buyNowBottom" rel="7745" class="btn btn-danger" value="Mua ngay" style="text-transform:uppercase;font-weight:bold; margin-top:-5px; margin-left:5px;" /> </p>
-                                        <div style="clear:both;"></div>
-                                    </div>
-                                    <div class="tags"> <span>Từ khóa thời trang: </span> <a href="http://4menshop.com/thoi-trang/jean-nam-skinny.html" title="jean nam skinny">jean nam skinny</a><a href="http://4menshop.com/thoi-trang/jean-skinny-nam.html" title="jean skinny nam">jean skinny nam</a><a href="http://4menshop.com/thoi-trang/jean-skinny-nam-tphcm.html" title="jean skinny nam tphcm">jean skinny nam tphcm</a><a href="http://4menshop.com/thoi-trang/jeans-skinny-nam.html" title="jeans skinny nam">jeans skinny nam</a><a href="http://4menshop.com/thoi-trang/quan-bo-skinny.html" title="quần bò skinny">quần bò skinny</a><a href="http://4menshop.com/thoi-trang/quan-jean-nam-skinny.html" title="quần jean nam skinny">quần jean nam skinny</a><a href="http://4menshop.com/thoi-trang/quan-jean-skinny-nam-gia-re.html" title="quần jean skinny nam giá rẻ">quần jean skinny nam giá rẻ</a><a href="http://4menshop.com/thoi-trang/quan-jean-skinny-nam-ha-noi.html" title="quần jean skinny nam hà nội">quần jean skinny nam hà nội</a><a href="http://4menshop.com/thoi-trang/quan-jeans-skinny.html" title="quần jeans skinny">quần jeans skinny</a><a href="http://4menshop.com/thoi-trang/quan-jeans-skinny-nam.html" title="quần jeans skinny nam">quần jeans skinny nam</a>
-                                        <div style="clear:both;"></div>
-                                    </div>
-                                    <div style="border-top:1px dotted #CCC; margin-top:10px; padding-top:10px;">
-                                        <table style="width:100%" class="table-social">
-                                            <tbody>
-                                                <tr>
-                                                    <td width="50%" align="center" style="height:30px;"> Thích và chia sẻ </td>
-                                                    <td width="50%" align="center">Tham gia Page cộng đồng</td>
-                                                </tr>
-                                                <tr>
-                                                    <td align="center"> <span> <div class="fb-like" data-href="http://4menshop.com/quan-jeans-rach/quan-jean-rach-goi-den-qj1395-7745.html" data-send="true" data-layout="button_count" data-width="100" data-show-faces="true" data-font="arial"></div> </span> <span> <div class="g-plusone" data-size="medium"></div> </span> </td>
-                                                    <td align="center"> <span> <div class="fb-like" data-href="http://www.facebook.com/4menshopcom" data-width="70" data-layout="button_count" data-action="like" data-show-faces="false" data-height="20"></div> </span> <span> <div class="g-plusone" data-size="medium" data-count="true" data-href="http://4menshop.com/" data-lang="vi-VN"></div> </span> </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                    <div class="navigationLinks"> <a class="prev" href="http://4menshop.com/quan-jeans-rach/quan-jean-rach-xanh-qj1391-7740.html" title="Quần Jean Rách Xanh QJ1391">Quần Jean Rách Xanh QJ1391</a> <a class="next" href="http://4menshop.com/quan-jeans-rach/quan-jean-xanh-den-qj1397-7747.html" title="Quần Jean Xanh Đen QJ1397">Quần Jean Xanh Đen QJ1397</a> </div>
+
                                 </div>
                             </section>
+                            <div class="tab-pane fade active in" id="reviews">
+                                <div class="product-comment margin-bottom-40">
+                                    <div class="product-comment-in">
+                                        <img class="product-comment-img rounded-x" src="assets/img/team/01.jpg" alt="">
+                                        <div class="product-comment-dtl">
+                                            <h4>Mickel <small>22 days ago</small></h4>
+                                            <p>I like the green colour, it's very likeable and reminds me of Hollister. A little loose though but I am very skinny</p>
+                                            <ul class="list-inline product-ratings">
+                                                <li class="reply"><a href="#">Reply</a></li>
+                                                <li class="pull-right">
+                                                    <ul class="list-inline">
+                                                        <li><i class="rating-selected fa fa-star"></i></li>
+                                                        <li><i class="rating-selected fa fa-star"></i></li>
+                                                        <li><i class="rating-selected fa fa-star"></i></li>
+                                                        <li><i class="rating fa fa-star"></i></li>
+                                                        <li><i class="rating fa fa-star"></i></li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h3 class="heading-md margin-bottom-30">Add a review</h3>
+                                <form action="assets/php/demo-contacts-process.php" method="post" id="sky-form3" class="sky-form sky-changes-4">
+                                    <fieldset>
+                                        <div class="margin-bottom-30">
+                                            <label class="label-v2">Name</label>
+                                            <label class="input">
+                                                <input name="name" id="name" type="text">
+                                            </label>
+                                        </div>
+
+                                        <div class="margin-bottom-30">
+                                            <label class="label-v2">Email</label>
+                                            <label class="input">
+                                                <input name="email" id="email" type="email">
+                                            </label>
+                                        </div>
+
+                                        <div class="margin-bottom-30">
+                                            <label class="label-v2">Review</label>
+                                            <label class="textarea">
+                                                <textarea rows="7" name="message" id="message"></textarea>
+                                            </label>
+                                        </div>
+                                    </fieldset>
+
+                                    <footer class="review-submit">
+                                        <label class="label-v2">Review</label>
+                                        <div class="stars-ratings">
+                                            <input name="stars-rating" id="stars-rating-5" type="radio">
+                                            <label for="stars-rating-5"><i class="fa fa-star"></i></label>
+                                            <input name="stars-rating" id="stars-rating-4" type="radio">
+                                            <label for="stars-rating-4"><i class="fa fa-star"></i></label>
+                                            <input name="stars-rating" id="stars-rating-3" type="radio">
+                                            <label for="stars-rating-3"><i class="fa fa-star"></i></label>
+                                            <input name="stars-rating" id="stars-rating-2" type="radio">
+                                            <label for="stars-rating-2"><i class="fa fa-star"></i></label>
+                                            <input name="stars-rating" id="stars-rating-1" type="radio">
+                                            <label for="stars-rating-1"><i class="fa fa-star"></i></label>
+                                        </div>
+                                        <button type="button" class="btn-u btn-u-sea-shop btn-u-sm pull-right">Submit</button>
+                                    </footer>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -216,7 +250,7 @@
                 </div>
 
                 <div id="special_block_right" class="block hidden-xs">
-                    <p class="title_block"> <a href="<?php //echo product_link($id, $name);  ?>" title="thoi trang hot nhat"> Thời trang hot nhất </a> </p>
+                    <p class="title_block"> <a href="<?php //echo product_link($id, $name);     ?>" title="thoi trang hot nhat"> Thời trang hot nhất </a> </p>
                     <div class="block_content products-block">
                         <ul>
                             <?php foreach ($hottestProducts as $product): ?>
@@ -238,50 +272,7 @@
                     <p class="title_block"> Từ khóa thời trang </p>
                     <div class="block_content"> <a href="http://4menshop.com/ao-quan-nam.html" title="ao quan nam">Áo quần nam</a> <a href="http://4menshop.com/ao-so-mi-nam.html" title="ao so mi nam">Áo sơ mi nam</a> <a href="http://4menshop.com/ao-vest-nam.html" title="ao vest nam">Áo vest nam</a> <a href="http://4menshop.com/quan-kaki-nam.html" title="quan kaki nam">Quần kaki nam</a> <a href="http://4menshop.com/quan-jean-nam.html" title="quan jean nam">Quần jean nam</a> <a href="http://4menshop.com/quan-tay-nam.html" title="quan tay nam">Quần tây nam</a> <a href="http://4menshop.com/ao-khoac-da.html" title="ao da nam">Áo da nam</a> <a href="http://4menshop.com/ao-khoac-nam.html" title="ao khoac nam">Áo khoác nam</a> <a href="http://4menshop.com/ao-len-nam.html" title="ao len nam">Áo len nam</a> <a href="http://4menshop.com/quan-nam.html" title="quan nam">Quần nam</a> <a href="http://4menshop.com/ao-nam.html" title="ao nam">Áo nam</a> <a href="http://4menshop.com/ao-thun-nam.html" title="ao thun nam">Áo thun nam</a> <a href="http://4menshop.com/giay-nam.html" title="giay nam">Giày nam</a> <a href="http://4menshop.com/vi-da-nam.html" title="vi da nam">Ví da nam</a> <a href="http://4menshop.com/that-lung-nam.html" title="That lung nam">Thắt lưng nam</a> <a href="http://4menshop.com/quan-ao-nam.html" title="quan ao nam">Quần áo nam</a> <a href="http://4menshop.com/quan-jean-nam-ha-noi.html" title="quan jean nam ha noi">Quần jean nam Hà Nội</a> </div>
                 </div>
-                <div class="block box-menu buy-box-right">
-                    <h2 class="title_block" align="center"> MUA SẢN PHẨM </h2>
-                    <div class="block_content_buy_right">
-                        <div class="content_prices price clearfix">
-                            <label class="col-md-4">Giá: </label>
-                            <p class="our_price_display col-md-8"> <span> 325.000</span> </p>
-                            <div class="clear"></div>
-                        </div>
-                        <div class="box-info-product">
-                            <div class="product_attributes clearfix">
-                                <div id="attributes">
-                                    <div class="clearfix"></div>
-                                    <fieldset class="attribute_fieldset">
-                                        <label class="attribute_label" for="group_1">Kích thước</label>
-                                        <div class="attribute_list">
-                                            <select name="sizeSelect" id="sizeSelectRight" style="width:70px;">
-                                                <option value="28">28</option>
-                                                <option value="29">29</option>
-                                                <option value="30">30</option>
-                                                <option value="31">31</option>
-                                                <option value="32">32</option>
-                                                <option value="34">34</option>
-                                            </select>
-                                        </div>
-                                    </fieldset>
-                                </div>
-                                <p>
-                                    <label class="m-w-68">Số lượng</label>
-                                    <input class="text" style="width:70px; text-align:center;" type="number" min="1" max="10" value="1" id="quantityBuyRight" /> <span class="clearfix"></span> </p>
-                                <div class="box-cart-bottom">
-                                    <p class="buttons_bottom_block">
-                                        <button type="button" id="buyNowRight" rel="7745" have-size="1" class="btn-check-out btn btn-danger btn-buynow" value="Mua ngay"> <i class="fa fa-shopping-cart "></i><span>Mua ngay</span>
-                                        </button>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="hotline" style="padding:10px;"> <i class="fa fa-phone"></i> <span>0868.044.644</span> <span>0868.444.644</span>
-                            <div style="clear:both"></div>
-                        </div>
-                    </div>
-                </div>
+
             </div>
         </div>
         <div class="center_column" id="product_populary" style="clear:both;">

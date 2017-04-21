@@ -13,7 +13,6 @@
             <file>file:/D:/Xampp/htdocs/shoponline/application/controllers/Customer.php</file>
             <file>file:/D:/Xampp/htdocs/shoponline/application/views/site/cart/index.php</file>
             <file>file:/D:/Xampp/htdocs/shoponline/application/helpers/common_helper.php</file>
-            <file>file:/D:/Xampp/htdocs/shoponline/application/controllers/ProductDetail.php</file>
             <file>file:/D:/Xampp/htdocs/shoponline/application/libraries/Datetime_library.php</file>
             <file>file:/D:/Xampp/htdocs/shoponline/application/models/Product_model.php</file>
             <file>file:/D:/Xampp/htdocs/shoponline/application/controllers/Cart.php</file>
@@ -23,15 +22,18 @@
             <file>file:/D:/Xampp/htdocs/shoponline/application/views/admin/home/index.php</file>
             <file>file:/D:/Xampp/htdocs/shoponline/application/core/MY_Model.php</file>
             <file>file:/D:/Xampp/htdocs/shoponline/application/controllers/admin/Statistics.php</file>
+            <file>file:/D:/Xampp/htdocs/shoponline/application/controllers/Productdetail.php</file>
             <file>file:/D:/Xampp/htdocs/shoponline/application/views/admin/shared/left.php</file>
             <file>file:/D:/Xampp/htdocs/shoponline/application/controllers/Product.php</file>
             <file>file:/D:/Xampp/htdocs/shoponline/application/views/admin/order/detail.php</file>
             <file>file:/D:/Xampp/htdocs/shoponline/application/controllers/admin/Category.php</file>
             <file>file:/D:/Xampp/htdocs/shoponline/application/language/english/index.html</file>
             <file>file:/D:/Xampp/htdocs/shoponline/application/models/OrderDetail_model.php</file>
+            <file>file:/D:/Xampp/htdocs/shoponline/public/site/css/shop.style.css</file>
             <file>file:/D:/Xampp/htdocs/shoponline/application/controllers/admin/Account.php</file>
             <file>file:/D:/Xampp/htdocs/shoponline/application/models/Order_model.php</file>
             <file>file:/D:/Xampp/htdocs/shoponline/application/views/admin/statistics/index.php</file>
+            <file>file:/D:/Xampp/htdocs/shoponline/application/config/database.php</file>
             <file>file:/D:/Xampp/htdocs/shoponline/application/views/site/cart/form.php</file>
             <file>file:/D:/Xampp/htdocs/shoponline/public/site/css/css.css</file>
             <file>file:/D:/Xampp/htdocs/shoponline/application/views/site/productdetail/index.php</file>
@@ -44,6 +46,7 @@
             <file>file:/D:/Xampp/htdocs/shoponline/application/views/site/shared/header.php</file>
             <file>file:/D:/Xampp/htdocs/shoponline/application/controllers/admin/Order.php</file>
             <file>file:/D:/Xampp/htdocs/shoponline/application/views/site/customer/login.php</file>
+            <file>file:/D:/Xampp/htdocs/shoponline/application/config/config.php</file>
             <file>file:/D:/Xampp/htdocs/shoponline/application/controllers/Home.php</file>
         </group>
     </open-files>
