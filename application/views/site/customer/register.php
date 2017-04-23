@@ -2,10 +2,11 @@
 <div class="log-reg-v3" style="margin-top: 50px">
     <div class="container">
         <div class="row">
-            <div class="col-md-7 md-margin-bottom-50">
-                <h2 class="welcome-title">Chào mừng đến với <strong> 4MENSHOP </strong> </h2>
+            <div class="col-md-7">
+                <h2 class="welcome-title" style="margin-bottom: 20px">Chào mừng đến với <strong> 4MENSHOP </strong> </h2>
                 <div id="cmsinfo_block">
-                    <div class="content shipping margin-bottom-20">
+                    <div class="content" style="margin-bottom: 30px">
+                        <div class="shipping" ></div>
                         <p>
                             <strong>Miến phí vận chuyển cho đơn hàng trên 1.000.000 VNĐ</strong>
                         </p>
@@ -16,7 +17,8 @@
                         </ul>
                     </div>
 
-                    <div class="content support margin-bottom-20">
+                    <div class="content support" style="margin-bottom: 30px">
+                         <div class="support"></div>
                         <p><strong>Gọi ngay cho chúng tôi khi bạn có thắc mắc</strong>
                         </p>
                         <ul>
@@ -27,7 +29,8 @@
                         </ul>
                     </div>
 
-                    <div class="content card margin-bottom-20">
+                    <div class="content card" style="margin-bottom: 30px">
+                         <div class="card"></div>
                         <p><strong class="bold">Chế độ ưu đãi thành viên VIP:</strong>
                         </p>
                         <ul>
@@ -92,10 +95,10 @@
                     <div class="row">
                         <label class="col-lg-4" for="param_gender">Giới tính</label>
                         <div class=" col-lg-8">
-                            <div class="radio">
+                            <div class="radio-inline">
                                 <label><input type="radio" name="gender" checked="true">Nam</label>
                             </div>
-                            <div class="radio">
+                            <div class="radio-inline">
                                 <label><input type="radio" name="gender">Nữ</label>
                             </div>
                         </div>
@@ -125,7 +128,7 @@
                     <div class="row">
                         <label class="col-lg-4"></label>
                         <div class="col-lg-6">
-                            <button class="btn-u btn-u-sea-shop margin-bottom-20" type="submit">Đăng kí</button>
+                           <button class="btn btn-danger" style="background: #BD0103" type="submit">Đăng kí</button>
                         </div>
                     </div>
 
