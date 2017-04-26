@@ -91,7 +91,15 @@
         </div>
         <div class="content-box">
             <a href="">
-                <img  src="public/site/images/ads.png">
+                <img  src="public/site/images/ads.png" >
+            </a>
+            <hr>
+            <a href="http://cntt.dlu.edu.vn" target="_blank">
+                <img  src="public/site/images/itdlu-ads.png">
+            </a>
+               <hr>
+             <a href="http://dammio.com" target="_blank">
+                <img  src="public/site/images/dammio-ads.png">
             </a>
         </div>
     </div>

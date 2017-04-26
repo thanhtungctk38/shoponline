@@ -1,6 +1,5 @@
 <!--=== Login ===-->
-<div class="log-reg-v3" style="margin-top: 50px">
-    <div class="container">
+<div class="log-reg" style="margin-top: 50px">
         <div class="row">
             <div class="col-md-7">
                 <h2 class="welcome-title" style="margin-bottom: 20px">Chào mừng đến với <strong> 4MENSHOP </strong> </h2>
@@ -138,6 +137,5 @@
                 <p class="text-center">Bạn đã có tài khoản? Hãy <a href="customer/login"><strong>Đăng nhập</strong></a> ngay</p>
             </div>
         </div><!--/end row-->
-    </div><!--/end container-->
 </div>
 <!--=== End Login ===-->

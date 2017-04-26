@@ -53,6 +53,7 @@ $route['default_controller'] = 'home';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 $route['sanpham/(:num)-(:any)']= 'productdetail/index/$1-$2';
+$route['danhmuc']='product';
 $route['danhmuc/(:num)-(:any)']='product/get_by_category/$1';
 $route['danhmuc/(:num)-(:any)/(:num)']='product/get_by_category/$1/$3';
 $route['danhmuc/san-pham-khuyen-mai']='product/get_promotion_product';

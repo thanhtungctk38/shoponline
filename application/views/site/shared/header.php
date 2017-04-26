@@ -43,7 +43,7 @@
 <div id="menu"><!-- the menu -->
     <ul class="menu_top">
         <li><a href="">Trang chủ </a></li>
-        <li><a href="product">Thời trang nam</a></li>
+        <li><a href="product">Sản phẩm</a></li>
         <li><a href="<?php echo promotion_link();?>">Khuyến mãi</a></li>
         <li><a href="<?php echo featured_link();?>">Nổi bật</a></li>
         <li><a href="lien-he.html">Liên hệ</a></li>

@@ -38,10 +38,8 @@ ul.catalog-main li {
 }
 
 ul.catalog-main li{
-    background: none repeat scroll 0 0 #4C66A4;
     color: #FFFFFF;
     display: table;
-    font-weight: bold;
     height: 25px;
     margin-left: 5px;
     padding-left: 8px;
@@ -63,7 +61,6 @@ ul.catalog-sub li a:hover {
     color: #FF6600;
 }
 ul.catalog-main  li  a{
-    color: #FFFFFF;
     padding: 5px;
     display:block;
 } 
