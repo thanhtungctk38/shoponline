@@ -87,7 +87,7 @@ class Customer extends MY_Controller {
             } else {
                 $this->session->set_flashdata('message', 'Không thể thêm dữ liệu');
             }
-            redirect('');
+            redirect(base_url('customer/login'));
         }
         $this->data = array(
             'temp' => 'site/customer/register',
