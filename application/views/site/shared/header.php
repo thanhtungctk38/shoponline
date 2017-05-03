@@ -29,9 +29,9 @@
 
     </div>       
     <div id="search"><!-- the search -->
-        <form method="get" action="tim-kiem.html">
+        <form method="get" action="product/search">
             <input type="text" id="text-search" name="key-search" value="" placeholder="Tìm kiếm sản phẩm..." class="ui-autocomplete-input" autocomplete="off" role="textbox" aria-autocomplete="list" aria-haspopup="true">
-            <input type="submit" id="but" name="but" value="Tìm kiếm">
+            <input type="submit" id="but" value="Tìm kiếm">
         </form>
     </div><!-- End search -->
 

@@ -30,5 +30,8 @@ class Product_model extends MY_Model{
         );
         return $this->get_all($option);
     }
+    function search($inputString){
+        
+    }
 }
 ?>
