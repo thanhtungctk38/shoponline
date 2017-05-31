@@ -40,7 +40,7 @@
         </li>
         <li class="product">
             <a href="" class=" exp" >
-                <span>Sản phẩm</span>
+                <span>Quản lý sản phẩm</span>
             </a>
 
             <ul class="sub">
@@ -66,7 +66,7 @@
             <li class="account">
 
                 <a href="<?php echo admin_url('account') ?>" class=" exp" >
-                    <span>Tài khoản</span>
+                    <span>Quản lý Tài khoản</span>
                 </a>
 
                 <ul class="sub">

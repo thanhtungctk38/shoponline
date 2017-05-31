@@ -1,11 +1,9 @@
 <!-- End wraper -->
 <script src="public/site/plugins/jquery/jquery.min.js" type="text/javascript"></script>
 <script type="text/javascript" src="../js/jquery/jquery-ui.min.js"></script>
-
 <script src="public/site/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
 <script src="public/site/js/script.js"></script>
 <script src="public/site/plugins/owl-carousel/owl.carousel.min.js" type="text/javascript"></script>
-<!-- raty -->
 <script type="text/javascript" src="public/site/raty/jquery.raty.min.js"></script>
 <script src="public/site/plugins/metisMenu/metisMenu.min.js" type="text/javascript"></script>
 <script type="text/javascript">
@@ -23,7 +21,7 @@
 
 <!--End raty -->
 
-<!-- End Javascript -->
+
 <script type="text/javascript">
     $(document).ready(function () {
         var owl = $('.owl-carousel');

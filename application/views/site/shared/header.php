@@ -13,7 +13,7 @@
 </script>-->
 <div class='top'><!-- The top -->
     <div id="logo"><!-- the logo -->
-        <a  href="" title="Học lập trình website với PHP và MYSQL">
+        <a  href="" title="4MENSHOP">
             <img src="public/site/images/logo.png"  alt="Học lập trình website với PHP và MYSQL"/>
         </a>
     </div><!-- End logo -->
@@ -50,12 +50,14 @@
         <div style="float:right">
             <?php if (isset($user)): ?>
 
-                <li>Xin chào  <a href="dang-ky.html"> <?php echo $user->CustomerName; ?></a></li>
+                <li>Xin chào  <a href="customer/account"> <?php echo $user->CustomerName; ?></a></li>
                 <li><a href="customer/logout">Đăng xuất</a></li>
+                
 
             <?php else: ?>
                 <li><a href="customer/login">Đăng nhập</a></li>
                 <li><a href="customer/register">Đăng ký</a></li>
+                
             <?php endif; ?>
         </div>
     </ul>

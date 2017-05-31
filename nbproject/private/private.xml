@@ -3,21 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/Xampp/htdocs/shoponline/application/views/site/product/viewdetail.php</file>
-            <file>file:/D:/Xampp/htdocs/shoponline/application/views/site/product/index.php</file>
-            <file>file:/D:/Xampp/htdocs/shoponline/application/config/routes.php</file>
-            <file>file:/D:/Xampp/htdocs/shoponline/public/site/css/product.css</file>
-            <file>file:/D:/Xampp/htdocs/shoponline/application/controllers/Customer.php</file>
-            <file>file:/D:/Xampp/htdocs/shoponline/application/models/Customer_model.php</file>
-            <file>file:/D:/Xampp/htdocs/shoponline/application/config/database.php</file>
-            <file>file:/D:/Xampp/htdocs/shoponline/application/helpers/common_helper.php</file>
-            <file>file:/D:/Xampp/htdocs/shoponline/application/views/site/home/index.php</file>
-            <file>file:/D:/Xampp/htdocs/shoponline/application/models/Product_model.php</file>
-            <file>file:/D:/Xampp/htdocs/shoponline/application/views/site/shared/header.php</file>
-            <file>file:/D:/Xampp/htdocs/shoponline/application/core/MY_Model.php</file>
-            <file>file:/D:/Xampp/htdocs/shoponline/application/config/config.php</file>
-            <file>file:/D:/Xampp/htdocs/shoponline/application/controllers/Product.php</file>
-            <file>file:/D:/Xampp/htdocs/shoponline/application/models/Category_model.php</file>
+            <file>file:/D:/Xampp/htdocs/shoponline/application/controllers/admin/Product.php</file>
+            <file>file:/D:/Xampp/htdocs/shoponline/application/libraries/Pagination_library.php</file>
+            <file>file:/D:/Xampp/htdocs/shoponline/application/controllers/admin/Order.php</file>
+            <file>file:/D:/Xampp/htdocs/shoponline/application/views/admin/shared/left.php</file>
         </group>
     </open-files>
 </project-private>

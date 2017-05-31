@@ -37,7 +37,7 @@
                                 Size: <b><?php echo $product->Size; ?></b> 
                             </p>
                             Đánh giá &nbsp;
-                            <span class='raty_detailt' style = 'margin:5px' id='9' data-score='4'></span> 
+                            <span class='raty' style = 'margin:5px' id='9' data-score='4'></span> 
                             | Tổng số: <b  class='rate_count'>1</b>
 
                             <div class='action'>

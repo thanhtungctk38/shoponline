@@ -17,8 +17,30 @@ class Order_model extends MY_Model {
      * @return array: mảng đơn hàng (gồm chi tiết)
      */
 
+    public function get_customer_order_list($customerID) {
+        $input = array(
+            'where' => "CustomerID = $customerID"
+        );
+        $orders = $this->get_all($input);
+        foreach ($orders as $row) {
+            //Get detail
+            $option = array(
+                'select' => 'orderdetail.*, product.ProductName',
+                'join' => array(
+                    array('product', 'orderdetail.ProductID= product.ProductID', '')
+                ),
+                'where' => 'OrderID=' . $row->OrderID
+            );
+            $this->CI->load->model('orderdetail_model');
+            $details = $this->CI->orderdetail_model->get_all($option);
+
+            $row->Details = $details;
+        }
+        return $orders;
+    }
+
     public function get_order_detail($id) {
-        $order = $this->get_row($id);
+        $order = $this->single($id);
         if ($order->CustomerID != 0) {
             $this->CI->load->model('customer_model');
             $customer = $this->CI->customer_model->single($order->CustomerID);

@@ -94,6 +94,38 @@ class Product extends MY_Controller {
         $this->_default($total, $url, 'Kết quả tìm kiếm với từ khóa: ' . $key, $input);
     }
 
+    function search_by_price(){
+        $key = $this->input->get('price');
+          switch ($key){
+            case 'Below100':
+                $where = "Price<=100000";
+                break;
+            case '100To300':
+                $where = "Price>=100000 AND Price <=300000";
+                break;
+            case '300To500':
+                $where = "Price>=300000 AND Price <=500000";
+                break;
+            case '500To1':
+                $where = "Price>=500000 AND Price <=1000000";
+                break;
+            case 'Above1':
+                $where= "Price >=1000000";
+                break;
+            default:
+                $where='';
+                
+        }
+        $offset = $this->pagination_library->get_offset();
+        $input = array(
+            'limit' => array($this->per_page, $offset),
+            'where' => $where
+        );
+       
+        $total = $this->product_model->total($input);
+        $url = 'product/search_by_price?price=' . $key;
+        $this->_default($total, $url, 'Kết quả tìm kiếm' , $input);
+    }
     function _default($total, $url, $title, $input) {
 
         $this->data = array(

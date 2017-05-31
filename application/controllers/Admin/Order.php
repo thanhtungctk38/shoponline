@@ -11,10 +11,9 @@ class Order extends MY_Controller {
         //Kiểm tra có lọc hay không
         $input = $this->_filter();
         $this->load->library('pagination_library');
-        $per_page = $this->pagination_library->per_page;
-        $offset = $this->pagination_library->get_offset();
+        $offset = $this->pagination_library->get_offset(10);
         $input = array(
-            'limit' => array($per_page, $offset)
+            'limit' => array(10, $offset)
         );
         $total = $this->order_model->total($input);
         $url = admin_url('order');
@@ -22,7 +21,7 @@ class Order extends MY_Controller {
             'message' => $this->session->flashdata('message'),
             'total' => $total,
             'temp' => 'admin/order/index',
-            'list' => $this->order_model->get_order($per_page, $offset),
+            'list' => $this->order_model->get_order(10, $offset),
             'pagination' => $this->pagination_library->create_links($total, $url)
         );
         $this->load->view('admin/shared/layout', $this->data);
