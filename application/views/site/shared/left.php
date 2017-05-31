@@ -2,6 +2,39 @@
 <div class='col-md-3 left'>
     <div class="box-left">
         <div class="title tittle-box-left">
+            <h2> Tìm kiếm theo giá </h2>
+        </div>
+        <div class="content-box" ><!-- The content-box -->
+            <form class="t-form form_action" method="get" style='padding:10px' action="product/search_by_price" name="search" >
+                <div class="form-row">
+                    <label for="param_price_from" class="form-label" style='width:70px'>Giá: <span class="req">*</span></label>
+                    <div class="form-item"  style='width:90px'>
+                        <select  class="input" id="price_from" name="price" >
+                            <option value="Below100">Dưới 100 ngàn</option>
+                            <option value="100To300">Từ 100 đến 300 ngàn</option>
+                            <option value="300To500">Từ 300 đến 500 ngàn</option>
+                            <option value="500To1">Từ 500 ngàn đến 1 triệu</option>
+                            <option value="Above1">Trên 1 triệu</option>
+                        </select>
+                        <div class="clear"></div>
+                        <div class="error" id="price_from_error"></div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+
+
+                <div class="form-row">
+                    <label class="form-label">&nbsp;</label>
+                    <div class="form-item">
+                        <input type="submit" class="button"  value="Tìm kiềm" style='height:30px !important;line-height:30px !important;padding:0px 10px !important'>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </form>
+        </div><!-- End content-box -->
+    </div>
+    <div class="box-left">
+        <div class="title tittle-box-left">
             <h2> Danh mục sản phẩm </h2>
         </div>
         <div class="content-box"><!-- The content-box -->
@@ -49,40 +82,11 @@
                             <a rel="nofollow" href="skype:thanhtungctk38">
                                 <img style="margin-bottom:-3px" src="public/site/images/skype.png"> Skype: thanhtungctk38			</a>
                         </p>	
-            </div>			        </div>
+            </div>			        
+        </div>
     </div>
     <!-- End Support -->
 
-    <!-- The news -->
-    <div class="box-left">
-        <div class="title tittle-box-right">
-            <h2> Bài viết mới </h2>
-        </div>
-        <div class="content-box">
-            <ul class='news'>
-                <li>
-                    <a href="news/view/4.html" title="Mỹ tăng cường không kích Iraq">
-                        <img src="public/site/images/li.png">
-                        Mỹ tăng cường không kích Iraq	                        </a>
-                </li>
-                <li>
-                    <a href="news/view/3.html" title="Hà Nội: CSGT tìm người thân giúp cháu bé 8 tuổi đi lạc">
-                        <img src="public/site/images/li.png">
-                        Hà Nội: CSGT tìm người thân giúp cháu bé 8 tuổi đi lạc	                        </a>
-                </li>
-                <li>
-                    <a href="news/view/2.html" title="Arsenal đồng ý bán Vermaelen cho Barcelona">
-                        <img src="public/site/images/li.png">
-                        Arsenal đồng ý bán Vermaelen cho Barcelona	                        </a>
-                </li>
-                <li>
-                    <a href="news/view/1.html" title="Nhà lầu siêu xe hàng mã ế sưng, đồ chơi biển đảo hút khách">
-                        <img src="public/site/images/li.png">
-                        Nhà lầu siêu xe hàng mã ế sưng, đồ chơi biển đảo hút khách	                        </a>
-                </li>
-            </ul>
-        </div>
-    </div>		<!-- End news -->
 
     <!-- The Ads -->
     <div class="box-left">
@@ -91,7 +95,15 @@
         </div>
         <div class="content-box">
             <a href="">
-                <img  src="public/site/images/ads.png">
+                <img  src="public/site/images/ads.png" >
+            </a>
+            <hr>
+            <a href="http://cntt.dlu.edu.vn" target="_blank">
+                <img  src="public/site/images/itdlu-ads.png">
+            </a>
+            <hr>
+            <a href="http://dammio.com" target="_blank">
+                <img  src="public/site/images/dammio-ads.png">
             </a>
         </div>
     </div>

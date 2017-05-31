@@ -13,7 +13,7 @@
 </script>-->
 <div class='top'><!-- The top -->
     <div id="logo"><!-- the logo -->
-        <a  href="" title="Học lập trình website với PHP và MYSQL">
+        <a  href="" title="4MENSHOP">
             <img src="public/site/images/logo.png"  alt="Học lập trình website với PHP và MYSQL"/>
         </a>
     </div><!-- End logo -->
@@ -29,9 +29,9 @@
 
     </div>       
     <div id="search"><!-- the search -->
-        <form method="get" action="tim-kiem.html">
+        <form method="get" action="product/search">
             <input type="text" id="text-search" name="key-search" value="" placeholder="Tìm kiếm sản phẩm..." class="ui-autocomplete-input" autocomplete="off" role="textbox" aria-autocomplete="list" aria-haspopup="true">
-            <input type="submit" id="but" name="but" value="Tìm kiếm">
+            <input type="submit" id="but" value="Tìm kiếm">
         </form>
     </div><!-- End search -->
 
@@ -43,19 +43,21 @@
 <div id="menu"><!-- the menu -->
     <ul class="menu_top">
         <li><a href="">Trang chủ </a></li>
-        <li><a href="product">Thời trang nam</a></li>
+        <li><a href="product">Sản phẩm</a></li>
         <li><a href="<?php echo promotion_link();?>">Khuyến mãi</a></li>
         <li><a href="<?php echo featured_link();?>">Nổi bật</a></li>
         <li><a href="lien-he.html">Liên hệ</a></li>
         <div style="float:right">
             <?php if (isset($user)): ?>
 
-                <li>Xin chào  <a href="dang-ky.html"> <?php echo $user->CustomerName; ?></a></li>
+                <li>Xin chào  <a href="customer/account"> <?php echo $user->CustomerName; ?></a></li>
                 <li><a href="customer/logout">Đăng xuất</a></li>
+                
 
             <?php else: ?>
                 <li><a href="customer/login">Đăng nhập</a></li>
                 <li><a href="customer/register">Đăng ký</a></li>
+                
             <?php endif; ?>
         </div>
     </ul>

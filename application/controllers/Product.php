@@ -39,7 +39,7 @@ class Product extends MY_Controller {
         $offset = $this->pagination_library->get_offset();
         $input = array(
             'limit' => array($this->per_page, $offset),
-            'order'=>array('TotalView'=> 'DESC')
+            'order' => array('TotalView' => 'DESC')
         );
         $total = $this->product_model->total($input);
         $url = featured_link();
@@ -56,7 +56,78 @@ class Product extends MY_Controller {
         $this->_default($total, $url, 'Thời trang nam', $input);
     }
 
+    //Xem chi tiết sản phẩm
+    function view_detail($id) {
+        $product = $this->product_model->single($id);
+
+        $this->load->model('category_model');
+        $category = $this->category_model->get_parent_category($product->CategoryID);
+
+        //Cập nhật lượt xem
+        $data = array(
+            'TotalView' => $product->TotalView + 1
+        );
+
+        $this->product_model->update($product->ProductID, $data);
+        $this->data += array(
+            'temp' => 'site/product/viewdetail',
+            'title' => $product->ProductName,
+            'product' => $product,
+            'hottestProducts' => $this->product_model->get_hottest_products(3),
+            'products' => $this->product_model->get_product_by_category($product->CategoryID, 10),
+            'category' => $category
+        );
+        $this->load->view('site/shared/layout', $this->data);
+    }
+
+    function search() {
+        $key = $this->input->get('key-search');
+        //$array = explode(' ', $key);
+        $offset = $this->pagination_library->get_offset();
+        $input = array(
+            'limit' => array($this->per_page, $offset),
+            'like' => array('ProductName',$key)
+        );
+       
+        $total = $this->product_model->total($input);
+        $url = 'product/search?key_search=' . $key;
+        $this->_default($total, $url, 'Kết quả tìm kiếm với từ khóa: ' . $key, $input);
+    }
+
+    function search_by_price(){
+        $key = $this->input->get('price');
+          switch ($key){
+            case 'Below100':
+                $where = "Price<=100000";
+                break;
+            case '100To300':
+                $where = "Price>=100000 AND Price <=300000";
+                break;
+            case '300To500':
+                $where = "Price>=300000 AND Price <=500000";
+                break;
+            case '500To1':
+                $where = "Price>=500000 AND Price <=1000000";
+                break;
+            case 'Above1':
+                $where= "Price >=1000000";
+                break;
+            default:
+                $where='';
+                
+        }
+        $offset = $this->pagination_library->get_offset();
+        $input = array(
+            'limit' => array($this->per_page, $offset),
+            'where' => $where
+        );
+       
+        $total = $this->product_model->total($input);
+        $url = 'product/search_by_price?price=' . $key;
+        $this->_default($total, $url, 'Kết quả tìm kiếm' , $input);
+    }
     function _default($total, $url, $title, $input) {
+
         $this->data = array(
             'temp' => 'site/product/index',
             'title' => $title,

@@ -22,6 +22,10 @@
 
     font-size:13px;
 }
+.product h3 a:hover
+{
+    color:#bd0103;
+}
 .product div.action
 {
     margin-top:10px;

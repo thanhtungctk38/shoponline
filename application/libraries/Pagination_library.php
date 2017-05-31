@@ -12,10 +12,14 @@ class Pagination_library {
         $this->pagination = $this->CI->pagination;
     }
 
-    function get_offset() {
+    function get_offset($perpage = 0) {
         $page = intval($this->CI->input->get('page'));
         $page = ($page > 0) ? $page : 1;
-        $offset = ($page - 1) * $this->per_page;
+        if ($perpage == 0) {
+            $offset = ($page - 1) * $this->per_page;
+        } else {
+            $offset = ($page - 1) * $perpage;
+        }
         return $offset;
     }
 

@@ -30,10 +30,10 @@ class Product extends MY_Controller {
         //Cài đặt phân trang
         $this->load->library('pagination_library');
 
-        $per_page = $this->pagination_library->per_page;
-        $offset = $this->pagination_library->get_offset();
+        $offset = $this->pagination_library->get_offset(10);
+       
         $total = $this->product_model->total($input);
-        $input['limit'] = array($per_page, $offset);
+        $input['limit'] = array(10, $offset);
 
         $url = base_url("admin/product/index?id=$id&name=$name&category=$cateId");
         $this->data = array(

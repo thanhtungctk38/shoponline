@@ -514,3 +514,9 @@ ul.news li a img
     border-radius: 50%;
     content: "";
 }
+.account .form-control{
+    width:200px;
+}
+.account label{
+    text-align: left;
+}
